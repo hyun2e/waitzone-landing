@@ -29,8 +29,34 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Pretendard', sans-serif;
-    background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme }) => theme.grayColors.gray50};
+    color: ${({ theme }) => theme.grayColors.gray800};
+  }
+
+  h1, h2, h3, h4, h5, h6 {  /* 기본 타이포그래피 설정 */
+    font-family: ${({ theme }) => theme.fonts.heading};
+    font-weight: bold;
+    line-height: 1.3;
+  }
+
+  p {
+    font-family: ${({ theme }) => theme.fonts.main};
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    line-height: 1.4;
+  }
+
+  input, textarea { 
+  /* 입력 폼 기본 스타일 */
+    font-family: inherit;
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    border: 1px solid ${({ theme }) => theme.grayColors.gray300};
+    padding: ${({ theme }) => theme.spacing.sm};
+    border-radius: ${({ theme }) => theme.borders.radiusSmall};
+    transition: ${({ theme }) => theme.transitions.fast};
+  }
+  input:focus, textarea:focus {
+    border-color: ${({ theme }) => theme.mainColors.primary300};
+    outline: none;
   }
 
 `;
