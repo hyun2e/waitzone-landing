@@ -33,6 +33,11 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.grayColors.gray800};
   }
 
+  h1 {
+    font-size: 40px;
+    font-weight: 800;
+  }
+
   h1, h2, h3, h4, h5, h6 {  /* 기본 타이포그래피 설정 */
     font-family: ${({ theme }) => theme.fonts.heading};
     font-weight: bold;
