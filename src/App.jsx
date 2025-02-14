@@ -13,6 +13,7 @@ const slidesHero = [
   { src: "https://placehold.co/600x400/green/black", content: "Slide 3" },
   { src: "https://placehold.co/600x400/red/white", content: "Slide 4" },
   { src: "https://placehold.co/600x400/red/white", content: "gh" },
+  { src: "https://placehold.co/600x400/red/white", content: "nyg" },
 ];
 
 const Section = styled.section`
