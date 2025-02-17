@@ -1,6 +1,6 @@
 import React from "react";
 
-const Features03 = () => {
+const Features02 = () => {
   return (
     /* 섹션 제목 및 설명 */
     <div>
