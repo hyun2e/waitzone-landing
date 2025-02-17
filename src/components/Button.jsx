@@ -10,6 +10,7 @@ const FullButton = styled.a`
   font-size: 16px;
   font-weight: 700;
   color: #ffffff;
+  background-color: ${({ bgcolor }) => bgcolor};
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -46,7 +47,8 @@ const OutlineButton = styled.a`
 
 // Button 컴포넌트
 // full-btn
-const Button = ({ type, href, children }) => {
+const Button = ({ type, href, children, bgcolor }) => {
+  console.log(bgcolor);
   switch (type) {
     case "outline-btn":
       return (
@@ -57,7 +59,12 @@ const Button = ({ type, href, children }) => {
     case "full-btn":
     default:
       return (
-        <FullButton href={href} target="_blank" rel="noopener noreferrer">
+        <FullButton
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          bgcolor={bgcolor}
+        >
           {children}
         </FullButton>
       );

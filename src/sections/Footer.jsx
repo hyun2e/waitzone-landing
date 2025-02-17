@@ -5,15 +5,15 @@ const Footer = () => {
   return (
     <div>
       <div>
-        <img classname="logo" src={footer_logo} />
+        <img className="logo" src={footer_logo} />
       </div>
 
       <div>
-        <p classname="title">당신의 기다림을 즐겁고 가치있게</p>
+        <p className="title">당신의 기다림을 즐겁고 가치있게</p>
       </div>
 
       <div>
-        <p classname="survey_title">WAIT ZONE 설문조사</p>
+        <p className="survey_title">WAIT ZONE 설문조사</p>
         <p className="survey_description">
           서비스 품질 향상을 위한 설문조사와 사용성 인터뷰를 진행 중입니다.
         </p>

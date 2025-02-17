@@ -26,6 +26,10 @@ const slidesHero = [
   { src: "https://placehold.co/600x400/red/white", content: "ljh" },
 ];
 
+const ContentContainer = styled.div`
+  max-width: 800px;
+  margin: auto;
+`;
 const Section = styled.section`
   height: 500px;
   background-color: ${({ $bgColor }) => $bgColor || "#1d94d9"};
@@ -60,13 +64,15 @@ const App = () => {
           섹션 2
         </Section> */}
         <NavBar />
-        <HeroSection />
-        <CoreValues />
-        <Features01 />
-        <Features02 />
-        <Features03 />
-        <Features04 />
-        <Footer />
+        <ContentContainer>
+          <HeroSection />
+          <CoreValues />
+          <Features01 />
+          <Features02 />
+          <Features03 />
+          <Features04 />
+          <Footer />
+        </ContentContainer>
       </>
     </ThemeProvider>
   );

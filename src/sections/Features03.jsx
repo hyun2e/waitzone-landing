@@ -11,16 +11,22 @@ import f3_mo_2 from "../assets/images/f3_mo_2.svg";
 import f3_mo_s_1 from "../assets/images/f3_mo_s_1.svg";
 import f3_mo_s_2 from "../assets/images/f3_mo_s_2.svg";
 import f3_tag from "../assets/images/f3_tag.png";
+import styled from "styled-components";
+
+const FeartureContainer = styled.div`
+  background-image: url("src/assets/images/f3_background.png");
+  width: 100%;
+`;
 
 const Features03 = () => {
   return (
-    <div>
+    <FeartureContainer>
       <div>
-        <h4 classname="f3_section">Features 03</h4>
-        <h2 classname="f3_title">
+        <h4 className="f3_section">Features 03</h4>
+        <h2 className="f3_title">
           반경 커스텀으로 폭 넓은 Zone의 추천 장소 제공
         </h2>
-        <p classname="f3_description">
+        <p className="f3_description">
           자유롭게 존의 반경을 설정해 보세요.
           <br />
           여유롭게 설정한 후, 주변을 즐기고 오세요!
@@ -28,7 +34,7 @@ const Features03 = () => {
       </div>
 
       <div>
-        <img classname="f3_mo" src={f3_mo_1} />
+        <img className="f3_mo" src={f3_mo_1} />
         <img className="f3_line_1" src={f3_line_1} />
         <img className="f3_line_2" src={f3_line_2} />
         <img className="f3_tag" src={f3_tag} />
@@ -36,7 +42,7 @@ const Features03 = () => {
 
       <div>
         <p className="f3_custom_flow">커스텀 Flow</p>
-        <img classname="f3_line_flow" src={f3_line_flow} />
+        <img className="f3_line_flow" src={f3_line_flow} />
         <img className="f3_mo_s_1" src={f3_mo_s_1} />
         <img className="f3_mo_s_2" src={f3_mo_s_2} />
         <img className="f3_line_3" src={f3_line_3} />
@@ -51,7 +57,7 @@ const Features03 = () => {
         <p className="f3_body_title_3">길찾기 · 웨이팅 신청 제공</p>
         <p className="f3_body_text_3">실시간 대기 현황 한눈에 보기</p>
       </div>
-    </div>
+    </FeartureContainer>
   );
 };
 

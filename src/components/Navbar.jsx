@@ -60,7 +60,7 @@ const NavBar = () => {
         <NavLink href="#section1">섹션 1</NavLink>
         <NavLink href="#section2">섹션 2</NavLink>
         {/* 여기에 섹션 3으로 이동하는 NavLink를 추가해봅시다 */}
-        <Button type="full-btn" href="https://www.naver.com">
+        <Button type="full-btn" bgcolor="#171517" href="https://www.naver.com">
           체험하기
         </Button>
       </NavButtons>
