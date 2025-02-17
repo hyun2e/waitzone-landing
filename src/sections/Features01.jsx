@@ -1,3 +1,4 @@
+
 import React from "react";
 import f1_mo from './assets/images/f1_mo.svg';
 import f1_gradient_right from './assets/images/f1_gradient_right.png';
@@ -39,4 +40,3 @@ const Features01 = () => {
   );
 };
 
-export default Features01;
