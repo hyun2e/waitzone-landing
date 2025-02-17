@@ -9,6 +9,7 @@ export const theme = {
     secondary700: "#3e3e3e", // 서브 색상
   },
   grayColors: {
+    gray900: "#171517",
     gray800: "#242424", // 그레이 색상 
     gray600: "#4d4d4d", 
     gray500: "#666666", 
@@ -40,8 +41,10 @@ export const theme = {
       lg: "18px",  // font-lg
       xl: "20px",  // font-xl (대제목)
       xxl: "24px", // 추가 (부제목 등)
-      heading1: "32px", // h1
-      heading2: "28px", // h2
+      h1: "32px", // heading1
+      h2: "28px", // heading2
+      h3: "22px", // heading3
+      h4: "16px", // heading4
     },
     // 필요한 다른 크기들...
   },

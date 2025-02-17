@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import f1_mo from "../assets/images/f1_mo.svg";
 import f1_gradient_right from "../assets/images/f1_gradient_right.png";
 import f1_gradient_left from "../assets/images/f1_gradient_left.png";
@@ -11,34 +12,107 @@ import f1_icon_6 from "../assets/images/f1_icon_6.png";
 
 const Features01 = () => {
   return (
-    <div>
-      <div>
-        <h4 className="f1_section">Features 01</h4>
-        <h2 className="f1_title">웨이팅 신청 존에서 빠르게 웨이팅</h2>
-        <p className="f1_description">
-          장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.
-        </p>
-      </div>
+    <FeatureContainer>
+      <GradientRight src={f1_gradient_right}/>
+      <GradientLeft src={f1_gradient_left}/>
 
-      <div>
-        <img className="f1_mo" src={f1_mo} />
-      </div>
+      <Icons>
+        <Icon src={f1_icon_1}/>
+        <Icon src={f1_icon_2}/>
+        <Icon src={f1_icon_3}/>
+        <Icon src={f1_icon_4}/>
+        <Icon src={f1_icon_5}/>
+        <Icon src={f1_icon_6}/>
+      </Icons>
 
-      <div>
-        <img className="f1_gradient_r" src={f1_gradient_right} />
-        <img className="f1_gradient_l" src={f1_gradient_left} />
-      </div>
-
-      <div>
-        <img className="f1_icon_1" src={f1_icon_1} />
-        <img className="f1_icon_2" src={f1_icon_2} />
-        <img className="f1_icon_3" src={f1_icon_3} />
-        <img className="f1_icon_4" src={f1_icon_4} />
-        <img className="f1_icon_5" src={f1_icon_5} />
-        <img className="f1_icon_6" src={f1_icon_6} />
-      </div>
-    </div>
+      <Content>
+        <Title>Features 01</Title>
+        <SubTitle>웨이팅 신청 존에서 빠르게 웨이팅</SubTitle>
+        <Description>장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.</Description>
+        <PhoneImage src={f1_mo}/>
+      </Content>
+    </FeatureContainer>
   );
 };
 
 export default Features01;
+
+// Style
+const FeatureContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 670px;
+  background: #171517;
+  margin-top: 70px;
+  margin-bottom: 0px;
+  overflow: hidden;
+`;
+
+/* 🟣 콘텐츠 박스 */
+const Content = styled.div`
+  position: relative;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  z-index: 2;
+`;
+
+const Title = styled.h4`
+  font-size: 16px;
+  font-weight: 800;
+  color: #ACA7FF;
+  line-height: 140%;
+  letter-spacing: -0.32px;
+`;
+
+const SubTitle = styled.h2`
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 5px;
+  line-height: 140%;
+  letter-spacing: -0.48px;
+`;
+
+const Description = styled.p`
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 3px;
+  line-height: 140%;
+  letter-spacing: -0.32px;
+`;
+
+const PhoneImage = styled.img`
+  width: 283px;
+  height: 460px;
+  flex-shrink: 0;
+  margin-top: 54px;
+  z-index: 2;
+`;
+
+const GradientRight = styled.img`
+  position: absolute;
+  width: 150px;
+  height: 670px;
+  margin-right: 650px;
+`;
+
+const GradientLeft = styled.img`
+  position: absolute;
+  width: 150px;
+  height: 670px;
+  margin-left: 650px;
+`;
+
+const Icons = styled.div`
+  position: absolute;
+  display: flex;
+  gap: 55px;
+  bottom: 40%; left: 50%;
+  transform: translateX(-59%);
+  z-index: 1;
+`;
+
+const Icon = styled.img`
+  width: 130px;
+  height: 130px;
+`;
