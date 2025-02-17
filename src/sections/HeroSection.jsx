@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
-
+import background from "../assets/images/1_background_all.png";
+import mock from "../assets/images/1_background_phonemock.png";
 const HeroSection = () => {
   return (
     <div>
@@ -19,7 +20,9 @@ const HeroSection = () => {
         <p>서비스 품질 향상을 위한 설문조사입니다. </p><br/>
         <p>많은 참여 부탁드립니다</p>
       </div>
-      <img />
+
+      <img src={background}/>
+      <img src={mock}/>
     </div>
   );
 };
