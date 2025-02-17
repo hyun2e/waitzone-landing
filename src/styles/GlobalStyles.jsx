@@ -50,20 +50,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.4;
   }
 
-  input, textarea { 
-  /* 입력 폼 기본 스타일 */
-    font-family: inherit;
-    font-size: ${({ theme }) => theme.fontSizes.base};
-    border: 1px solid ${({ theme }) => theme.grayColors.gray300};
-    padding: ${({ theme }) => theme.spacing.sm};
-    border-radius: ${({ theme }) => theme.borders.radiusSmall};
-    transition: ${({ theme }) => theme.transitions.fast};
-  }
-  input:focus, textarea:focus {
-    border-color: ${({ theme }) => theme.mainColors.primary300};
-    outline: none;
-  }
-
 `;
 
 export default GlobalStyle;

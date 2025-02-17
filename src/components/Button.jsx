@@ -10,7 +10,6 @@ const FullButton = styled.a`
   font-size: 16px;
   font-weight: 700;
   color: #ffffff;
-  background-color: ${({ theme }) => theme.colors.primary};
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -19,7 +18,6 @@ const FullButton = styled.a`
   transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primaryDark};
   }
 `;
 

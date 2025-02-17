@@ -43,7 +43,6 @@ const NavLink = styled.a`
   transition: color 0.3s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primaryDark};
   }
 
   &:focus {
