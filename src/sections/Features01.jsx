@@ -63,6 +63,7 @@ const Title = styled.h4`
   color: #ACA7FF;
   line-height: 140%;
   letter-spacing: -0.32px;
+  margin-top: 70px;
 `;
 
 const SubTitle = styled.h2`
