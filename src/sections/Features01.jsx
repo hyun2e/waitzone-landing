@@ -13,8 +13,8 @@ const Features01 = () => {
   return (
     <div>
       <div> 
-        <p classname="f1_section">Features 01</p>
-        <p classname="f1_title">웨이팅 신청 존에서 빠르게 웨이팅</p>
+        <h4 classname="f1_section">Features 01</h4>
+        <h2 classname="f1_title">웨이팅 신청 존에서 빠르게 웨이팅</h2>
         <p classname="f1_description">장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.</p>
       </div>
 

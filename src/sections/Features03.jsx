@@ -16,8 +16,8 @@ const Features03 = () => {
   return (
     <div>
          <div>
-            <p classname="f3_section">Features 03</p>
-            <p classname="f3_title">반경 커스텀으로 폭 넓은 Zone의 추천 장소 제공</p>
+            <h4 classname="f3_section">Features 03</h4>
+            <h2 classname="f3_title">반경 커스텀으로 폭 넓은 Zone의 추천 장소 제공</h2>
             <p classname="f3_description">자유롭게 존의 반경을 설정해 보세요.<br/>
             여유롭게 설정한 후, 주변을 즐기고 오세요!</p>
         </div>
@@ -37,14 +37,6 @@ const Features03 = () => {
             <img className="f3_line_3" src={f3_line_3}/>
             <p className="f3_body_title_1">내 주변 세부 웨이팅 존</p>
             <p className="f3_body_text_1">내 위치 중심의 세부 장소 추천 영역</p>
-        </div>
-
-        <div>
-            <img className="f3_mo_2" src={f3_mo_2}/>
-            <p className="f3_body_title_2">대기현황 실시간 제공</p>
-            <p className="f3_body_text_2">실시간 대기 현황 한눈에 보기</p>
-            <p className="f3_body_title_3">길찾기 · 웨이팅 신청 제공</p>
-            <p className="f3_body_text_3">실시간 대기 현황 한눈에 보기</p>
         </div>
 
         <div>
