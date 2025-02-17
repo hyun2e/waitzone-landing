@@ -5,6 +5,13 @@ import NavBar from "./components/NavBar";
 import GlobalStyle from "./styles/GlobalStyles";
 import { theme } from "./styles/theme";
 import Slider from "./components/Slider";
+import HeroSection from "./sections/HeroSection";
+import CoreValues from "./sections/CoreValues";
+import Features01 from "./sections/Features01";
+import Features02 from "./sections/Features02";
+import Features03 from "./sections/Features03";
+import Features04 from "./sections/Features04";
+import Footer from "./sections/Footer";
 
 // 예시 슬라이드 데이터: src 값으로 정적인 이미지 URL을 사용합니다.
 const slidesHero = [
@@ -42,8 +49,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <NavBar />
-        {/* 히어로 섹션에 Slider 컴포넌트를 포함 */}
+        {/* <NavBar />
         <Section id="section-hero" $bgColor="#1E3A5F">
           <Slider slides={slidesHero} duration={1} />
         </Section>
@@ -52,7 +58,15 @@ const App = () => {
         </Section>
         <Section id="section2" $bgColor="#0F4C75">
           섹션 2
-        </Section>
+        </Section> */}
+        <NavBar />
+        <HeroSection />
+        <CoreValues />
+        <Features01 />
+        <Features02 />
+        <Features03 />
+        <Features04 />
+        <Footer />
       </>
     </ThemeProvider>
   );
