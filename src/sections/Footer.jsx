@@ -136,10 +136,11 @@ const ConnectBox = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 `;
 
 const ConnectTitle = styled.p`
+  color: #d9d9d9;
   font-size: 12px;
   font-weight: 600;
   line-height: 140%;
