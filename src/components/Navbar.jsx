@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import LogoImg from "/Users/macbook/Desktop/waitzone-landing/src/assets/images/logo.svg";
+import LogoImg from "../assets/images/logo.svg";
 
 // ✅ NavBar 컨테이너 스타일 적용
 const Nav = styled.nav`
