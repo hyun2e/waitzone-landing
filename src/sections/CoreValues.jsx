@@ -15,6 +15,18 @@ const CoreContainer = styled.div`
   padding: 40px 20px;
 `;
 
+const ContentWrapper = styled.div`
+  position: relative;
+  z-index: 1000;
+`;
+
+const GradImg = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+`;
+
 const TopCorevalue = styled.div`
   display: flex;
   width: 100%;
@@ -46,28 +58,32 @@ const CoreValues = () => {
   return (
     <CoreContainer>
       {/* Core Values */}
-      <TopCorevalue>
-        <p>Core Values</p>
-        <h2>"웨이팅 시간을 가치있고 즐거운 경험으로 만들기"</h2>
-      </TopCorevalue>
+      <ContentWrapper>
+        <TopCorevalue>
+          <p>Core Values</p>
+          <h2>"웨이팅 시간을 가치있고 즐거운 경험으로 만들기"</h2>
+        </TopCorevalue>
 
-      {/* 해결 방향 */}
-      <MiddleCorevalue>
-        <p>해결 방향</p>
-        <h2>시간허비 · 활동 제약</h2>
-        <p>다양성-사용자의 웨이팅 시간과 상황마다 다른 다양한 경험</p>
-      </MiddleCorevalue>
+        {/* 해결 방향 */}
+        <MiddleCorevalue>
+          <p>해결 방향</p>
+          <h2>시간허비 · 활동 제약</h2>
+          <p>다양성-사용자의 웨이팅 시간과 상황마다 다른 다양한 경험</p>
+        </MiddleCorevalue>
 
-      {/* Solution */}
-      <Solution>
-        <p>
-          대기 시간을 반영해 Zone을 표시하고, 시간 내에 가능한 활동을 추천해
-          드려요.
-        </p>
-      </Solution>
+        <img src={arrow} />
 
-      <img src={arrow} />
-      <img src={background} alt="background" />
+        {/* Solution */}
+        <Solution>
+          <p>
+            대기 시간을 반영해 Zone을 표시하고, 시간 내에 가능한 활동을 추천해
+            드려요.
+          </p>
+        </Solution>
+      </ContentWrapper>
+
+      <GradImg src={background} alt="background" />
+
       <img src={line} />
       <img src={textbook} />
     </CoreContainer>
