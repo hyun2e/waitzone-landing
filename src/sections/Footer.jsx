@@ -1,36 +1,166 @@
 import React from "react";
+import styled from "styled-components";
 import footer_logo from "../assets/images/footer_logo.png";
 
 const Footer = () => {
   return (
-    <div>
-      <div>
-        <img className="logo" src={footer_logo} />
-      </div>
-
-      <div>
-        <p className="title">당신의 기다림을 즐겁고 가치있게</p>
-      </div>
-
-      <div>
-        <p className="survey_title">WAIT ZONE 설문조사</p>
-        <p className="survey_description">
-          서비스 품질 향상을 위한 설문조사와 사용성 인터뷰를 진행 중입니다.
-        </p>
-        <button className="survey_button">참여하기</button>
-      </div>
-
-      <div className="survey_connect">
-        <p>Connect TBWIN</p>
-        <ul>
-          <li>이지혜 [jhw_d@naver.com]</li>
-          <li>남윤경 [yungyeong6596@daum.net]</li>
-          <li>배은아 [honggsam@gmail.com]</li>
-          <li>최주희 [keycys31@gmail.com]</li>
-        </ul>
-      </div>
-    </div>
+    <FooterContainer>
+      <LeftSection>
+        <Logo src={footer_logo} alt="Footer Logo" />
+      </LeftSection>
+      
+      <CenterSection>
+        <Title>당신의 기다림을 즐겁고 가치있게</Title>
+        <SurveyBox>
+            <surveyText>
+              <SurveyTitle>WAIT ZONE 설문조사</SurveyTitle>
+              <SurveyDescription>서비스 품질 향상을 위한 설문조사와 사용성 인터뷰를 진행 중입니다.</SurveyDescription>
+            </surveyText>
+          <SurveyButton>참여하기</SurveyButton>
+        </SurveyBox>
+      </CenterSection>
+      
+      <ConnectBox>
+        <ConnectTitle>Connect TBWIN</ConnectTitle>
+        <ContactList>
+          <ContactItem>이지혜 [jhw_d@naver.com]</ContactItem>
+          <ContactItem>남윤경 [yungyeong6596@daum.net]</ContactItem>
+          <ContactItem>배은아 [honggsam@gmail.com]</ContactItem>
+          <ContactItem>최주희 [keycys31@gmail.com]</ContactItem>
+        </ContactList>
+      </ConnectBox>
+    </FooterContainer>
   );
 };
+
+const FooterContainer = styled.footer`
+  background-color: #242424;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+  height: 230px;
+  flex-shrink: 0;
+`;
+
+const LeftSection = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Logo = styled.img`
+  width: 78px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 48px;
+  margin-bottom: 150px;
+`;
+
+const CenterSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 57.5px;
+  margin-top: 60px;
+  gap: 26.5px;
+`;
+
+const Title = styled.p`
+  color: #e6e6e6;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: -0.36px;
+  text-align: left;
+`;
+
+const SurveyBox = styled.div`
+  display: inline-flex;
+  background-color: #171517;
+  padding: 10px 16px;
+  border-radius: 6px;
+  align-items: center;
+  gap: 15px;
+  width: 428px;
+`;
+
+const SurveyText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+`;
+
+const SurveyTitle = styled.p`
+  color: #e6e6e6;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.32px;
+  text-align: left;
+  margin-bottom: 2px;
+  margin-top: 10px;
+`;
+
+const SurveyDescription = styled.p`
+  color: #cccccc;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 160%;
+  letter-spacing: -0.24px;
+  margin-bottom: 10px;
+  text-align: left;
+`;
+
+const SurveyButton = styled.button`
+  display: flex;
+  background-color: #6F47FF;
+  color: white;
+  height: 32px;
+  padding: 5.5px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+`;
+
+const ConnectBox = styled.div`
+  display: flex;
+  width: 184px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+`;
+
+const ConnectTitle = styled.p`
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.24px;
+  text-align: left;
+`;
+
+const ContactList = styled.ul`
+  color: #999999;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 170%;
+  letter-spacing: -0.24px;
+  text-align: left;
+`;
+
+const ContactItem = styled.li`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  gap: 10px;
+`;
 
 export default Footer;

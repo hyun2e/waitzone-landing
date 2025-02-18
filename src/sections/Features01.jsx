@@ -12,7 +12,7 @@ import f1_icon_6 from "../assets/images/f1_icon_6.png";
 
 const Features01 = () => {
   return (
-    <FeatureContainer>
+    <Feature01Container>
       <GradientRight src={f1_gradient_right}/>
       <GradientLeft src={f1_gradient_left}/>
 
@@ -31,14 +31,14 @@ const Features01 = () => {
         <Description>장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.</Description>
         <PhoneImage src={f1_mo}/>
       </Content>
-    </FeatureContainer>
+    </Feature01Container>
   );
 };
 
 export default Features01;
 
 // Style
-const FeatureContainer = styled.div`
+const Feature01Container = styled.div`
   position: relative;
   width: 100%;
   height: 670px;
@@ -48,7 +48,6 @@ const FeatureContainer = styled.div`
   overflow: hidden;
 `;
 
-/* 🟣 콘텐츠 박스 */
 const Content = styled.div`
   position: relative;
   text-align: center;
