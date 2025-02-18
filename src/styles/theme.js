@@ -2,8 +2,8 @@ export const theme = {
   mainColors: {
     background: "#f0f0f0", // 배경색
     primary300: "#6f47ff", // 주요 색상
-    primary200: "#977aff", 
-    primary100: "#bfadff", 
+    primary200: "#977aff",
+    primary100: "#bfadff",
   },
   subColor: {
     secondary700: "#3e3e3e", // 서브 색상
@@ -20,7 +20,7 @@ export const theme = {
     gray50: "#e6e6e6",
 
     text: "#ffffff", // 본문 텍스트 색상
-    textpoint: "#aca7ff",// 텍스트 포인트 색상
+    textpoint: "#aca7ff", // 텍스트 포인트 색상
     secondary: "#977aff", // 보조 색상 (리스트 아이템 등)
     // 필요한 다른 색상들...
   },
@@ -28,18 +28,19 @@ export const theme = {
     fonts: {
       primary: "'Pretendard', sans-serif", // 기본 폰트
       heading: "'Pretendard', sans-serif", // 제목 폰트도 동일
-      fallback: "'Roboto', sans-serif" // Pretendard가 없을 때만 대체 폰트 적용
-    }
-    
+      fallback: "'Roboto', sans-serif", // Pretendard가 없을 때만 대체 폰트 적용
+    },
+
     // 필요한 다른 폰트들...
   },
   fontSizes: {
     fontSizes: {
-      xs: "12px",  // font-xs
-      sm: "14px",  // font-sm
+      xxs: "10px", // font-xxs
+      xs: "12px", // font-xs
+      sm: "14px", // font-sm
       base: "16px", // font-base (본문)
-      lg: "18px",  // font-lg
-      xl: "20px",  // font-xl (대제목)
+      lg: "18px", // font-lg
+      xl: "20px", // font-xl (대제목)
       xxl: "24px", // 추가 (부제목 등)
       h1: "32px", // heading1
       h2: "28px", // heading2
