@@ -70,6 +70,14 @@ display: inline-flex;
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+&:hover {
+  background-color: #c89dff; /* 연한 보라색 */
+  color: #301690;
+
+  
+}
 `;
 
 const SecondaryButton = styled.a`
@@ -85,6 +93,13 @@ const SecondaryButton = styled.a`
   border: 1px solid #ffffff;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+&:hover {
+  background-color: #4c2dbd; /* 연한 보라색 */
+  color: #FFFFFF;
+  border: 1px solid #ffffff;
+}
 `;
 
 const Heroimg = styled.div`
