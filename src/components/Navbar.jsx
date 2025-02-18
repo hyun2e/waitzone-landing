@@ -1,48 +1,45 @@
-// src/components/NavBar.jsx
 import React from "react";
 import styled from "styled-components";
-import Button from "./Button";
+import LogoImg from "/Users/macbook/Desktop/waitzone-landing/src/assets/images/logo.svg";
 
-// NavBar 컨테이너 스타일
+// ✅ NavBar 컨테이너 스타일 적용
 const Nav = styled.nav`
-  /* position이 fixed니까 스크롤을 내려도 navbar가 따라오겠죠? */
   position: fixed;
   top: 0;
   width: 100%;
-  height: 60px;
-  background-color: rgba(44, 62, 80, 0.9); /* 반투명 배경 */
+  height: 66px;
+  background-color: rgba(62, 62, 62, 0.21); /* ✅ 21% 투명도 적용 */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 32px;
   z-index: 1000;
 `;
 
-// 로고 스타일
-const Logo = styled.div`
-  color: #ffffff;
-  font-family: ${({ theme }) => theme.fonts.main};
-  font-size: 24px;
-  font-weight: bold;
+// ✅ 로고 이미지 스타일
+const Logo = styled.img`
+  height: 20px; /* ✅ 로고 크기 조정 */
+  cursor: pointer;
 `;
 
-// 네비게이션 버튼 컨테이너
+// ✅ 네비게이션 버튼 컨테이너
 const NavButtons = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
 `;
 
-// 스크롤 링크 스타일
+// ✅ 스크롤 링크 스타일
 const NavLink = styled.a`
   color: #ffffff;
-  font-family: ${({ theme }) => theme.fonts.main};
+  font-family: "Pretendard", sans-serif;
   font-size: 16px;
   cursor: pointer;
-  text-decoration: none; /* a태그의 기본 밑줄 제거 */
+  text-decoration: none;
   transition: color 0.3s ease;
 
   &:hover {
+    color: #d1c4ff;
   }
 
   &:focus {
@@ -50,19 +47,40 @@ const NavLink = styled.a`
   }
 `;
 
+// ✅ 버튼 스타일 (105x40px 고정)
+const AppButton = styled.a`
+  display: flex;
+  align-items: center; /* ✅ 세로 중앙 정렬 */
+  justify-content: center; /* ✅ 가로 중앙 정렬 */
+  width: 105px; /* ✅ 고정 너비 */
+  height: 40px; /* ✅ 고정 높이 */
+  background-color: #171517;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-align: center; /* ✅ 텍스트 가운데 정렬 */
+  text-decoration: none;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: #2c2c2c;
+  }
+`;
 const NavBar = () => {
   return (
-    // Nav에 flex를 주니까 자식 요소인 Logo와 NavButton이 가로 정렬 됩니다.
     <Nav>
-      <Logo>MyLogo</Logo>
-      {/* NavButtons 안의 버튼들도 가로 정렬 되어야하니 NavButtons에도 flex를 줍니다. */}
+      {/* ✅ 로고 이미지 적용 */}
+      <a href="/">
+        <Logo src={LogoImg} alt="WAITZONE 로고" />
+      </a>
+
+      {/* ✅ 메뉴 & 버튼 */}
       <NavButtons>
-        <NavLink href="#section1">섹션 1</NavLink>
-        <NavLink href="#section2">섹션 2</NavLink>
-        {/* 여기에 섹션 3으로 이동하는 NavLink를 추가해봅시다 */}
-        <Button type="full-btn" bgcolor="#171517" href="https://www.naver.com">
-          체험하기
-        </Button>
+        <NavLink href="#intro">Intro</NavLink>
+        <NavLink href="#core-values">Core Values</NavLink>
+        <NavLink href="#features">Features</NavLink>
+        <AppButton href="https://www.naver.com">앱 체험하기</AppButton>
       </NavButtons>
     </Nav>
   );
