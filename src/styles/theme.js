@@ -10,13 +10,13 @@ export const theme = {
   },
   grayColors: {
     gray900: "#171517",
-    gray800: "#242424", // 그레이 색상 
-    gray600: "#4d4d4d", 
-    gray500: "#666666", 
-    gray400: "#808080", 
-    gray300: "#999999", 
-    gray200: "#b3b3b3", 
-    gray100: "#cccccc", 
+    gray800: "#242424", // 그레이 색상
+    gray600: "#4d4d4d",
+    gray500: "#666666",
+    gray400: "#808080",
+    gray300: "#999999",
+    gray200: "#b3b3b3",
+    gray100: "#cccccc",
     gray50: "#e6e6e6",
 
     text: "#ffffff", // 본문 텍스트 색상

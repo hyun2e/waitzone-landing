@@ -85,6 +85,14 @@ const FeatureTitleContainer = styled.div`
   }
 `;
 
+const SubTitle = styled.h2`
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 5px;
+  line-height: 140%;
+  letter-spacing: -0.48px;
+`;
+
 // 🔵 모바일 UI Wrapper
 const MoImageWrapper = styled.div`
   width: 100%;
@@ -144,6 +152,14 @@ const PopWrapper = styled.div`
   top: 267px; /* ✅ 위쪽으로 426px 떨어지게 */
   left: 472px; /* ✅ 오른쪽으로 141px 이동 */
   z-index: 5;
+  background-image: url(${f3_Pushalert});
+  background-size: cover;
+  height: 140px;
+  width: 320px;
+`;
+
+const PopContent = styled.div`
+  display: flex;
 `;
 
 const PopTextWrapper = styled.div`
@@ -160,7 +176,7 @@ const Features02 = () => {
       {/*  섹션 제목 */}
       <FeatureTitleContainer>
         <h4>Features02</h4>
-        <h2>웨이팅 존으로 안전하게 웨이팅하기</h2>
+        <SubTitle>웨이팅 존으로 안전하게 웨이팅하기</SubTitle>
         <p>
           웨이팅 시간 내 도보로 이동 가능한 존이에요.
           <br /> 잔여 대기 시간에 따라 반경이 실시간으로 줄어듭니다.
@@ -179,14 +195,13 @@ const Features02 = () => {
 
       {/*  팝업 넣기 말풍선 */}
       <PopWrapper>
-        <div style={{ position: "relative", display: "inline-block" }}>
-          <img src={f3_Pushalert} alt="배경" style={{ width: "100%" }} />
-          <lg>📢</lg>
+        <PopContent>
+          <img />
           <PopTextWrapper>
-            <lg>웨이팅 존에서 벗어났습니다.</lg>
-            <s>안전한 웨이팅을 위해 안으로 이동해주세요.</s>
+            <p>웨이팅 존에서 벗어났습니다.</p>
+            <p>안전한 웨이팅을 위해 안으로 이동해주세요.</p>
           </PopTextWrapper>
-        </div>
+        </PopContent>
       </PopWrapper>
 
       {/*  왼쪽 말풍선 */}
