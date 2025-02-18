@@ -90,6 +90,7 @@ const Feature03Container = styled.div`
 const TextSection = styled.div`
   position: relative;
   text-align: center;
+  color : #ffffff;
 `;
 
 const Title = styled.h4`
@@ -165,7 +166,11 @@ const TopContents01 = styled.div`
 `;
 
 const TopDescription01 = styled.p`
-
+  color: #B3B3B3;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 125%;
+  letter-spacing: -0.39px;
 `;
 
 const LineFlow = styled.img`
@@ -178,11 +183,15 @@ const TopContents02 = styled.div`
 `;
 
 const PhoneSmall01 = styled.img`
-
+  width: 164px;
+  height: 320.857px;
+  flex-shrink: 0;
 `;
 
 const PhoneSmall02 = styled.img`
-
+  width: 153.295px;
+  height: 319.777px;
+  flex-shrink: 0;
 `;
 
 // Top Contents 03
@@ -223,7 +232,9 @@ const BottomSection = styled.div`
 `;
 
 const Phone02= styled.img`
-
+  width: 241px;
+  height: 622.729px;
+  flex-shrink: 0;
 `;
 
 // Bottom Contents 01

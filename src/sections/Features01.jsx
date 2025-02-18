@@ -44,8 +44,6 @@ const Feature01Container = styled.div`
   width: 100%;
   height: 670px;
   background: #171517;
-  margin-top: 70px;
-  margin-bottom: 0px;
   overflow: hidden;
 `;
 
