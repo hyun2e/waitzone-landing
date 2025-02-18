@@ -22,45 +22,51 @@ const Features03 = () => {
         </Description>
       </TextSection>
 
-      <Phone01 src={f3_mo_1}/>
-        
-      <Line01 src={f3_line_1}/>
+      <ContentsSection>
+        <LeftSection>
+          <Phone01 src={f3_mo_1}/>
+          
+          <Line01 src={f3_line_1}/>
 
-      <Line02 src={f3_line_2}/>
+          <Line02 src={f3_line_2}/>
 
-      <Graphic src={f3_graphic_pin}/>
+          <Graphic src={f3_graphic_pin}/>
+        </LeftSection>
 
-      <TopSection>
-        <TopContents01>
-          <TopDescription01>커스텀 Flow</TopDescription01>
-          <LineFlow src={f3_line_flow}/>
-        </TopContents01>
+        <RightSection>
+          <TopSection>
+            <TopContents01>
+              <TopDescription01>커스텀 Flow</TopDescription01>
+              <LineFlow src={f3_line_flow}/>
+            </TopContents01>
 
-        <TopContents02>
-          <PhoneSmall01 src={f3_mo_s_1}/>
-          <PhoneSmall02 src={f3_mo_s_2}/>
-        </TopContents02>
+            <TopContents02>
+              <PhoneSmall01 src={f3_mo_s_1}/>
+              <PhoneSmall02 src={f3_mo_s_2}/>
+            </TopContents02>
 
-        <TopContents03>
-          <Line03 src={f3_line_3}/>
-          <TopDescription02>내 주변 세부 웨이팅 존</TopDescription02>
-          <TopDescription03>내 위치 중심의 세부 장소 추천 영역</TopDescription03>
-          </TopContents03>
-      </TopSection>
+            <TopContents03>
+              <Line03 src={f3_line_3}/>
+              <TopDescription02>내 주변 세부 웨이팅 존</TopDescription02>
+              <TopDescription03>내 위치 중심의 세부 장소 추천 영역</TopDescription03>
+            </TopContents03>
+          </TopSection>
 
-      <BottomSection>
-        <Phone02 src={f3_mo_2}/>
+          <BottomSection>
+            <Phone02 src={f3_mo_2}/>
 
-        <BottomContents01>
-          <BottomTitle01>대기현황 실시간 제공</BottomTitle01>
-          <BottomText01>실시간 대기 현황 한눈에 보기</BottomText01>
-        </BottomContents01>
+            <BottomContents01>
+              <BottomTitle01>대기현황 실시간 제공</BottomTitle01>
+              <BottomText01>실시간 대기 현황 한눈에 보기</BottomText01>
+            </BottomContents01>
 
-        <BottomContents02>
-          <BottomTitle02>길찾기 · 웨이팅 신청 제공</BottomTitle02>
-          <BottomText02>실시간 대기 현황 한눈에 보기</BottomText02>
-        </BottomContents02>
-      </BottomSection>
+            <BottomContents02>
+              <BottomTitle02>길찾기 · 웨이팅 신청 제공</BottomTitle02>
+              <BottomText02>실시간 대기 현황 한눈에 보기</BottomText02>
+            </BottomContents02>
+          </BottomSection>
+        </RightSection>
+      </ContentsSection>
     </Feature03Container>
   );
 };
@@ -72,17 +78,18 @@ export default Features03;
 const Feature03Container = styled.div`
   background: url("src/assets/images/f3_background.png");
   width: 100%;
-  
+  height: 1369px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;  
 `;
 
 // Text Section
 const TextSection = styled.div`
   position: relative;
   text-align: center;
-  color: white;
-  weight: 100%;
-  height: 1369px;
-  overflow: hidden;
 `;
 
 const Title = styled.h4`
@@ -110,8 +117,23 @@ const Description = styled.p`
   letter-spacing: -0.32px;
 `;
 
-// 기타
+// Contents Section
+const ContentsSection = styled.div`
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+// Left Section
+const LeftSection = styled.div`
+  
+`;
+
 const Phone01 = styled.img`
+  width: 285px;
+  height: 1073.873px;
+  flex-shrink: 0;
 
 `;
 
@@ -124,6 +146,11 @@ const Line02 = styled.img`
 `;
 
 const Graphic = styled.img`
+
+`;
+
+// Right Section
+const RightSection = styled.div`
 
 `;
 
@@ -160,19 +187,34 @@ const PhoneSmall02 = styled.img`
 
 // Top Contents 03
 const TopContents03 = styled.div`
-
+  display: flex;
+  width: 186px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
 `;
 
 const Line03 = styled.img`
-
+  width: 175px;
+  height: 13px;
+  flex-shrink: 0;
 `;
 
 const TopDescription02 = styled.p`
-
+  color: #ACA7FF;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 138%;
+  letter-spacing: -0.32px;
 `;
 
 const TopDescription03 = styled.p`
-
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.24px;
 `;
 
 // Bottom Section
@@ -186,26 +228,50 @@ const Phone02= styled.img`
 
 // Bottom Contents 01
 const BottomContents01 = styled.div`
-
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
 `;
 
 const BottomTitle01= styled.p`
-
+  color: #ACA7FF;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 135%;
+  letter-spacing: -0.32px;
 `;
 
 const BottomText01= styled.p`
-
+  text-align: right;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.24px;
 `;
 
 // Bottom Contents 02
 const BottomContents02 = styled.div`
-
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
 `;
 
 const BottomTitle02= styled.p`
-
+  color: #ACA7FF;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 135%;
+  letter-spacing: -0.32px;
 `;
 
 const BottomText02= styled.p`
-
+  text-align: right;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.24px;
 `;
