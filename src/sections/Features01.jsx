@@ -29,13 +29,14 @@ const Features01 = () => {
         <Title>Features 01</Title>
         <SubTitle>웨이팅 신청 존에서 빠르게 웨이팅</SubTitle>
         <Description>장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.</Description>
-        <PhoneImage src={f1_mo}/>
+        <Phone src={f1_mo}/>
       </Content>
     </Feature01Container>
   );
 };
 
 export default Features01;
+
 
 // Style
 const Feature01Container = styled.div`
@@ -81,7 +82,7 @@ const Description = styled.p`
   letter-spacing: -0.32px;
 `;
 
-const PhoneImage = styled.img`
+const Phone = styled.img`
   width: 283px;
   height: 460px;
   flex-shrink: 0;
