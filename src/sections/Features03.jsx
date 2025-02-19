@@ -114,7 +114,7 @@ const SubTitle = styled.h2`
 
 const Description = styled.p`
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 200;
   margin-top: 3px;
   line-height: 140%;
   letter-spacing: -0.32px;
