@@ -65,6 +65,11 @@ const FeatureContainer = styled.div`
   z-index: 0;
 `;
 
+const GraphicWrapper = styled.div`
+  width: 800px;
+  position: relative;
+`;
+
 //  제목 스타일 컨테이너
 const FeatureTitleContainer = styled.div`
   display: flex;
@@ -174,67 +179,69 @@ const IconWrapper = styled.div`
 const Features02 = () => {
   return (
     <FeatureContainer>
-      {/*  섹션 제목 */}
-      <FeatureTitleContainer>
-        <Title>Features02</Title>
-        <SubTitle>웨이팅 존으로 안전하게 웨이팅하기</SubTitle>
-        <Description>
-          웨이팅 시간 내 도보로 이동 가능한 존이에요.
-          <br /> 잔여 대기 시간에 따라 반경이 실시간으로 줄어듭니다.
-        </Description>
-      </FeatureTitleContainer>
-
       {/*  배경 이미지 */}
       <BgImageWrapper>
         <img className="f2_bg" src={f2_bg} alt="웨이팅 존 배경" />
       </BgImageWrapper>
 
-      {/*  모바일 UI */}
-      <MoImageWrapper>
-        <img className="f2_mo" src={f2_mo} alt="웨이팅 존 UI" />
-      </MoImageWrapper>
+      <GraphicWrapper>
+        {/*  섹션 제목 */}
+        <FeatureTitleContainer>
+          <Title>Features02</Title>
+          <SubTitle>웨이팅 존으로 안전하게 웨이팅하기</SubTitle>
+          <Description>
+            웨이팅 시간 내 도보로 이동 가능한 존이에요.
+            <br /> 잔여 대기 시간에 따라 반경이 실시간으로 줄어듭니다.
+          </Description>
+        </FeatureTitleContainer>
 
-      {/* -------------------------------------------------- */}
+        {/*  모바일 UI */}
+        <MoImageWrapper>
+          <img className="f2_mo" src={f2_mo} alt="웨이팅 존 UI" />
+        </MoImageWrapper>
 
-      {/* 팝업 */}
-      <PopWrapper>
-        <div style={{ position: "relative", display: "flex" }}>
-          <img src={f2_test} alt="배경" style={{ width: "105%" }} />
-        </div>
-        <PopContentsWrapper>
-          <IconWrapper>
-            <div style={{ position: "relative" }}>
-              <img
-                src={f2_icon}
-                alt="아이콘"
-                style={{ width: "30px", height: "30px" }}
-              />
-            </div>
-          </IconWrapper>
-          <PopTextWrapper>
-            <PopTextTitle>웨이팅 존에서 벗어났습니다.</PopTextTitle>
-            <PopText>안전한 웨이팅을 위해 안으로 이동해주세요.</PopText>
-          </PopTextWrapper>
-        </PopContentsWrapper>
-      </PopWrapper>
+        {/* -------------------------------------------------- */}
 
-      {/* -------------------------------------------------- */}
+        {/* 팝업 */}
+        <PopWrapper>
+          <div style={{ position: "relative", display: "flex" }}>
+            <img src={f2_test} alt="배경" style={{ width: "105%" }} />
+          </div>
+          <PopContentsWrapper>
+            <IconWrapper>
+              <div style={{ position: "relative" }}>
+                <img
+                  src={f2_icon}
+                  alt="아이콘"
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </div>
+            </IconWrapper>
+            <PopTextWrapper>
+              <PopTextTitle>웨이팅 존에서 벗어났습니다.</PopTextTitle>
+              <PopText>안전한 웨이팅을 위해 안으로 이동해주세요.</PopText>
+            </PopTextWrapper>
+          </PopContentsWrapper>
+        </PopWrapper>
 
-      {/*  왼쪽 말풍선 */}
-      <OverlayItemLeft>
-        <div style={{ position: "relative", display: "inline-block" }}>
-          <img src={f2_a_left} alt="배경" style={{ width: "100%" }} />
-          <OverlayText>입장을 놓치면 어떡하지?</OverlayText>
-        </div>
-      </OverlayItemLeft>
+        {/* -------------------------------------------------- */}
 
-      {/*  오른쪽 말풍선 */}
-      <OverlayItemRight>
-        <div style={{ position: "relative", display: "inline-block" }}>
-          <img src={f2_a_right} alt="배경" style={{ width: "100%" }} />
-          <OverlayText>어디까지 가도 될까?</OverlayText>
-        </div>
-      </OverlayItemRight>
+        {/*  왼쪽 말풍선 */}
+        <OverlayItemLeft>
+          <div style={{ position: "relative", display: "inline-block" }}>
+            <img src={f2_a_left} alt="배경" style={{ width: "100%" }} />
+            <OverlayText>입장을 놓치면 어떡하지?</OverlayText>
+          </div>
+        </OverlayItemLeft>
+
+        {/*  오른쪽 말풍선 */}
+        <OverlayItemRight>
+          <div style={{ position: "relative", display: "inline-block" }}>
+            <img src={f2_a_right} alt="배경" style={{ width: "100%" }} />
+            <OverlayText>어디까지 가도 될까?</OverlayText>
+          </div>
+        </OverlayItemRight>
+      </GraphicWrapper>
     </FeatureContainer>
   );
 };
