@@ -58,14 +58,10 @@ const Features03 = () => {
 
             <BottomContents01>
               <BottomTitle01>
-                대기현황
-                <br />
-                실시간 제공
+                대기현황 실시간 제공
               </BottomTitle01>
               <BottomText01>
-                실시간 대기 현황
-                <br />
-                한눈에 보기
+                실시간 대기 현황 한눈에 보기
               </BottomText01>
             </BottomContents01>
 
@@ -266,8 +262,8 @@ const BottomSection = styled.div`
   position: absolute;
   bottom: 10px;
   height: 500px;
-  width: 360px;
-
+  width: 450px;
+  right: 0px;
 `;
 
 const Phone02 = styled.img`
@@ -287,7 +283,7 @@ const BottomContents01 = styled.div`
   top: 0;
   gap: 5px;
   right: 290px;
-  top: 200px;
+  top: 205px;
 `;
 
 const BottomTitle01 = styled.p`
@@ -302,7 +298,7 @@ const BottomTitle01 = styled.p`
 const BottomText01 = styled.p`
   color: #ffffff;
   text-align: right;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 200;
   line-height: 150%;
   letter-spacing: -0.24px;
@@ -316,14 +312,14 @@ const BottomContents02 = styled.div`
   gap: 5px;
   position: absolute;
   right: 290px;
-  top: 450px;
+  top: 461px;
 `;
 
 const BottomTitle02 = styled.p`
   color: #aca7ff;
   text-align: right;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 135%;
   letter-spacing: -0.32px;
 `;
@@ -332,7 +328,7 @@ const BottomText02 = styled.p`
   color: #ffffff;
   text-align: right;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 150%;
   letter-spacing: -0.24px;
 `;
