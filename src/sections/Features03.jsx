@@ -136,7 +136,6 @@ const ContentsSection = styled.div`
   align-items: center;
   width: 800px;
   margin-top: 5px;
-  background-color: green;
   position: relative;
 `;
 
@@ -150,22 +149,25 @@ const Phone01 = styled.img`
 `;
 
 const Line01 = styled.img`
-  width: 114px;
+  width: 132px;
   height: 220px;
   position: absolute;
-  top: 0px;
+  top: 108px;
+  right: 371px;
 `;
 
 const Line02 = styled.img`
   width: 232.5px;
   height: 93px;
   position: absolute;
-  top: 0px;
+  top: 544px;
+  right: 271px;
 `;
 
 const Graphic = styled.img`
   position: absolute;
   top: 0px;
+  right: 79px;
 `;
 
 // Right Section
@@ -174,7 +176,6 @@ const RightSection = styled.div`
   width: 360px;
   height: 1000px;
   right: 10px;
-  background-color: #122902;
 `;
 
 // Top Section
@@ -182,7 +183,6 @@ const TopSection = styled.div`
   position: absolute;
   top: 10px;
   height: 450px;
-  background-color: blue;
 `;
 
 // Top Contents 01
@@ -190,8 +190,8 @@ const TopContents01 = styled.div`
   display: flex;
   justify-content: center;
   gap: 7px;
-  margin-top: 20px;
-  margin-bottom: -15px;
+  margin-top: -35px;
+  margin-bottom: 15px;
 `;
 
 const TopDescription01 = styled.p`
@@ -211,7 +211,6 @@ const PhoneSmall01 = styled.img`
   width: 170px;
   height: 327px;
   position: absolute;
-  margin-top: 30px;
 `;
 
 const PhoneSmall02 = styled.img`
@@ -219,7 +218,6 @@ const PhoneSmall02 = styled.img`
   height: 327px;
   position: absolute;
   right: 0px;
-  margin-top: 30px;
 `;
 
 // Top Contents 03
@@ -236,31 +234,31 @@ const Line03 = styled.img`
   height: 13px;
   position: absolute;
   right: 75px;
-  top: 378px;
+  top: 323px;
 `;
 
 const TopDescription02 = styled.p`
   color: #aca7ff;
   text-align: center;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 138%;
   letter-spacing: -0.32px;
   position: absolute;
   right: 95px;
-  top: 400px;
+  top: 343px;
 `;
 
 const TopDescription03 = styled.p`
   text-align: center;
   color: #ffffff;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 140%;
   letter-spacing: -0.24px;
   position: absolute;
   right: 82px;
-  top: 425px;
+  top: 367px;
 `;
 
 // Bottom Section
@@ -269,12 +267,15 @@ const BottomSection = styled.div`
   bottom: 10px;
   height: 500px;
   width: 360px;
-  background-color: yellow;
+
 `;
 
 const Phone02 = styled.img`
+  position: absolute;
   width: 241px;
   height: 623px;
+  bottom: -50px;
+  right: 40px;
 `;
 
 // Bottom Contents 01
@@ -285,13 +286,15 @@ const BottomContents01 = styled.div`
   position: absolute;
   top: 0;
   gap: 5px;
+  right: 290px;
+  top: 200px;
 `;
 
 const BottomTitle01 = styled.p`
   color: #aca7ff;
   text-align: right;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 135%;
   letter-spacing: -0.32px;
 `;
@@ -300,7 +303,7 @@ const BottomText01 = styled.p`
   color: #ffffff;
   text-align: right;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 150%;
   letter-spacing: -0.24px;
 `;
@@ -312,8 +315,8 @@ const BottomContents02 = styled.div`
   align-items: flex-end;
   gap: 5px;
   position: absolute;
-  bottom: 0px;
-  margin-top: 995px;
+  right: 290px;
+  top: 450px;
 `;
 
 const BottomTitle02 = styled.p`
