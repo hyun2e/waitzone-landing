@@ -8,12 +8,16 @@ import f3_line_2 from "../assets/images/f3_line_2.png";
 import f3_line_3 from "../assets/images/f3_line_3.png";
 import f3_mo_1 from "../assets/images/f3_mo_1.svg";
 import f3_mo_2 from "../assets/images/f3_mo_2.svg";
-import f3_mo_s_1 from "../assets/images/f3_mo_s_1.svg";
-import f3_mo_s_2 from "../assets/images/f3_mo_s_2.svg";
+import f3_mo_s_1 from "../assets/images/f3_mo_s_1.png";
+import f3_mo_s_2 from "../assets/images/f3_mo_s_2.png";
 
 const Features03 = () => {
   return (
     <Feature03Container>
+      <Graphic src={f3_graphic_pin} />
+      <Line01 src={f3_line_1} />
+      <Line02 src={f3_line_2} />
+
       <TextSection>
         <Title>Features 03</Title>
         <SubTitle>반경 커스텀으로 폭 넓은 Zone의 추천 장소 제공</SubTitle>
@@ -27,12 +31,6 @@ const Features03 = () => {
       <ContentsSection>
         <LeftSection>
           <Phone01 src={f3_mo_1} />
-
-          <Line01 src={f3_line_1} />
-
-          <Line02 src={f3_line_2} />
-
-          <Graphic src={f3_graphic_pin} />
         </LeftSection>
 
         <RightSection>
@@ -60,8 +58,8 @@ const Features03 = () => {
             <Phone02 src={f3_mo_2} />
 
             <BottomContents01>
-              <BottomTitle01>대기현황 실시간 제공</BottomTitle01>
-              <BottomText01>실시간 대기 현황 한눈에 보기</BottomText01>
+              <BottomTitle01>대기현황<br />실시간 제공</BottomTitle01>
+              <BottomText01>실시간 대기 현황<br />한눈에 보기</BottomText01>
             </BottomContents01>
 
             <BottomContents02>
@@ -94,6 +92,7 @@ const TextSection = styled.div`
   position: relative;
   text-align: center;
   color: #ffffff;
+  margin-bottom: 10px;
 `;
 
 const Title = styled.h4`
@@ -125,8 +124,10 @@ const Description = styled.p`
 const ContentsSection = styled.div`
   padding: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justifyContent: space-between;
+  alignItems: center;
+  width: 100%;
+  margin-top: 5px;
 `;
 
 // Left Section
@@ -134,24 +135,48 @@ const LeftSection = styled.div``;
 
 const Phone01 = styled.img`
   width: 285px;
-  height: 1073.873px;
-  flex-shrink: 0;
+  height: 1074px;
+  margin-left: 20px;
 `;
 
-const Line01 = styled.img``;
+const Line01 = styled.img`
+  width: 114px;
+  height: 220px;
+  position: absolute;
+  right: 1175px;
+  margin-top: 301px;
+`;
 
-const Line02 = styled.img``;
+const Line02 = styled.img`
+  width: 232.5px;
+  height: 93px;
+  position: absolute;
+  right: 1057px;
+  margin-top: 737px;
+`;
 
-const Graphic = styled.img``;
+const Graphic = styled.img`
+  position: absolute;
+  right: 864px;
+`;
 
 // Right Section
 const RightSection = styled.div``;
 
 // Top Section
-const TopSection = styled.div``;
+const TopSection = styled.div`
+  position: absolute;
+  right: 840px;
+`;
 
 // Top Contents 01
-const TopContents01 = styled.div``;
+const TopContents01 = styled.div`
+  display: flex;
+  justifyContent: center;
+  gap: 7px;
+  margin-top: 20px;
+  margin-bottom: -15px;
+`;
 
 const TopDescription01 = styled.p`
   color: #b3b3b3;
@@ -164,16 +189,23 @@ const TopDescription01 = styled.p`
 const LineFlow = styled.img``;
 
 // Top Contents 02
-const TopContents02 = styled.div``;
+const TopContents02 = styled.div`
+`;
 
 const PhoneSmall01 = styled.img`
-  width: 164px;
-  height: 320.857px;
+  width: 170px;
+  height: 327px;
+  position: absolute;
+  right: 165px;
+  margin-top: 30px;
 `;
 
 const PhoneSmall02 = styled.img`
-  width: 153.295px;
-  height: 319.777px;
+  width: 151px;
+  height: 327px;
+  position: absolute;
+  right: 0px;
+  margin-top: 30px;
 `;
 
 // Top Contents 03
@@ -188,7 +220,9 @@ const TopContents03 = styled.div`
 const Line03 = styled.img`
   width: 175px;
   height: 13px;
-  flex-shrink: 0;
+  position: absolute;
+  right: 75px;
+  top: 378px;
 `;
 
 const TopDescription02 = styled.p`
@@ -198,14 +232,21 @@ const TopDescription02 = styled.p`
   font-weight: 600;
   line-height: 138%;
   letter-spacing: -0.32px;
+  position: absolute;
+  right: 95px;
+  top: 400px;
 `;
 
 const TopDescription03 = styled.p`
   text-align: center;
+  color: #ffffff;
   font-size: 12px;
   font-weight: 400;
   line-height: 140%;
   letter-spacing: -0.24px;
+  position: absolute;
+  right: 82px;
+  top: 425px;
 `;
 
 // Bottom Section
@@ -213,8 +254,10 @@ const BottomSection = styled.div``;
 
 const Phone02 = styled.img`
   width: 241px;
-  height: 622.729px;
-  flex-shrink: 0;
+  height: 623px;
+  position: absolute;
+  right: 837px;
+  margin-top: 460px;
 `;
 
 // Bottom Contents 01
@@ -223,6 +266,9 @@ const BottomContents01 = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: 5px;
+  position: absolute;
+  right: 1090px;
+  margin-top: 720px;
 `;
 
 const BottomTitle01 = styled.p`
@@ -235,6 +281,7 @@ const BottomTitle01 = styled.p`
 `;
 
 const BottomText01 = styled.p`
+  color: #ffffff;
   text-align: right;
   font-size: 12px;
   font-weight: 400;
@@ -248,6 +295,9 @@ const BottomContents02 = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: 5px;
+  position: absolute;
+  right: 1090px;
+  margin-top: 995px;
 `;
 
 const BottomTitle02 = styled.p`
@@ -260,6 +310,7 @@ const BottomTitle02 = styled.p`
 `;
 
 const BottomText02 = styled.p`
+  color: #ffffff;
   text-align: right;
   font-size: 12px;
   font-weight: 400;
