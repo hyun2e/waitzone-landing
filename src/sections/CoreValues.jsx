@@ -39,12 +39,14 @@ const GradImg = styled.img`
   bottom: 0;
 `;
 
+/* Top core value 덩어리 부분*/
 const TopCorevalue = styled.div`
   color: #ffffff;
   font-size: 24px;
   font-weight: bold;
 `;
 
+/* 해결방향, 시간허비, 활동제약 덩어리 부분*/
 const MiddleCorevalue = styled.div`
   display: flex;
   justify-content: center; /* 가로 중앙 정렬 */
@@ -52,18 +54,18 @@ const MiddleCorevalue = styled.div`
   max-width: 600px;
   position: relative;
   color: #7852ff;
-  margin-top: 30px;
+  margin-top: 20px;
   flex-direction: column;
   text-align: center;
   margin-bottom: 30px;
 `;
-
+/* Solution 텍스트 해결방향 텍스트 core value 텍스트*/
 const StyledText1 = styled.p`
   color: #aca7ff;
   text-align: center;
   font-size: 16px;
 `;
-
+/* 다양성, 개인화, 가용성 움직이는 애니매이션 텍스트*/
 const StyledText2 = styled.p`
   color: #ffffff;
   font-size: 16px;
@@ -80,11 +82,21 @@ const StyledText2 = styled.p`
   z-index: 1000;
 `;
 
+/* 시간허비, 활동제약 텍스트 */
 const StyledText3 = styled.p`
   font-size: 20pt;
   font-weight: bold;
 `;
 
+/* 웨이팅 시간을 가치있고 즐거운 경험으로 만들기 */
+const TopCoretext = styled.p`
+  font-size: 20pt;
+  font-weight: bold;
+  margin-top: -20px;
+`;
+
+
+/* Solution 덩어리 부분*/
 const Solution = styled.div`
   display: flex;
   max-width: 600px;
@@ -98,10 +110,17 @@ const Solution = styled.div`
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: rgba(111, 71, 255, 0.5);
   border-radius: 20px;
 `;
+
+/* 대기 시간을 반영해 zone을 표시하고, 시간내에 가능한 활동을 추천해드려요 */
+const Solutiontext = styled.p`
+  font-size: 13pt;
+  margin-top: -10px;
+`;
+
 
 const CoreValues = () => {
   const [textIndex, setTextIndex] = useState(0);
@@ -123,7 +142,7 @@ const CoreValues = () => {
       <ContentWrapper>
         <TopCorevalue>
           <StyledText1>Core Values</StyledText1> <br />
-          <h2>"웨이팅 시간을 가치있고 즐거운 경험으로 만들기"</h2>
+          <TopCoretext>"웨이팅 시간을 가치있고 즐거운 경험으로 만들기"</TopCoretext>
         </TopCorevalue>
 
         <MiddleCorevalue>
@@ -147,10 +166,10 @@ const CoreValues = () => {
         <Solution>
           <StyledText1>Solution</StyledText1>
           <br />
-          <h2>
+          <Solutiontext>
             대기 시간을 반영해 Zone을 표시하고, 시간 내에 가능한 활동을 추천해
             드려요.
-          </h2>
+          </Solutiontext>
         </Solution>
       </ContentWrapper>
 
