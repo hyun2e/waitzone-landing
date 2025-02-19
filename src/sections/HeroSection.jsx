@@ -1,9 +1,40 @@
 import React from "react";
-//import Button from "../components/Button";//
+import styled from "styled-components";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+// 📌 이미지 파일
 import background from "../assets/images/1_background_all.png";
 import mock from "../assets/images/1_background_phonemock.png";
-import styled from "styled-components";
 
+// ✅ 애니메이션 설정 (제목, 설명, 버튼, 안내문 순차적 등장)
+const textVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
+};
+
+const descVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", delay: 0.3 } }
+};
+
+const buttonVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1, ease: "easeOut", delay: 0.5 } }
+};
+
+const textInfoVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.7 } }
+};
+
+// ✅ Phone Mockup 애니메이션 (오른쪽 → 왼쪽 슬라이드)
+const slideVariants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 1.2, ease: "easeInOut" } }
+};
+
+// ✅ Styled Components
 const HeroContainer = styled.div`
   background-image: url(${background});
   background-size: cover;
@@ -24,41 +55,35 @@ const HeroWrapper = styled.div`
   color: white;
 `;
 
-//웨이팅,언제까지 기다리기만 할래?//
-const Heromaintext = styled.div`
+const MotionHeromaintext = motion(styled.div`
   max-width: 600px;
   position: relative;
   top: 20px;
-`;
+`);
 
-//보이는 웨이팅~..//
-const Herodescript = styled.div`
+const MotionHerodescript = motion(styled.div`
   max-width: 600px;
   position: relative;
   top: 20px;
-  color: rgba(255, 255, 255, 0.7); /* 70% 투명도 */
-`;
-//서비스 품질 향상을~..//
-const Herotext = styled.div`
+  color: rgba(255, 255, 255, 0.7);
+`);
+
+const MotionHerotext = motion(styled.div`
   max-width: 600px;
   position: relative;
   top: 16px;
-  color: rgba(255, 255, 255, 0.4); /* 40% 투명도 */
+  color: rgba(255, 255, 255, 0.4);
+`);
 
-`;
-
-//버튼//
-const Herobutton = styled.div`
+const MotionHerobutton = motion(styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
   margin-top: 80px;
-
-`;
-
+`);
 
 const PrimaryButton = styled.a`
-display: inline-flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 14px 16px;
@@ -72,12 +97,10 @@ display: inline-flex;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
-&:hover {
-  background-color: #c89dff; /* 연한 보라색 */
-  color: #301690;
-
-  
-}
+  &:hover {
+    background-color: #c89dff;
+    color: #301690;
+  }
 `;
 
 const SecondaryButton = styled.a`
@@ -95,49 +118,83 @@ const SecondaryButton = styled.a`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
-&:hover {
-  background-color: #4c2dbd; /* 연한 보라색 */
-  color: #FFFFFF;
-  border: 1px solid #ffffff;
-}
+  &:hover {
+    background-color: #4c2dbd;
+    color: #FFFFFF;
+    border: 1px solid #ffffff;
+  }
 `;
 
-const Heroimg = styled.div`
+// ✅ Phone Mockup Motion 적용
+const MotionHeroimg = motion(styled.div`
   display: flex;
   justify-content: center;
   position: absolute;
   bottom: 20px;
   right: 50px;
   left: 450px;
-`;
+`);
 
 const HeroSection = () => {
+  // ✅ useInView 적용 (스크롤 시 등장)
+  const { ref: textRef, inView: textInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+  const { ref: buttonRef, inView: buttonInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+  const { ref: imageRef, inView: imageInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+
   return (
     <HeroContainer>
       <HeroWrapper>
-        <Heromaintext>
+        {/* ✅ 제목 애니메이션 적용 */}
+        <MotionHeromaintext
+          ref={textRef}
+          initial="hidden"
+          animate={textInView ? "visible" : "hidden"}
+          variants={textVariants}
+        >
           <h1>웨이팅, <br />언제까지 기다리기만 할래?</h1>
-          <Herodescript>
-          <p>보이는 웨이팅 존에서 재미있는 장소를 추천해 드릴게요.</p>
-          <p>웨이팅? 이제 새로운 플레이 타임이 됩니다!</p>
-          </Herodescript>
-        </Heromaintext>
 
-    
-        <Herobutton>
+          {/* ✅ 설명 애니메이션 적용 */}
+          <MotionHerodescript
+            initial="hidden"
+            animate={textInView ? "visible" : "hidden"}
+            variants={descVariants}
+          >
+            <p>보이는 웨이팅 존에서 재미있는 장소를 추천해 드릴게요.</p>
+            <p>웨이팅? 이제 새로운 플레이 타임이 됩니다!</p>
+          </MotionHerodescript>
+        </MotionHeromaintext>
+
+        {/* ✅ 버튼 애니메이션 적용 */}
+        <MotionHerobutton
+          ref={buttonRef}
+          initial="hidden"
+          animate={buttonInView ? "visible" : "hidden"}
+          variants={buttonVariants}
+        >
           <PrimaryButton href="https://www.naver.com">프로토타입 이동</PrimaryButton>
           <SecondaryButton href="https://www.naver.com">설문조사 참여하기</SecondaryButton>
-        </Herobutton>
-     
-        <Herotext>
-        <p>서비스 품질 향상을 위한 설문조사입니다.</p>
-        <p>많은 참여 부탁드립니다</p>
-        </Herotext>
+        </MotionHerobutton>
+
+        {/* ✅ 안내문 텍스트 애니메이션 적용 */}
+        <MotionHerotext
+          initial="hidden"
+          animate={buttonInView ? "visible" : "hidden"}
+          variants={textInfoVariants}
+        >
+          <p>서비스 품질 향상을 위한 설문조사입니다.</p>
+          <p>많은 참여 부탁드립니다</p>
+        </MotionHerotext>
       </HeroWrapper>
 
-      <Heroimg>
+      {/* ✅ 이미지 모션 적용 (오른쪽 → 왼쪽 슬라이드) */}
+      <MotionHeroimg
+        ref={imageRef}
+        initial="hidden"
+        animate={imageInView ? "visible" : "hidden"}
+        variants={slideVariants}
+      >
         <img src={mock} alt="Phone mockup" />
-      </Heroimg>
+      </MotionHeroimg>
     </HeroContainer>
   );
 };
