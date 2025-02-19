@@ -16,7 +16,6 @@ import f4Line4 from "../assets/images/f4_line_4.svg";
 import f4CardBig from "../assets/images/f4_card_big.svg";
 import f4Graphic from "../assets/images/f4_graphic.png";
 
-
 // ✅ 애니메이션 설정 (천천히 부드럽게 등장)
 const imageVariants = {
   hidden: { opacity: 0, y: 100 },
@@ -33,34 +32,32 @@ const imageVariants = {
 // ✅ 텍스트 애니메이션 설정 (각각 딜레이 적용)
 const textVariants = (delay) => ({
   hidden: { opacity: 0, y: 30 }, // 아래에서 시작
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 1, ease: "easeOut", delay } // 딜레이 적용
-  }
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, ease: "easeOut", delay }, // 딜레이 적용
+  },
 });
 
 const FeaturesContainer = styled.section`
-  background-color: ${({ theme }) => theme.mainColors.primary300};
+  background-color: #6b5cfa;
+  /* background-color: ${({ theme }) => theme.mainColors.primary300}; */
   color: ${({ theme }) => theme.grayColors.text};
   padding: 80px 20px;
   text-align: center;
   position: relative;
 `;
 
-
-
 const Header = styled.div`
   max-width: 800px;
   margin: 0 auto;
   text-align: center; /* ✅ 중앙 정렬 */
   gap: 18px; /* ✅ 요소 간 간격 추가 (h2, h1, p 사이) */
-  position: relative; 
+  position: relative;
   z-index: 2; /* ✅ 오버레이보다 위에 배치 */
-  
 
   h2 {
-    color: var(--2, #EEE9FF);
+    color: var(--2, #eee9ff);
     text-align: center;
     font-family: Pretendard;
     font-size: 16px;
@@ -72,7 +69,7 @@ const Header = styled.div`
   }
 
   h1 {
-    color: var(--White-50, var(--Color, #FFF));
+    color: var(--White-50, var(--Color, #fff));
     text-align: center;
     font-family: Pretendard;
     font-size: 24px;
@@ -84,7 +81,7 @@ const Header = styled.div`
   }
 
   p {
-    color: var(--White-50, var(--Color, #FFF));
+    color: var(--White-50, var(--Color, #fff));
     text-align: center;
     font-family: Pretendard;
     font-size: 16px;
@@ -106,7 +103,6 @@ const OverlayBox = styled.div`
   z-index: 1; /* ✅ 핸드폰 목업보다 아래에 배치 */
 `;
 
-
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -118,9 +114,9 @@ const ContentWrapper = styled.div`
 // ✅ 아이폰 목업 (motion 적용)
 const MotionImageWrapper = motion(styled.div`
   position: absolute;
-  left: 19%;  /* 기존 50% → 왼쪽으로 이동 */
+  left: 19%; /* 기존 50% → 왼쪽으로 이동 */
   transform: translateX(-50%); /* 중앙 정렬을 기본으로 하되, left 조정 */
-  top: 214px;  /* 상단과의 거리 유지 */
+  top: 214px; /* 상단과의 거리 유지 */
   object-fit: contain; /* 이미지 비율 유지 */
   display: flex;
   justify-content: center;
@@ -133,12 +129,13 @@ const CardsWrapper = styled.div`
   width: 400px; /* ✅ 카드 2.5개 정도 보이도록 설정 (값 조정 가능) */
   display: flex;
   justify-content: flex-start; /* ✅ 카드 왼쪽부터 채우도록 수정 */
-  Left: 400px;
+  left: 400px;
   overflow: hidden; /* ✅ 초과되는 카드 숨김 */
   margin-top: 158px;
 `;
 
-const FeatureCard = styled.img`/* 개별카드크기,둥근모서리,그림자등을적용 */
+const FeatureCard = styled.img`
+  /* 개별카드크기,둥근모서리,그림자등을적용 */
   width: 140px;
   border-radius: 10px;
   box-shadow: ${({ theme }) => theme.shadows.md};
@@ -155,13 +152,11 @@ const FloatingCardRight = styled.div`
   display: flex; /* ✅ flex 적용 */
   flex-direction: row; /* ✅ 세로 → 가로 정렬 */
   gap: 8px; /* ✅ 카드 사이 간격 */
-  Left: 38px;
+  left: 38px;
   //right: 0px; /* ✅ 기존 -30px → -50px로 변경 */
   //top: 200px;
   align-items: center; /* ✅ 카드들이 중앙에 정렬되도록 조정 */
 `;
-
-
 
 // ✅ Line 1 (작은 라인, 개별 적용)
 const LineImage1 = styled.img`
@@ -169,7 +164,7 @@ const LineImage1 = styled.img`
   width: 96px;
   height: 15px;
   flex-shrink: 0;
-  left: 90px; 
+  left: 90px;
   top: 500px; /* 기존 480px에서 조정 */
   object-fit: contain; /* 이미지 비율 유지 */
   z-index: 2; /* ✅ 오버레이보다 위에 배치 */
@@ -185,7 +180,6 @@ const LineImage3 = styled.img`
   top: 500px; /* 추천 카드 위에 배치 */
   z-index: 2; /* ✅ 오버레이보다 위에 배치 */
 `;
-
 
 // ✅ Line 2 (목업 위)
 const LineImage2 = styled.img`
@@ -346,120 +340,158 @@ const MotionCardBigWrapper = motion(styled.div`
   z-index: 3; /* ✅ 오버레이보다 위에 배치 */
 `);
 
+const GraphicWrapper = styled.div`
+  width: 800px;
+  position: relative;
+  margin: auto;
+`;
 
 const Features04 = () => {
+  // ✅ `useInView` 사용하여 스크롤 감지
+  const { ref: moRef, inView: moInView } = useInView({
+    triggerOnce: false, // 📌 스크롤로 다시 해당 영역이 보이면 반복 동작
+    threshold: 0.2, // 📌 20% 이상 화면에 보여야 트리거
+  });
 
-// ✅ `useInView` 사용하여 스크롤 감지
-const { ref: moRef, inView: moInView } = useInView({
-  triggerOnce: false, // 📌 스크롤로 다시 해당 영역이 보이면 반복 동작
-  threshold: 0.2, // 📌 20% 이상 화면에 보여야 트리거
-});
-
-const { ref: cardRef, inView: cardInView } = useInView({
-  triggerOnce: false, // 📌 스크롤 시 반복 동작
-  threshold: 0.2,
-});
-// ✅ 3개의 블록 각각 useInView 적용
-const { ref: textRef1, inView: textInView1 } = useInView({ triggerOnce: false, threshold: 0.2 });
-const { ref: textRef2, inView: textInView2 } = useInView({ triggerOnce: false, threshold: 0.2 });
-const { ref: textRef3, inView: textInView3 } = useInView({ triggerOnce: false, threshold: 0.2 });
-
+  const { ref: cardRef, inView: cardInView } = useInView({
+    triggerOnce: false, // 📌 스크롤 시 반복 동작
+    threshold: 0.2,
+  });
+  // ✅ 3개의 블록 각각 useInView 적용
+  const { ref: textRef1, inView: textInView1 } = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+  const { ref: textRef2, inView: textInView2 } = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
+  const { ref: textRef3, inView: textInView3 } = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
 
   return (
     <FeaturesContainer>
-      <Header>
-        <h2>Features 04</h2>
-        <h1>내 취향 테스트를 통한 맞춤 큐레이션 컨텐츠 제공</h1>
-        <p>사용자의 성향과 취향에 기반한 장소와 활동을 추천해줘요.</p>
-      </Header>
+      <GraphicWrapper>
+        <Header>
+          <h2>Features 04</h2>
+          <h1>내 취향 테스트를 통한 맞춤 큐레이션 컨텐츠 제공</h1>
+          <p>사용자의 성향과 취향에 기반한 장소와 활동을 추천해줘요.</p>
+        </Header>
 
-      <ContentWrapper>
-        {/* ✅ Line 2 이미지 (목업 위) */}
-        <LineImage2 src={f4Line2} alt="Design Line2" />
+        <ContentWrapper>
+          {/* ✅ Line 2 이미지 (목업 위) */}
+          <LineImage2 src={f4Line2} alt="Design Line2" />
 
-        {/* ✅ Line 4 이미지 (목업 위) */}
-        <LineImage4 src={f4Line4} alt="Design Line4" />
+          {/* ✅ Line 4 이미지 (목업 위) */}
+          <LineImage4 src={f4Line4} alt="Design Line4" />
 
+          {/* ✅ 오버레이 배경 */}
+          <OverlayBox />
 
-        {/* ✅ 오버레이 배경 */}
-        <OverlayBox />
+          {/* ✅ f4Mo 애니메이션 적용 */}
+          <MotionImageWrapper
+            ref={moRef} // ✅ useInView의 ref 사용
+            initial="hidden"
+            animate={moInView ? "visible" : "hidden"} // ✅ inView 값으로 애니메이션 트리거
+            variants={imageVariants}
+          >
+            <img src={f4Mo} alt="Mobile UI" className="max-w-sm" />
+          </MotionImageWrapper>
 
-      {/* ✅ f4Mo 애니메이션 적용 */}
-      <MotionImageWrapper
-        ref={moRef} // ✅ useInView의 ref 사용
-        initial="hidden"
-        animate={moInView ? "visible" : "hidden"} // ✅ inView 값으로 애니메이션 트리거
-        variants={imageVariants}
-      >
-        <img src={f4Mo} alt="Mobile UI" className="max-w-sm" />
-      </MotionImageWrapper>
+          <FloatingCardLeft>
+            <FeatureCard src={f4Card1} alt="Feature Card 1" />
+          </FloatingCardLeft>
 
-        <FloatingCardLeft>
-          <FeatureCard src={f4Card1} alt="Feature Card 1" />
-        </FloatingCardLeft>
+          <CardsWrapper>
+            <FloatingCardRight>
+              {[f4Card2, f4Card3, f4Card4].map((card, index) => (
+                <FeatureCard
+                  key={index}
+                  src={card}
+                  alt={`Feature Card ${index + 2}`}
+                />
+              ))}
+            </FloatingCardRight>
+          </CardsWrapper>
 
-        <CardsWrapper>
-        <FloatingCardRight>
-          {[f4Card2, f4Card3, f4Card4].map((card, index) => (
-            <FeatureCard key={index} src={card} alt={`Feature Card ${index + 2}`} />
-          ))}
-        </FloatingCardRight>
-        </CardsWrapper>
+          {/* ✅ Line 1 (작은 라인, 카드 밑) */}
+          <LineImage1 src={f4Line1} alt="Design Line1" />
 
-        {/* ✅ Line 1 (작은 라인, 카드 밑) */}
-        <LineImage1 src={f4Line1} alt="Design Line1" />
+          {/* ✅ Line 3 (큰 라인, 추천 카드 위) */}
+          <LineImage3 src={f4Line3} alt="Design Line3" />
+        </ContentWrapper>
 
-        {/* ✅ Line 3 (큰 라인, 추천 카드 위) */}
-        <LineImage3 src={f4Line3} alt="Design Line3" />
-      </ContentWrapper>
+        {/* 배경 그래픽 요소 */}
+        <StyledGraphicImage src={f4Graphic} alt="Graphic Illustration" />
 
-      {/* 배경 그래픽 요소 */}
-      <StyledGraphicImage src={f4Graphic} alt="Graphic Illustration" />
+        <MotionDescriptionBlock1
+          ref={textRef1}
+          initial="hidden"
+          animate={textInView1 ? "visible" : "hidden"}
+          variants={textVariants(0.2)} // 첫 번째 블록
+          style={{ top: "220px" }}
+        >
+          <h3>
+            <span className="icon">📌</span> 사용자의 니즈 & 취향 저격 큐레이션
+            제공
+          </h3>
+          <p>
+            웨이팅 중에도 더 가치 있는 시간을 보낼 수 있도록,
+            <br />
+            당신의 상황과 취향에 맞춘 장소와 활동을 추천합니다.
+          </p>
+        </MotionDescriptionBlock1>
 
+        <MotionDescriptionBlock2
+          ref={textRef2}
+          initial="hidden"
+          animate={textInView2 ? "visible" : "hidden"}
+          variants={textVariants(0.4)} // 두 번째 블록 (0.4초 딜레이)
+          style={{ top: "534px" }}
+        >
+          <h3>
+            <span className="icon">📍</span> 사용자의 현 위치기반 큐레이션 제공
+          </h3>
+          <p>
+            사용자의 현 위치를 고려한 큐레이션을 제공하고,
+            <br />
+            웨이팅 시간에 맞춘 다양한 장소를 추천합니다.
+          </p>
+        </MotionDescriptionBlock2>
 
-      <MotionDescriptionBlock1
-      ref={textRef1}
-      initial="hidden"
-      animate={textInView1 ? "visible" : "hidden"}
-      variants={textVariants(0.2)} // 첫 번째 블록
-      style={{ top: "220px" }}
-    >
-      <h3><span className="icon">📌</span> 사용자의 니즈 & 취향 저격 큐레이션 제공</h3>
-      <p>웨이팅 중에도 더 가치 있는 시간을 보낼 수 있도록,<br />당신의 상황과 취향에 맞춘 장소와 활동을 추천합니다.</p>
-    </MotionDescriptionBlock1>
+        {/* ✅ f4CardBig 애니메이션 적용 */}
+        <MotionCardBigWrapper
+          ref={cardRef} // ✅ useInView의 ref 사용
+          initial="hidden"
+          animate={cardInView ? "visible" : "hidden"} // ✅ inView 값으로 애니메이션 트리거
+          variants={imageVariants}
+        >
+          <img
+            src={f4CardBig}
+            alt="추천 카드"
+            className="max-w-md rounded-lg shadow-lg"
+          />
+        </MotionCardBigWrapper>
 
-     <MotionDescriptionBlock2
-    ref={textRef2}
-    initial="hidden"
-    animate={textInView2 ? "visible" : "hidden"}
-    variants={textVariants(0.4)} // 두 번째 블록 (0.4초 딜레이)
-    style={{ top: "534px" }}
-  >
-    <h3><span className="icon">📍</span> 사용자의 현 위치기반 큐레이션 제공</h3>
-    <p>사용자의 현 위치를 고려한 큐레이션을 제공하고,<br />웨이팅 시간에 맞춘 다양한 장소를 추천합니다.</p>
-  </MotionDescriptionBlock2>
-
-      {/* ✅ f4CardBig 애니메이션 적용 */}
-      <MotionCardBigWrapper
-        ref={cardRef} // ✅ useInView의 ref 사용
-        initial="hidden"
-        animate={cardInView ? "visible" : "hidden"} // ✅ inView 값으로 애니메이션 트리거
-        variants={imageVariants}
-      >
-        <img src={f4CardBig} alt="추천 카드" className="max-w-md rounded-lg shadow-lg" />
-      </MotionCardBigWrapper>
-   
-      <MotionDescriptionBlock3
-    ref={textRef3}
-    initial="hidden"
-    animate={textInView3 ? "visible" : "hidden"}
-    variants={textVariants(0.6)} // 세 번째 블록 (0.6초 딜레이)
-    style={{ top: "880px" }}
-  >
-    <h3><span className="icon">✨</span> 당신만을 위한 맞춤 추천이 완성됐어요!</h3>
-    <p>간단한 스타일 선택 (원하는 장소, 분위기, 목적) 후<br />사용자에게 맞는 장소와 활동을 추천합니다!</p>
-  </MotionDescriptionBlock3>
-
+        <MotionDescriptionBlock3
+          ref={textRef3}
+          initial="hidden"
+          animate={textInView3 ? "visible" : "hidden"}
+          variants={textVariants(0.6)} // 세 번째 블록 (0.6초 딜레이)
+          style={{ top: "880px" }}
+        >
+          <h3>
+            <span className="icon">✨</span> 당신만을 위한 맞춤 추천이
+            완성됐어요!
+          </h3>
+          <p>
+            간단한 스타일 선택 (원하는 장소, 분위기, 목적) 후<br />
+            사용자에게 맞는 장소와 활동을 추천합니다!
+          </p>
+        </MotionDescriptionBlock3>
+      </GraphicWrapper>
     </FeaturesContainer>
   );
 };
