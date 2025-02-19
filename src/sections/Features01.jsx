@@ -13,30 +13,31 @@ import f1_icon_6 from "../assets/images/f1_icon_6.png";
 const Features01 = () => {
   return (
     <Feature01Container>
-      <GradientRight src={f1_gradient_right}/>
-      <GradientLeft src={f1_gradient_left}/>
+      <GradientRight src={f1_gradient_right} />
+      <GradientLeft src={f1_gradient_left} />
 
       <Icons>
-        <Icon src={f1_icon_1}/>
-        <Icon src={f1_icon_2}/>
-        <Icon src={f1_icon_3}/>
-        <Icon src={f1_icon_4}/>
-        <Icon src={f1_icon_5}/>
-        <Icon src={f1_icon_6}/>
+        <Icon src={f1_icon_1} />
+        <Icon src={f1_icon_2} />
+        <Icon src={f1_icon_3} />
+        <Icon src={f1_icon_4} />
+        <Icon src={f1_icon_5} />
+        <Icon src={f1_icon_6} />
       </Icons>
 
       <Content>
         <Title>Features 01</Title>
         <SubTitle>웨이팅 신청 존에서 빠르게 웨이팅</SubTitle>
-        <Description>장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.</Description>
-        <Phone src={f1_mo}/>
+        <Description>
+          장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.
+        </Description>
+        <Phone src={f1_mo} />
       </Content>
     </Feature01Container>
   );
 };
 
 export default Features01;
-
 
 // Style
 const Feature01Container = styled.div`
@@ -53,12 +54,13 @@ const Content = styled.div`
   color: white;
   max-width: 800px;
   z-index: 2;
+  margin: auto;
 `;
 
 const Title = styled.h4`
   font-size: 16px;
   font-weight: 800;
-  color: #ACA7FF;
+  color: #aca7ff;
   line-height: 140%;
   letter-spacing: -0.32px;
   margin-top: 70px;
@@ -106,7 +108,8 @@ const Icons = styled.div`
   position: absolute;
   display: flex;
   gap: 55px;
-  bottom: 40%; left: 50%;
+  bottom: 40%;
+  left: 50%;
   transform: translateX(-59%);
   z-index: 1;
 `;
