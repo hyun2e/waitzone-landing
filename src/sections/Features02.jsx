@@ -198,7 +198,6 @@ const Features02 = () => {
 
       {/* 팝업 */}
       <PopWrapper>
-        <PopTextWrapper>
         <div style={{ position: "relative", display: "flex" }}>
           <img src={f2_test} alt="배경" style={{ width: "105%" }} />
         </div>
