@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import f2_mo from "../assets/images/f2_mo.svg";
 import f2_bg from "../assets/images/f2_background_graphic_pin.png";
+import f2_test from "../assets/images/f2_test.svg";
+import f2_a_left from "../assets/images/f2_a_left.svg";
+import f2_a_right from "../assets/images/f2_a_right.svg";
+import f2_icon from "../assets/images/f2_icon.svg";
 
 // 폰트 스타일's 시작 --------------------------------------
 
@@ -134,16 +138,24 @@ const OverlayText = styled.div`
 // 팝업_시작 --------------------------------------
 
 const PopWrapper = styled.div`
+  display: flex;
   position: absolute;
-  top: 199px;
-  right: 72px;
+  top: 225px;
+  right: 85px;
   z-index: 4;
+  width: 300px;
+  background-image: url(f2_test);
+  background-size: cover;
+  background-position: center;
 `;
 
-const PopContent = styled.div`
-  display: flex;
-  align-items: center;
+const PopContentsWrapper = styled.div`
   gap: 9px;
+  display: flex;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 완전한 중앙 정렬 */
 `;
 
 const PopTextWrapper = styled.div`
@@ -151,6 +163,10 @@ const PopTextWrapper = styled.div`
   display: flex; /* 내부 요소들이 한 줄로 정렬되도록 설정 */
   flex-direction: column; /* 여러 줄이 필요할 경우 정렬 유지 */
   white-space: nowrap; /* 글자가 강제로 세로로 흐르는 것 방지 */
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
 `;
 
 // 리턴문 시작 --------------------------------------------------
@@ -180,19 +196,26 @@ const Features02 = () => {
 
       {/* -------------------------------------------------- */}
 
-      {/*  팝업 넣기 말풍선 */}
+      {/* 팝업 */}
       <PopWrapper>
-        <PopContent>
-          <img
-            src={""}
-            alt="아이콘"
-            style={{ width: "30px", height: "30px" }}
-          />
+        <div style={{ position: "relative", display: "flex" }}>
+          <img src={f2_test} alt="배경" style={{ width: "105%" }} />
+        </div>
+        <PopContentsWrapper>
+          <IconWrapper>
+            <div style={{ position: "relative" }}>
+              <img
+                src={f2_icon}
+                alt="아이콘"
+                style={{ width: "30px", height: "30px" }}
+              />
+            </div>
+          </IconWrapper>
           <PopTextWrapper>
             <PopTextTitle>웨이팅 존에서 벗어났습니다.</PopTextTitle>
             <PopText>안전한 웨이팅을 위해 안으로 이동해주세요.</PopText>
           </PopTextWrapper>
-        </PopContent>
+        </PopContentsWrapper>
       </PopWrapper>
 
       {/* -------------------------------------------------- */}
@@ -200,7 +223,7 @@ const Features02 = () => {
       {/*  왼쪽 말풍선 */}
       <OverlayItemLeft>
         <div style={{ position: "relative", display: "inline-block" }}>
-          <img src={""} alt="배경" style={{ width: "100%" }} />
+          <img src={f2_a_left} alt="배경" style={{ width: "100%" }} />
           <OverlayText>입장을 놓치면 어떡하지?</OverlayText>
         </div>
       </OverlayItemLeft>
@@ -208,7 +231,7 @@ const Features02 = () => {
       {/*  오른쪽 말풍선 */}
       <OverlayItemRight>
         <div style={{ position: "relative", display: "inline-block" }}>
-          <img src={""} alt="배경" style={{ width: "100%" }} />
+          <img src={f2_a_right} alt="배경" style={{ width: "100%" }} />
           <OverlayText>어디까지 가도 될까?</OverlayText>
         </div>
       </OverlayItemRight>
