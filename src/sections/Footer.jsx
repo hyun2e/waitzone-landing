@@ -6,33 +6,34 @@ const Footer = () => {
   return (
     <FooterContainer>
       <LeftSection>
-        <Logo src={footer_logo}/>
+        <Logo src={footer_logo} />
       </LeftSection>
-      
+
       <CenterSection>
         <Title>당신의 기다림을 즐겁고 가치있게</Title>
-          <SurveyBox>
-              <surveyText>
-                <SurveyTitle>WAIT ZONE 설문조사</SurveyTitle>
-                <SurveyDescription>서비스 품질 향상을 위한 설문조사와 사용성 인터뷰를 진행 중입니다.</SurveyDescription>
-              </surveyText>
-            <SurveyButton>참여하기</SurveyButton>
-          </SurveyBox>
+        <SurveyBox>
+          <SurveyText>
+            <SurveyTitle>WAIT ZONE 설문조사</SurveyTitle>
+            <SurveyDescription>
+              서비스 품질 향상을 위한 설문조사와 사용성 인터뷰를 진행 중입니다.
+            </SurveyDescription>
+          </SurveyText>
+          <SurveyButton>참여하기</SurveyButton>
+        </SurveyBox>
       </CenterSection>
-      
+
       <ConnectBox>
         <ConnectTitle>Connect TBWIN</ConnectTitle>
-          <ContactList>
-            <ContactItem>이지혜 [jhw_d@naver.com]</ContactItem>
-            <ContactItem>남윤경 [yungyeong6596@daum.net]</ContactItem>
-            <ContactItem>배은아 [honggsam@gmail.com]</ContactItem>
-            <ContactItem>최주희 [keycys31@gmail.com]</ContactItem>
+        <ContactList>
+          <ContactItem>이지혜 [jhw_d@naver.com]</ContactItem>
+          <ContactItem>남윤경 [yungyeong6596@daum.net]</ContactItem>
+          <ContactItem>배은아 [honggsam@gmail.com]</ContactItem>
+          <ContactItem>최주희 [keycys31@gmail.com]</ContactItem>
         </ContactList>
       </ConnectBox>
     </FooterContainer>
   );
 };
-
 
 // Style
 const FooterContainer = styled.footer`
@@ -120,7 +121,7 @@ const SurveyDescription = styled.p`
 
 const SurveyButton = styled.button`
   display: flex;
-  background-color: #6F47FF;
+  background-color: #6f47ff;
   color: white;
   height: 32px;
   padding: 5.5px 12px;

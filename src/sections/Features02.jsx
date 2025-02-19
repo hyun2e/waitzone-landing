@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import f2_mo from "../assets/images/f2_mo.svg";
 import f2_bg from "../assets/images/f2_background_graphic_pin.png";
-import f2_alert_left from "../assets/images/f2_alert_left.svg";
-import f2_alert_right_2 from "../assets/images/f2_alert_right_2.svg";
-import f2_pushalert from "../assets/images/f2_push_alert_closed.svg";
-import f2_pushicon from "../assets/images/f2_push_alert_icon.svg";
 
 // 폰트 스타일's 시작 --------------------------------------
 
@@ -142,10 +138,6 @@ const PopWrapper = styled.div`
   top: 199px;
   right: 72px;
   z-index: 4;
-  background-image: url(${f2_pushalert});
-  background-size: cover;
-  height: 140px;
-  width: 320px;
 `;
 
 const PopContent = styled.div`
@@ -192,7 +184,7 @@ const Features02 = () => {
       <PopWrapper>
         <PopContent>
           <img
-            src={f2_pushicon}
+            src={""}
             alt="아이콘"
             style={{ width: "30px", height: "30px" }}
           />
@@ -208,7 +200,7 @@ const Features02 = () => {
       {/*  왼쪽 말풍선 */}
       <OverlayItemLeft>
         <div style={{ position: "relative", display: "inline-block" }}>
-          <img src={f2_alert_left} alt="배경" style={{ width: "100%" }} />
+          <img src={""} alt="배경" style={{ width: "100%" }} />
           <OverlayText>입장을 놓치면 어떡하지?</OverlayText>
         </div>
       </OverlayItemLeft>
@@ -216,7 +208,7 @@ const Features02 = () => {
       {/*  오른쪽 말풍선 */}
       <OverlayItemRight>
         <div style={{ position: "relative", display: "inline-block" }}>
-          <img src={f2_alert_right_2} alt="배경" style={{ width: "100%" }} />
+          <img src={""} alt="배경" style={{ width: "100%" }} />
           <OverlayText>어디까지 가도 될까?</OverlayText>
         </div>
       </OverlayItemRight>
