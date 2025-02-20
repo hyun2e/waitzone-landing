@@ -140,6 +140,7 @@ const SurveyButton = styled.button`
   font-size: 14px;
   font-weight: 600;
   line-height: 150%;
+  width: 73px;
 `;
 
 const ConnectBox = styled.div`
