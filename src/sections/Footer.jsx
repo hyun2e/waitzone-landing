@@ -20,7 +20,12 @@ const Footer = () => {
                 중입니다.
               </SurveyDescription>
             </SurveyText>
-            <SurveyButton>참여하기</SurveyButton>
+            <SurveyButton
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeIZJh5xgWYgiHQtU7GJxg_WpLLUOvXwwup98EbcISM8xR-DA/viewform?usp=header"
+              target="_blank"
+            >
+              참여하기
+            </SurveyButton>
           </SurveyBox>
         </CenterSection>
 
@@ -128,8 +133,7 @@ const SurveyDescription = styled.p`
   text-align: left;
 `;
 
-const SurveyButton = styled.button`
-  display: flex;
+const SurveyButton = styled.a`
   background-color: #6f47ff;
   color: white;
   height: 32px;
@@ -140,6 +144,8 @@ const SurveyButton = styled.button`
   font-weight: 600;
   line-height: 32px;
   width: 73px;
+  text-decoration: none;
+  text-align: center;
 `;
 
 const ConnectBox = styled.div`

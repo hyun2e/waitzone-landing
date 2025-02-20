@@ -158,6 +158,8 @@ const SecondaryButton = styled.a`
   margin-left: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 100;
 
   &:hover {
     background-color: #4c2dbd;
@@ -225,10 +227,16 @@ const HeroSection = () => {
             animate={buttonInView ? "visible" : "hidden"}
             variants={buttonVariants}
           >
-            <PrimaryButton href="https://www.figma.com/proto/ds0Lh5X8LrFvX6g2ab4o1u/2%EC%A1%B0?node-id=3538-39212&t=Jo6B6Je3jo4cl34y-1">
+            <PrimaryButton
+              href="https://www.figma.com/proto/ds0Lh5X8LrFvX6g2ab4o1u/2%EC%A1%B0?node-id=3538-39212&t=Jo6B6Je3jo4cl34y-1"
+              target="_blank"
+            >
               프로토타입 이동
             </PrimaryButton>
-            <SecondaryButton href="https://docs.google.com/forms/d/e/1FAIpQLSeIZJh5xgWYgiHQtU7GJxg_WpLLUOvXwwup98EbcISM8xR-DA/viewform?usp=header">
+            <SecondaryButton
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeIZJh5xgWYgiHQtU7GJxg_WpLLUOvXwwup98EbcISM8xR-DA/viewform?usp=header"
+              target="_blank"
+            >
               설문조사 참여하기
             </SecondaryButton>
           </MotionHerobutton>

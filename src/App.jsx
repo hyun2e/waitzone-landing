@@ -12,25 +12,9 @@ import Features04 from "./sections/Features04";
 import Footer from "./sections/Footer";
 
 const ContentContainer = styled.div`
+  width: 100%;
   //max-width: 800px;
   //margin: auto;
-`;
-const Section = styled.section`
-  height: 500px;
-  background-color: ${({ $bgColor }) => $bgColor || "#1d94d9"};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: ${({ theme }) => theme.fonts.main};
-  font-size: 32px;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
-  /* 반응형 스타일: 모바일 화면 (화면 폭 <= 768px)에서는 높이와 폰트 크기를 조정 */
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    height: 300px;
-    font-size: 20px;
-  }
 `;
 
 const App = () => {
@@ -54,7 +38,15 @@ const App = () => {
         <GlobalStyle />
         <NavBar
           scrollToSection={scrollToSection}
-          refs={{ heroRef, coreValuesRef, features01Ref, features02Ref, features03Ref, features04Ref, footerRef }}
+          refs={{
+            heroRef,
+            coreValuesRef,
+            features01Ref,
+            features02Ref,
+            features03Ref,
+            features04Ref,
+            footerRef,
+          }}
         />
         <ContentContainer>
           <div ref={heroRef}>

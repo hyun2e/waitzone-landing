@@ -94,7 +94,10 @@ const NavBar = ({ scrollToSection, refs }) => {
         <NavLink onClick={() => scrollToSection(refs.features04Ref)}>
           Features04
         </NavLink>
-        <AppButton href="https://www.figma.com/proto/ds0Lh5X8LrFvX6g2ab4o1u/2%EC%A1%B0?node-id=3538-39212&t=Jo6B6Je3jo4cl34y-1">
+        <AppButton
+          href="https://www.figma.com/proto/ds0Lh5X8LrFvX6g2ab4o1u/2%EC%A1%B0?node-id=3538-39212&t=Jo6B6Je3jo4cl34y-1"
+          target="_blank"
+        >
           앱 체험하기
         </AppButton>
       </NavButtons>
