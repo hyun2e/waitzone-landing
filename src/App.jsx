@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styled, { ThemeProvider } from "styled-components";
-// import NavBar from "./components/NavBar.jsx";
+import NavBar from "./components/Navbar.jsx";
 import GlobalStyle from "./styles/GlobalStyles.jsx";
 import { theme } from "./styles/theme.js";
 import HeroSection from "./sections/HeroSection.jsx";
@@ -36,7 +36,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        {/* <NavBar
+        <NavBar
           scrollToSection={scrollToSection}
           refs={{
             heroRef,
@@ -47,7 +47,7 @@ const App = () => {
             features04Ref,
             footerRef,
           }}
-        /> */}
+        />
         <ContentContainer>
           <div ref={heroRef}>
             <HeroSection />
