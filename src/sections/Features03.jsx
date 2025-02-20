@@ -23,47 +23,138 @@ const fadeInUp = {
 const Features03 = () => {
   return (
     <Feature03Container>
-      <Graphic as={motion.img} src={f3_graphic_pin} custom={0} variants={fadeInUp} initial="hidden" animate="visible" />
-      <TextSection>
-        <Title as={motion.h4} custom={1} variants={fadeInUp} initial="hidden" animate="visible">Features 03</Title>
-        <SubTitle as={motion.h2} custom={2} variants={fadeInUp} initial="hidden" animate="visible">반경 커스텀으로 폭 넓은 Zone의 추천 장소 제공</SubTitle>
-        <Description as={motion.p} custom={3} variants={fadeInUp} initial="hidden" animate="visible">
-          자유롭게 존의 반경을 설정해 보세요.
-          <br />
-          여유롭게 설정한 후, 주변을 즐기고 오세요!
-        </Description>
-      </TextSection>
-      <ContentsSection>
-        <Line01 as={motion.img} src={f3_line_1} custom={8} variants={fadeInUp} initial="hidden" animate="visible" />
-        <Line02 as={motion.img} src={f3_line_2} custom={10} variants={fadeInUp} initial="hidden" animate="visible" />
-        <Phone01 as={motion.img} src={f3_mo_1} custom={4} variants={fadeInUp} initial="hidden" animate="visible" />
-        <TopSection>
-          <TopContents01 as={motion.div} custom={5} variants={fadeInUp} initial="hidden" animate="visible">
-            <TopDescription01>커스텀 Flow</TopDescription01>
-            <LineFlow src={f3_line_flow} alt="line-flow" />
-          </TopContents01>
-          <TopContents02 as={motion.div} custom={6} variants={fadeInUp} initial="hidden" animate="visible">
-            <PhoneSmall01 src={f3_mo_s_1} alt="phone-small-1" />
-            <PhoneSmall02 src={f3_mo_s_2} alt="phone-small-2" />
-          </TopContents02>
-          <TopContents03 as={motion.div} custom={7} variants={fadeInUp} initial="hidden" animate="visible">
-            <Line03 src={f3_line_3} alt="line-3" />
-            <TopDescription02>내 주변 세부 웨이팅 존</TopDescription02>
-            <TopDescription03>내 위치 중심의 세부 장소 추천 영역</TopDescription03>
-          </TopContents03>
-        </TopSection>
-        <BottomSection>
-          <Phone02 as={motion.img} src={f3_mo_2} custom={9} variants={fadeInUp} initial="hidden" animate="visible" />
-          <BottomContents01 as={motion.div} custom={11} variants={fadeInUp} initial="hidden" animate="visible">
-            <BottomTitle01>대기현황 실시간 제공</BottomTitle01>
-            <BottomText01>실시간 대기 현황 한눈에 보기</BottomText01>
-          </BottomContents01>
-          <BottomContents02 as={motion.div} custom={12} variants={fadeInUp} initial="hidden" animate="visible">
-            <BottomTitle02>길찾기 · 웨이팅 신청 제공</BottomTitle02>
-            <BottomText02>실시간 대기 현황 한눈에 보기</BottomText02>
-          </BottomContents02>
-        </BottomSection>
-      </ContentsSection>
+      <Container>
+        <Graphic
+          as={motion.img}
+          src={f3_graphic_pin}
+          custom={0}
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+        />
+        <TextSection>
+          <Title
+            as={motion.h4}
+            custom={1}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+          >
+            Features 03
+          </Title>
+          <SubTitle
+            as={motion.h2}
+            custom={2}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+          >
+            반경 커스텀으로 폭 넓은 Zone의 추천 장소 제공
+          </SubTitle>
+          <Description
+            as={motion.p}
+            custom={3}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+          >
+            자유롭게 존의 반경을 설정해 보세요.
+            <br />
+            여유롭게 설정한 후, 주변을 즐기고 오세요!
+          </Description>
+        </TextSection>
+        <ContentsSection>
+          <Line01
+            as={motion.img}
+            src={f3_line_1}
+            custom={8}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+          />
+          <Line02
+            as={motion.img}
+            src={f3_line_2}
+            custom={10}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+          />
+          <Phone01
+            as={motion.img}
+            src={f3_mo_1}
+            custom={4}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+          />
+          <TopSection>
+            <TopContents01
+              as={motion.div}
+              custom={5}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+            >
+              <TopDescription01>커스텀 Flow</TopDescription01>
+              <LineFlow src={f3_line_flow} alt="line-flow" />
+            </TopContents01>
+            <TopContents02
+              as={motion.div}
+              custom={6}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+            >
+              <PhoneSmall01 src={f3_mo_s_1} alt="phone-small-1" />
+              <PhoneSmall02 src={f3_mo_s_2} alt="phone-small-2" />
+            </TopContents02>
+            <TopContents03
+              as={motion.div}
+              custom={7}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+            >
+              <Line03 src={f3_line_3} alt="line-3" />
+              <TopDescription02>내 주변 세부 웨이팅 존</TopDescription02>
+              <TopDescription03>
+                내 위치 중심의 세부 장소 추천 영역
+              </TopDescription03>
+            </TopContents03>
+          </TopSection>
+          <BottomSection>
+            <Phone02
+              as={motion.img}
+              src={f3_mo_2}
+              custom={9}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+            />
+            <BottomContents01
+              as={motion.div}
+              custom={11}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+            >
+              <BottomTitle01>대기현황 실시간 제공</BottomTitle01>
+              <BottomText01>실시간 대기 현황 한눈에 보기</BottomText01>
+            </BottomContents01>
+            <BottomContents02
+              as={motion.div}
+              custom={12}
+              variants={fadeInUp}
+              initial="hidden"
+              animate="visible"
+            >
+              <BottomTitle02>길찾기 · 웨이팅 신청 제공</BottomTitle02>
+              <BottomText02>실시간 대기 현황 한눈에 보기</BottomText02>
+            </BottomContents02>
+          </BottomSection>
+        </ContentsSection>
+      </Container>
     </Feature03Container>
   );
 };
@@ -82,6 +173,11 @@ const Feature03Container = styled.div`
   overflow: hidden;
   position: relative;
   background-size: cover;
+`;
+
+const Container = styled.div`
+  position: relative;
+  width: 800px;
 `;
 
 // Text Section
@@ -156,7 +252,7 @@ const Line02 = styled.img`
 const Graphic = styled.img`
   position: absolute;
   top: 0px;
-  right: 565px;
+  right: 78px;
 `;
 
 // Right Section
