@@ -233,7 +233,7 @@ const Features02 = () => {
                 <img
                   src={f2_icon}
                   alt="아이콘"
-                  style={{ width: "30px", height: "30px" }}
+                  style={{ width: "23px", height: "23px" }}
                 />
               </div>
             </IconWrapper>
