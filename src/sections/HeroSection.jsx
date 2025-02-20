@@ -43,6 +43,9 @@ const HeroContainer = styled.div`
   height: 800px;
   position: relative;
   padding: 40px 20px;
+  margin: auto;
+  display: flex;
+  margin-top: 0;
 `;
 
 

@@ -1,10 +1,8 @@
-// src/App.jsx
-import React from "react";
+import React, { useRef } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import NavBar from "./components/NavBar";
 import GlobalStyle from "./styles/GlobalStyles";
 import { theme } from "./styles/theme";
-import Slider from "./components/Slider";
 import HeroSection from "./sections/HeroSection";
 import CoreValues from "./sections/CoreValues";
 import Features01 from "./sections/Features01";
@@ -12,19 +10,6 @@ import Features02 from "./sections/Features02";
 import Features03 from "./sections/Features03";
 import Features04 from "./sections/Features04";
 import Footer from "./sections/Footer";
-
-// 예시 슬라이드 데이터: src 값으로 정적인 이미지 URL을 사용합니다.
-const slidesHero = [
-  { src: "src/assets/images/hero01.png", content: "Slide 1" },
-  { src: "https://placehold.co/600x400/blue/yellow", content: "Slide 2" },
-  { src: "https://placehold.co/600x400/green/black", content: "Slide 3" },
-  { src: "https://placehold.co/600x400/red/white", content: "Slide 4" },
-  { src: "https://placehold.co/600x400/red/white", content: "gh" },
-  { src: "https://placehold.co/600x400/red/white", content: "nyg" },
-  { src: "https://placehold.co/600x400/red/white", content: "cjh" },
-  { src: "https://placehold.co/600x400/red/white", content: "ea" },
-  { src: "https://placehold.co/600x400/red/white", content: "ljh" },
-];
 
 const ContentContainer = styled.div`
   //max-width: 800px;
@@ -49,29 +34,50 @@ const Section = styled.section`
 `;
 
 const App = () => {
+  // 🔥 스크롤 이동을 위한 ref 설정
+  const heroRef = useRef(null);
+  const coreValuesRef = useRef(null);
+  const features01Ref = useRef(null);
+  const features02Ref = useRef(null);
+  const features03Ref = useRef(null);
+  const features04Ref = useRef(null);
+  const footerRef = useRef(null);
+
+  // 📌 스크롤 이동 함수
+  const scrollToSection = (ref) => {
+    ref?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        {/* <NavBar />
-        <Section id="section-hero" $bgColor="#1E3A5F">
-          <Slider slides={slidesHero} duration={1} />
-        </Section>
-        <Section id="section1" $bgColor="#dee2be">
-          섹션 1
-        </Section>
-        <Section id="section2" $bgColor="#0F4C75">
-          섹션 2
-        </Section> */}
-        <NavBar />
+        <NavBar
+          scrollToSection={scrollToSection}
+          refs={{ heroRef, coreValuesRef, features01Ref, features02Ref, features03Ref, features04Ref, footerRef }}
+        />
         <ContentContainer>
-          <HeroSection />
-          <CoreValues />
-          <Features01 />
-          <Features02 />
-          <Features03 />
-          <Features04 />
-          <Footer />
+          <div ref={heroRef}>
+            <HeroSection />
+          </div>
+          <div ref={coreValuesRef}>
+            <CoreValues />
+          </div>
+          <div ref={features01Ref}>
+            <Features01 />
+          </div>
+          <div ref={features02Ref}>
+            <Features02 />
+          </div>
+          <div ref={features03Ref}>
+            <Features03 />
+          </div>
+          <div ref={features04Ref}>
+            <Features04 />
+          </div>
+          <div ref={footerRef}>
+            <Footer />
+          </div>
         </ContentContainer>
       </>
     </ThemeProvider>

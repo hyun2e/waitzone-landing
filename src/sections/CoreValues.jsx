@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import arrow from "../assets/images/c2_arrow.png";
-import background from "../assets/images/c2_background.png";
+import background from "../assets/images/c2_background2.png";
 import line from "../assets/images/c2_textbox_line.png";
 
 // 스타일 컴포넌트
 const CoreContainer = styled.div`
   background-image: url(${background});
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   width: 100%;
-  min-height: 560px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -29,15 +28,15 @@ const ContentWrapper = styled.div`
   z-index: 1000;
 `;
 
-const GradImg = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
+ const GradImg = styled.img`
+   position: absolute;
+   top: 0;
+   left: 0;
   width: 100%;
-  background-size: cover;
-  min-height: 560px;
-  bottom: 0;
-`;
+  /* background-size: center; */
+  background-color: rgba(173, 173, 173, 0.9);
+ 
+ `;
 
 /* Top core value 덩어리 부분*/
 const TopCorevalue = styled.div`

@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import LogoImg from "../assets/images/logo.svg";
 
-// ✅ NavBar 컨테이너 스타일 적용
+// ✅ NavBar 스타일 정의
 const Nav = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
   height: 66px;
-  background-color: rgba(62, 62, 62, 0.21); /* ✅ 21% 투명도 적용 */
+  background-color: rgba(62, 62, 62, 0.21);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,9 +16,9 @@ const Nav = styled.nav`
   z-index: 1000;
 `;
 
-// ✅ 로고 이미지 스타일
+// ✅ 로고 스타일
 const Logo = styled.img`
-  height: 20px; /* ✅ 로고 크기 조정 */
+  height: 20px;
   cursor: pointer;
 `;
 
@@ -29,8 +29,10 @@ const NavButtons = styled.div`
   gap: 32px;
 `;
 
-// ✅ 스크롤 링크 스타일
-const NavLink = styled.a`
+// ✅ 네비게이션 링크 스타일
+const NavLink = styled.button`
+  background: none;
+  border: none;
   color: #ffffff;
   font-family: "Pretendard", sans-serif;
   font-size: 16px;
@@ -39,7 +41,7 @@ const NavLink = styled.a`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #d1c4ff;
+    color: #7852FF;
   }
 
   &:focus {
@@ -50,36 +52,40 @@ const NavLink = styled.a`
 // ✅ 버튼 스타일 (105x40px 고정)
 const AppButton = styled.a`
   display: flex;
-  align-items: center; /* ✅ 세로 중앙 정렬 */
-  justify-content: center; /* ✅ 가로 중앙 정렬 */
-  width: 105px; /* ✅ 고정 너비 */
-  height: 40px; /* ✅ 고정 높이 */
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 40px;
   background-color: #171517;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px;
-  text-align: center; /* ✅ 텍스트 가운데 정렬 */
+  text-align: center;
   text-decoration: none;
   transition: background 0.3s ease;
 
   &:hover {
-    background-color: #2c2c2c;
+    background-color: #7852FF;
   }
 `;
-const NavBar = () => {
+
+// ✅ NavBar 컴포넌트
+const NavBar = ({ scrollToSection, refs }) => {
   return (
     <Nav>
-      {/* ✅ 로고 이미지 적용 */}
+      {/* ✅ 로고 */}
       <a href="/">
         <Logo src={LogoImg} alt="WAITZONE 로고" />
       </a>
 
-      {/* ✅ 메뉴 & 버튼 */}
+      {/* ✅ 네비게이션 버튼 */}
       <NavButtons>
-        <NavLink href="#intro">Intro</NavLink>
-        <NavLink href="#core-values">Core Values</NavLink>
-        <NavLink href="#features">Features</NavLink>
+        <NavLink onClick={() => scrollToSection(refs.heroRef)}>Intro</NavLink>
+        <NavLink onClick={() => scrollToSection(refs.features01Ref)}>Features01</NavLink>
+        <NavLink onClick={() => scrollToSection(refs.features02Ref)}>Features02</NavLink>
+        <NavLink onClick={() => scrollToSection(refs.features03Ref)}>Features03</NavLink>
+        <NavLink onClick={() => scrollToSection(refs.features04Ref)}>Features04</NavLink>
         <AppButton href="https://www.naver.com">앱 체험하기</AppButton>
       </NavButtons>
     </Nav>
@@ -87,4 +93,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
