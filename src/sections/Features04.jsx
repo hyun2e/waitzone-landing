@@ -5,16 +5,17 @@ import { useInView } from "react-intersection-observer";
 
 // 📌 이미지 파일
 import f4Mo from "../assets/images/f4_mo.svg";
-import f4Card1 from "../assets/images/f4_card_1.png";
-import f4Card2 from "../assets/images/f4_card_2.png";
-import f4Card3 from "../assets/images/f4_card_3.png";
-import f4Card4 from "../assets/images/f4_card_4.png";
+import f4Card1 from "../assets/images/f4_card_1.svg";
+import f4Card2 from "../assets/images/f4_card_2.svg";
+import f4Card3 from "../assets/images/f4_card_3.svg";
+import f4Card4 from "../assets/images/f4_card_4.svg";
 import f4Line1 from "../assets/images/f4_line1.svg";
 import f4Line2 from "../assets/images/f4_line_2.svg";
 import f4Line3 from "../assets/images/f4_line3.svg";
 import f4Line4 from "../assets/images/f4_line_4.svg";
 import f4CardBig from "../assets/images/f4_card_big.svg";
 import f4Graphic from "../assets/images/f4_graphic.png";
+
 
 // ✅ 애니메이션 설정 (천천히 부드럽게 등장)
 const imageVariants = {
@@ -38,6 +39,25 @@ const textVariants = (delay) => ({
     transition: { duration: 1, ease: "easeOut", delay }, // 딜레이 적용
   },
 });
+
+const lineVariants2 = {
+  hidden: { opacity: 0, y: 20 }, // 아래에서 시작
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 1, delay: 0.2, ease: "easeOut" }
+  }
+};
+
+const lineVariants4 = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 1, delay: 0.4, ease: "easeOut" }
+  }
+};
+
 
 const FeaturesContainer = styled.section`
   background-color: #6b5cfa;
@@ -92,22 +112,13 @@ const Header = styled.div`
   }
 `;
 
-const OverlayBox = styled.div`
-  position: absolute;
-  width: 800px; /* ✅ 전체 너비 */
-  height: 1044px; /* ✅ 전체 높이 */
-  background-color: rgba(106, 99, 248, 0.75); /* ✅ #6A63F8, 75% */
-  top: 0px; /* ✅ 핸드폰 목업과 같은 높이 조정 */
-  left: 50%;
-  transform: translateX(-50%); /* ✅ 가운데 정렬 */
-  z-index: 1; /* ✅ 핸드폰 목업보다 아래에 배치 */
-`;
 
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 795px; /* ✅ 목업이 포함될 수 있도록 적절한 높이 설정 */
+  height: 950px; /* ✅ 목업이 포함될 수 있도록 적절한 높이 설정 */
+  width: 800px;
   overflow: hidden; /* ✅ 영역 밖으로 넘치는 요소 숨김 */
 `;
 
@@ -126,12 +137,12 @@ const MotionImageWrapper = motion(styled.div`
 // ✅ 카드 그룹
 const CardsWrapper = styled.div`
   position: absolute; /* ✅ 위치 절대값으로 설정 */
-  width: 400px; /* ✅ 카드 2.5개 정도 보이도록 설정 (값 조정 가능) */
+  width: 100%; /* ✅ 카드 2.5개 정도 보이도록 설정 (값 조정 가능) */
   display: flex;
   justify-content: flex-start; /* ✅ 카드 왼쪽부터 채우도록 수정 */
-  left: 400px;
+  left: 388px;
   overflow: hidden; /* ✅ 초과되는 카드 숨김 */
-  margin-top: 158px;
+  margin-top: 224px;
 `;
 
 const FeatureCard = styled.img`
@@ -144,7 +155,7 @@ const FeatureCard = styled.img`
 const FloatingCardLeft = styled.div`
   position: absolute;
   left: 18px; /* 기존 -40px → 더 왼쪽으로 이동 */
-  top: 400px; /* 기존 25% → 픽셀 단위로 조정 */
+  top: 390px; /* 기존 25% → 픽셀 단위로 조정 */
   transform: translateY(-50%); /* 이미지가 중앙 기준으로 정렬되도록 조정 */
 `;
 
@@ -154,7 +165,7 @@ const FloatingCardRight = styled.div`
   gap: 8px; /* ✅ 카드 사이 간격 */
   left: 38px;
   //right: 0px; /* ✅ 기존 -30px → -50px로 변경 */
-  //top: 200px;
+  //top: 420px;
   align-items: center; /* ✅ 카드들이 중앙에 정렬되도록 조정 */
 `;
 
@@ -182,30 +193,30 @@ const LineImage3 = styled.img`
 `;
 
 // ✅ Line 2 (목업 위)
-const LineImage2 = styled.img`
+const MotionLineImage2 = motion(styled.img`
   position: absolute;
   width: 77px;
   height: 99px;
   flex-shrink: 0;
-  left: 382px;
+  left: 348px;
   transform: translateX(-50%);
   top: 230px; /* 모바일 목업 위 */
   object-fit: contain; /* 이미지 비율 유지 */
   z-index: 4; /* ✅ 오버레이보다 위에 배치 */
-`;
+`);
 
 // ✅ Line 4 (목업 위)
-const LineImage4 = styled.img`
+const MotionLineImage4 = motion(styled.img`
   position: absolute;
   width: 133px;
   height: 81px;
   flex-shrink: 0;
-  left: 360px;
+  left: 290px;
   transform: translateX(-50%);
-  top: 465px; /* 모바일 목업 위 */
+  top: 462px; /* 모바일 목업 위 */
   object-fit: contain; /* 이미지 비율 유지 */
   z-index: 4; /* ✅ 오버레이보다 위에 배치 */
-`;
+`);
 
 // ✅ 배경 그래픽 요소
 const StyledGraphicImage = styled.img`
@@ -381,14 +392,23 @@ const Features04 = () => {
         </Header>
 
         <ContentWrapper>
-          {/* ✅ Line 2 이미지 (목업 위) */}
-          <LineImage2 src={f4Line2} alt="Design Line2" />
+            <MotionLineImage2 
+              src={f4Line2} 
+              alt="Design Line2" 
+              initial="hidden" 
+              whileInView="visible" 
+              variants={lineVariants2} 
+              viewport={{ once: false, amount: 0.2 }}
+            />
 
-          {/* ✅ Line 4 이미지 (목업 위) */}
-          <LineImage4 src={f4Line4} alt="Design Line4" />
-
-          {/* ✅ 오버레이 배경 */}
-          <OverlayBox />
+            <MotionLineImage4 
+              src={f4Line4} 
+              alt="Design Line4" 
+              initial="hidden" 
+              whileInView="visible" 
+              variants={lineVariants4} 
+              viewport={{ once: false, amount: 0.2 }}
+            />
 
           {/* ✅ f4Mo 애니메이션 적용 */}
           <MotionImageWrapper

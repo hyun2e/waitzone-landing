@@ -45,6 +45,7 @@ const HeroContainer = styled.div`
   padding: 40px 20px;
 `;
 
+
 const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -53,6 +54,12 @@ const HeroWrapper = styled.div`
   top: 160px;
   left: 50px;
   color: white;
+`;
+const GroupContainer = styled.div`
+  width: 800px;
+  margin: auto;
+  left: -50px;
+  position: relative;
 `;
 
 const MotionHeromaintext = motion(styled.div`
@@ -69,17 +76,32 @@ const MotionHerodescript = motion(styled.div`
 `);
 
 const MotionHerotext = motion(styled.div`
-  max-width: 600px;
+  max-width: 500px;
   position: relative;
   top: 16px;
   color: rgba(255, 255, 255, 0.4);
+  font-size: 16px; /* 기본 크기 */
+  
+  @media (max-width: 768px) {
+    font-size: 14px; /* 모바일 화면에서는 작게 */
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px; /* 더 작은 화면에서는 더 작게 */
+  }
 `);
 
 const MotionHerobutton = motion(styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 80px;
+  gap: 5px;
+  margin-top: 70px;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    gap: 3px;
+    margin-top: 40px;
+  }
 `);
 
 const PrimaryButton = styled.a`
@@ -113,7 +135,7 @@ const SecondaryButton = styled.a`
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
-  border: 1px solid #ffffff;
+  border: 0.5px solid #ffffff95;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -123,16 +145,16 @@ const SecondaryButton = styled.a`
     color: #FFFFFF;
     border: 1px solid #ffffff;
   }
-`;
+`;  
 
 // ✅ Phone Mockup Motion 적용
 const MotionHeroimg = motion(styled.div`
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: relative;
+  Top: 270px;
   bottom: 20px;
-  right: 50px;
-  left: 450px;
+  left: 210px;
 `);
 
 const HeroSection = () => {
@@ -143,59 +165,61 @@ const HeroSection = () => {
 
   return (
     <HeroContainer>
-      <HeroWrapper>
-        {/* ✅ 제목 애니메이션 적용 */}
-        <MotionHeromaintext
-          ref={textRef}
-          initial="hidden"
-          animate={textInView ? "visible" : "hidden"}
-          variants={textVariants}
-        >
-          <h1>웨이팅, <br />언제까지 기다리기만 할래?</h1>
+      <GroupContainer>
+         <HeroWrapper>
+            {/* ✅ 제목 애니메이션 적용 */}
+            <MotionHeromaintext
+              ref={textRef}
+              initial="hidden"
+              animate={textInView ? "visible" : "hidden"}
+              variants={textVariants}
+            >
+              <h1>웨이팅, <br />언제까지 기다리기만 할래?</h1>
 
-          {/* ✅ 설명 애니메이션 적용 */}
-          <MotionHerodescript
+              {/* ✅ 설명 애니메이션 적용 */}
+              <MotionHerodescript
+                initial="hidden"
+                animate={textInView ? "visible" : "hidden"}
+                variants={descVariants}
+              >
+                <p>보이는 웨이팅 존에서 재미있는 장소를 추천해 드릴게요.</p>
+                <p>웨이팅? 이제 새로운 플레이 타임이 됩니다!</p>
+              </MotionHerodescript>
+            </MotionHeromaintext>
+
+            {/* ✅ 버튼 애니메이션 적용 */}
+            <MotionHerobutton
+              ref={buttonRef}
+              initial="hidden"
+              animate={buttonInView ? "visible" : "hidden"}
+              variants={buttonVariants}
+            >
+              <PrimaryButton href="https://www.naver.com">프로토타입 이동</PrimaryButton>
+              <SecondaryButton href="https://www.naver.com">설문조사 참여하기</SecondaryButton>
+            </MotionHerobutton>
+
+            {/* ✅ 안내문 텍스트 애니메이션 적용 */}
+            <MotionHerotext
+              initial="hidden"
+              animate={buttonInView ? "visible" : "hidden"}
+              variants={textInfoVariants}
+            >
+              <p>서비스 품질 향상을 위한 설문조사입니다.</p>
+              <p>많은 참여 부탁드립니다</p>
+            </MotionHerotext>
+          </HeroWrapper>
+
+          {/* ✅ 이미지 모션 적용 (오른쪽 → 왼쪽 슬라이드) */}
+          <MotionHeroimg
+            ref={imageRef}
             initial="hidden"
-            animate={textInView ? "visible" : "hidden"}
-            variants={descVariants}
+            animate={imageInView ? "visible" : "hidden"}
+            variants={slideVariants}
           >
-            <p>보이는 웨이팅 존에서 재미있는 장소를 추천해 드릴게요.</p>
-            <p>웨이팅? 이제 새로운 플레이 타임이 됩니다!</p>
-          </MotionHerodescript>
-        </MotionHeromaintext>
-
-        {/* ✅ 버튼 애니메이션 적용 */}
-        <MotionHerobutton
-          ref={buttonRef}
-          initial="hidden"
-          animate={buttonInView ? "visible" : "hidden"}
-          variants={buttonVariants}
-        >
-          <PrimaryButton href="https://www.naver.com">프로토타입 이동</PrimaryButton>
-          <SecondaryButton href="https://www.naver.com">설문조사 참여하기</SecondaryButton>
-        </MotionHerobutton>
-
-        {/* ✅ 안내문 텍스트 애니메이션 적용 */}
-        <MotionHerotext
-          initial="hidden"
-          animate={buttonInView ? "visible" : "hidden"}
-          variants={textInfoVariants}
-        >
-          <p>서비스 품질 향상을 위한 설문조사입니다.</p>
-          <p>많은 참여 부탁드립니다</p>
-        </MotionHerotext>
-      </HeroWrapper>
-
-      {/* ✅ 이미지 모션 적용 (오른쪽 → 왼쪽 슬라이드) */}
-      <MotionHeroimg
-        ref={imageRef}
-        initial="hidden"
-        animate={imageInView ? "visible" : "hidden"}
-        variants={slideVariants}
-      >
-        <img src={mock} alt="Phone mockup" />
-      </MotionHeroimg>
-    </HeroContainer>
+            <img src={mock} alt="Phone mockup" />
+          </MotionHeroimg>
+      </GroupContainer>
+   </HeroContainer>
   );
 };
 
