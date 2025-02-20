@@ -39,9 +39,15 @@ const NavLink = styled.button`
   cursor: pointer;
   text-decoration: none;
   transition: color 0.3s ease;
+  width: 105px;
+  height: 40px;
+  border-radius: 8px;
 
+  /* intro- features 버튼 호버효과 */
   &:hover {
-    color: #7852ff;
+    color: #c5b8f4;
+    background-color: #6F47FF;
+   
   }
 
   &:focus {
@@ -66,7 +72,8 @@ const AppButton = styled.a`
   transition: background 0.3s ease;
 
   &:hover {
-    background-color: #7852ff;
+    background-color: #c5b8f4;
+    color: black;
   }
 `;
 
