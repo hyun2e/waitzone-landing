@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-//
 // ✅ NavBar 스타일 정의
 const Nav = styled.nav`
   position: fixed;
