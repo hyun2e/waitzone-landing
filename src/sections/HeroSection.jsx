@@ -62,6 +62,7 @@ const GroupContainer = styled.div`
   width: 800px;
   margin: auto;
   left: -50px;
+  top: -150px;
   position: relative;
 `;
 
