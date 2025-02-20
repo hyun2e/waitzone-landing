@@ -41,7 +41,7 @@ const NavLink = styled.button`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #7852FF;
+    color: #7852ff;
   }
 
   &:focus {
@@ -66,7 +66,7 @@ const AppButton = styled.a`
   transition: background 0.3s ease;
 
   &:hover {
-    background-color: #7852FF;
+    background-color: #7852ff;
   }
 `;
 
@@ -82,11 +82,21 @@ const NavBar = ({ scrollToSection, refs }) => {
       {/* ✅ 네비게이션 버튼 */}
       <NavButtons>
         <NavLink onClick={() => scrollToSection(refs.heroRef)}>Intro</NavLink>
-        <NavLink onClick={() => scrollToSection(refs.features01Ref)}>Features01</NavLink>
-        <NavLink onClick={() => scrollToSection(refs.features02Ref)}>Features02</NavLink>
-        <NavLink onClick={() => scrollToSection(refs.features03Ref)}>Features03</NavLink>
-        <NavLink onClick={() => scrollToSection(refs.features04Ref)}>Features04</NavLink>
-        <AppButton href="https://www.naver.com">앱 체험하기</AppButton>
+        <NavLink onClick={() => scrollToSection(refs.features01Ref)}>
+          Features01
+        </NavLink>
+        <NavLink onClick={() => scrollToSection(refs.features02Ref)}>
+          Features02
+        </NavLink>
+        <NavLink onClick={() => scrollToSection(refs.features03Ref)}>
+          Features03
+        </NavLink>
+        <NavLink onClick={() => scrollToSection(refs.features04Ref)}>
+          Features04
+        </NavLink>
+        <AppButton href="https://www.figma.com/proto/ds0Lh5X8LrFvX6g2ab4o1u/2%EC%A1%B0?node-id=3538-39212&t=Jo6B6Je3jo4cl34y-1">
+          앱 체험하기
+        </AppButton>
       </NavButtons>
     </Nav>
   );
