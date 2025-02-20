@@ -6,6 +6,7 @@ import f2_test from "../assets/images/f2_test.svg";
 import f2_a_left from "../assets/images/f2_a_left.svg";
 import f2_a_right from "../assets/images/f2_a_right.svg";
 import f2_icon from "../assets/images/f2_icon.svg";
+import f2_play from "../assets/images/f2_play.gif";
 
 // 폰트 스타일's 시작 --------------------------------------
 
@@ -105,6 +106,20 @@ const BgImageWrapper = styled.div`
   z-index: 0;
 `;
 
+const GifWrapper = styled.div`
+  position: absolute;
+  top: 385px; /* 원하는 위치로 조정 가능 */
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
+  z-index: 3; /* f2_mo보다 높은 값으로 설정 */
+  width: 167px; /* GIF 크기 조정 */
+  height: auto;
+`;
+
+const Gifimg = styled.img`
+  width: 100%;
+`;
+
 // 말풍선_이미지 --------------------------------------
 const OverlayItemLeft = styled.div`
   position: absolute;
@@ -199,6 +214,11 @@ const Features02 = () => {
         <MoImageWrapper>
           <img className="f2_mo" src={f2_mo} alt="웨이팅 존 UI" />
         </MoImageWrapper>
+
+        {/* ✅ GIF 추가: MoImageWrapper 위에 배치 */}
+        <GifWrapper>
+          <Gifimg src={f2_play} alt="GIF 애니메이션" />
+        </GifWrapper>
 
         {/* -------------------------------------------------- */}
 

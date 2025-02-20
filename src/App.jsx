@@ -27,7 +27,7 @@ const slidesHero = [
 ];
 
 const ContentContainer = styled.div`
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: auto;
 `;
 const Section = styled.section`
