@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import f3_background from "../assets/images/f3_background.png";
-import f3_line_flow from "../assets/images/f3_line_flow.png";
+import { motion } from "framer-motion";
 import f3_graphic_pin from "../assets/images/f3_graphic_pin.png";
 import f3_line_1 from "../assets/images/f3_line_1.png";
 import f3_line_2 from "../assets/images/f3_line_2.png";
@@ -10,67 +9,60 @@ import f3_mo_1 from "../assets/images/f3_mo_1.svg";
 import f3_mo_2 from "../assets/images/f3_mo_2.svg";
 import f3_mo_s_1 from "../assets/images/f3_mo_s_1.png";
 import f3_mo_s_2 from "../assets/images/f3_mo_s_2.png";
+import f3_line_flow from "../assets/images/f3_line_flow.png";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
+  }),
+};
 
 const Features03 = () => {
   return (
     <Feature03Container>
-      <Graphic src={f3_graphic_pin} />
+      <Graphic as={motion.img} src={f3_graphic_pin} custom={0} variants={fadeInUp} initial="hidden" animate="visible" />
       <TextSection>
-        <Title>Features 03</Title>
-        <SubTitle>반경 커스텀으로 폭 넓은 Zone의 추천 장소 제공</SubTitle>
-        <Description>
+        <Title as={motion.h4} custom={1} variants={fadeInUp} initial="hidden" animate="visible">Features 03</Title>
+        <SubTitle as={motion.h2} custom={2} variants={fadeInUp} initial="hidden" animate="visible">반경 커스텀으로 폭 넓은 Zone의 추천 장소 제공</SubTitle>
+        <Description as={motion.p} custom={3} variants={fadeInUp} initial="hidden" animate="visible">
           자유롭게 존의 반경을 설정해 보세요.
           <br />
           여유롭게 설정한 후, 주변을 즐기고 오세요!
         </Description>
       </TextSection>
-
       <ContentsSection>
-        <Line01 src={f3_line_1} />
-        <Line02 src={f3_line_2} />
-        <LeftSection>
-          <Phone01 src={f3_mo_1} />
-        </LeftSection>
-
-        <RightSection>
-          <TopSection>
-            <TopContents01>
-              <TopDescription01>커스텀 Flow</TopDescription01>
-              <LineFlow src={f3_line_flow} />
-            </TopContents01>
-
-            <TopContents02>
-              <PhoneSmall01 src={f3_mo_s_1} />
-              <PhoneSmall02 src={f3_mo_s_2} />
-            </TopContents02>
-
-            <TopContents03>
-              <Line03 src={f3_line_3} />
-              <TopDescription02>내 주변 세부 웨이팅 존</TopDescription02>
-              <TopDescription03>
-                내 위치 중심의 세부 장소 추천 영역
-              </TopDescription03>
-            </TopContents03>
-          </TopSection>
-
-          <BottomSection>
-            <Phone02 src={f3_mo_2} />
-
-            <BottomContents01>
-              <BottomTitle01>
-                대기현황 실시간 제공
-              </BottomTitle01>
-              <BottomText01>
-                실시간 대기 현황 한눈에 보기
-              </BottomText01>
-            </BottomContents01>
-
-            <BottomContents02>
-              <BottomTitle02>길찾기 · 웨이팅 신청 제공</BottomTitle02>
-              <BottomText02>실시간 대기 현황 한눈에 보기</BottomText02>
-            </BottomContents02>
-          </BottomSection>
-        </RightSection>
+        <Line01 as={motion.img} src={f3_line_1} custom={8} variants={fadeInUp} initial="hidden" animate="visible" />
+        <Line02 as={motion.img} src={f3_line_2} custom={10} variants={fadeInUp} initial="hidden" animate="visible" />
+        <Phone01 as={motion.img} src={f3_mo_1} custom={4} variants={fadeInUp} initial="hidden" animate="visible" />
+        <TopSection>
+          <TopContents01 as={motion.div} custom={5} variants={fadeInUp} initial="hidden" animate="visible">
+            <TopDescription01>커스텀 Flow</TopDescription01>
+            <LineFlow src={f3_line_flow} alt="line-flow" />
+          </TopContents01>
+          <TopContents02 as={motion.div} custom={6} variants={fadeInUp} initial="hidden" animate="visible">
+            <PhoneSmall01 src={f3_mo_s_1} alt="phone-small-1" />
+            <PhoneSmall02 src={f3_mo_s_2} alt="phone-small-2" />
+          </TopContents02>
+          <TopContents03 as={motion.div} custom={7} variants={fadeInUp} initial="hidden" animate="visible">
+            <Line03 src={f3_line_3} alt="line-3" />
+            <TopDescription02>내 주변 세부 웨이팅 존</TopDescription02>
+            <TopDescription03>내 위치 중심의 세부 장소 추천 영역</TopDescription03>
+          </TopContents03>
+        </TopSection>
+        <BottomSection>
+          <Phone02 as={motion.img} src={f3_mo_2} custom={9} variants={fadeInUp} initial="hidden" animate="visible" />
+          <BottomContents01 as={motion.div} custom={11} variants={fadeInUp} initial="hidden" animate="visible">
+            <BottomTitle01>대기현황 실시간 제공</BottomTitle01>
+            <BottomText01>실시간 대기 현황 한눈에 보기</BottomText01>
+          </BottomContents01>
+          <BottomContents02 as={motion.div} custom={12} variants={fadeInUp} initial="hidden" animate="visible">
+            <BottomTitle02>길찾기 · 웨이팅 신청 제공</BottomTitle02>
+            <BottomText02>실시간 대기 현황 한눈에 보기</BottomText02>
+          </BottomContents02>
+        </BottomSection>
       </ContentsSection>
     </Feature03Container>
   );
@@ -145,19 +137,19 @@ const Phone01 = styled.img`
 `;
 
 const Line01 = styled.img`
-  width: 132px;
-  height: 220px;
+  width: 128px;
+  height: 215px;
   position: absolute;
-  top: 108px;
-  right: 371px;
+  top: 109px;
+  right: 379px;
 `;
 
 const Line02 = styled.img`
-  width: 232.5px;
+  width: 245px;
   height: 93px;
   position: absolute;
-  top: 544px;
-  right: 271px;
+  top: 538px;
+  right: 260px;
 `;
 
 const Graphic = styled.img`
@@ -171,14 +163,14 @@ const RightSection = styled.div`
   position: absolute;
   width: 360px;
   height: 1000px;
-  right: 10px;
 `;
 
 // Top Section
 const TopSection = styled.div`
   position: absolute;
-  top: 10px;
+  top: 70px;
   height: 450px;
+  right: 45px;
 `;
 
 // Top Contents 01
@@ -207,6 +199,7 @@ const PhoneSmall01 = styled.img`
   width: 170px;
   height: 327px;
   position: absolute;
+  right: 162px;
 `;
 
 const PhoneSmall02 = styled.img`
@@ -221,16 +214,17 @@ const TopContents03 = styled.div`
   display: flex;
   width: 186px;
   flex-direction: column;
-  align-items: flex-start;
   gap: 3px;
+  position: absolute;
+  right: 60px;
+  top: 323px;
+  align-items: center;
 `;
 
 const Line03 = styled.img`
   width: 175px;
   height: 13px;
-  position: absolute;
-  right: 75px;
-  top: 323px;
+  margin-bottom: 5px;
 `;
 
 const TopDescription02 = styled.p`
@@ -240,9 +234,6 @@ const TopDescription02 = styled.p`
   font-weight: 500;
   line-height: 138%;
   letter-spacing: -0.32px;
-  position: absolute;
-  right: 95px;
-  top: 343px;
 `;
 
 const TopDescription03 = styled.p`
@@ -252,15 +243,12 @@ const TopDescription03 = styled.p`
   font-weight: 200;
   line-height: 140%;
   letter-spacing: -0.24px;
-  position: absolute;
-  right: 82px;
-  top: 367px;
 `;
 
 // Bottom Section
 const BottomSection = styled.div`
   position: absolute;
-  bottom: 10px;
+  bottom: 60px;
   height: 500px;
   width: 450px;
   right: 0px;
