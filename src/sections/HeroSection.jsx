@@ -141,6 +141,7 @@ const SecondaryButton = styled.a`
   text-decoration: none;
   border: 0.5px solid #ffffff95;
   border-radius: 8px;
+  margin-left: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
