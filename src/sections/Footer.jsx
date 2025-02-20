@@ -133,13 +133,12 @@ const SurveyButton = styled.button`
   background-color: #6f47ff;
   color: white;
   height: 32px;
-  padding: 5.5px 12px;
   border-radius: 6px;
   border: none;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  line-height: 150%;
+  line-height: 32px;
   width: 73px;
 `;
 
