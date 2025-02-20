@@ -1,11 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import f1_mo from "../assets/images/f1_mo.svg";
-import f1_gradient_right from "../assets/images/f1_gradient_right.png";
-import f1_gradient_left from "../assets/images/f1_gradient_left.png";
-import f1_icon from "../assets/images/f1_icon_all.png";
-
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -30,18 +25,51 @@ const scrollingAnimation = {
 const Features01 = () => {
   return (
     <Feature01Container>
-      <GradientRight src={f1_gradient_right} />
-      <GradientLeft src={f1_gradient_left} />
+      <GradientRight src={"/assets/images/f1_gradient_right.png"} />
+      <GradientLeft src={"/assets/images/f1_gradient_left.png"} />
 
-        <Icons as={motion.img} {...scrollingAnimation} src={f1_icon} />
+      <Icons
+        as={motion.img}
+        {...scrollingAnimation}
+        src={"/assets/images/f1_icon_all.png"}
+      />
 
       <Content>
-        <Title as={motion.h4} custom={0} variants={fadeInUp} initial="hidden" animate="visible">Features 01</Title>
-        <SubTitle as={motion.h2} custom={1} variants={fadeInUp} initial="hidden" animate="visible">웨이팅 신청 존에서 빠르게 웨이팅</SubTitle>
-        <Description as={motion.p} custom={2} variants={fadeInUp} initial="hidden" animate="visible">
+        <Title
+          as={motion.h4}
+          custom={0}
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+        >
+          Features 01
+        </Title>
+        <SubTitle
+          as={motion.h2}
+          custom={1}
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+        >
+          웨이팅 신청 존에서 빠르게 웨이팅
+        </SubTitle>
+        <Description
+          as={motion.p}
+          custom={2}
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+        >
           장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.
         </Description>
-        <Phone as={motion.img} src={f1_mo} custom={3} variants={fadeInUp} initial="hidden" animate="visible"/>
+        <Phone
+          as={motion.img}
+          src={"/assets/images/f1_mo.svg"}
+          custom={3}
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+        />
       </Content>
     </Feature01Container>
   );

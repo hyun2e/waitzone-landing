@@ -1,15 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import f3_graphic_pin from "../assets/images/f3_graphic_pin.png";
-import f3_line_1 from "../assets/images/f3_line_1.png";
-import f3_line_2 from "../assets/images/f3_line_2.png";
-import f3_line_3 from "../assets/images/f3_line_3.png";
-import f3_mo_1 from "../assets/images/f3_mo_1.svg";
-import f3_mo_2 from "../assets/images/f3_mo_2.svg";
-import f3_mo_s_1 from "../assets/images/f3_mo_s_1.png";
-import f3_mo_s_2 from "../assets/images/f3_mo_s_2.png";
-import f3_line_flow from "../assets/images/f3_line_flow.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -26,7 +17,7 @@ const Features03 = () => {
       <Container>
         <Graphic
           as={motion.img}
-          src={f3_graphic_pin}
+          src={"/assets/images/f3_graphic_pin.png"}
           custom={0}
           variants={fadeInUp}
           initial="hidden"
@@ -66,7 +57,7 @@ const Features03 = () => {
         <ContentsSection>
           <Line01
             as={motion.img}
-            src={f3_line_1}
+            src={"/assets/images/f3_line_1.png"}
             custom={8}
             variants={fadeInUp}
             initial="hidden"
@@ -74,7 +65,7 @@ const Features03 = () => {
           />
           <Line02
             as={motion.img}
-            src={f3_line_2}
+            src={"/assets/images/f3_line_2.png"}
             custom={10}
             variants={fadeInUp}
             initial="hidden"
@@ -82,7 +73,7 @@ const Features03 = () => {
           />
           <Phone01
             as={motion.img}
-            src={f3_mo_1}
+            src={"/assets/images/f3_mo_1.svg"}
             custom={4}
             variants={fadeInUp}
             initial="hidden"
@@ -97,7 +88,10 @@ const Features03 = () => {
               animate="visible"
             >
               <TopDescription01>커스텀 Flow</TopDescription01>
-              <LineFlow src={f3_line_flow} alt="line-flow" />
+              <LineFlow
+                src={"/assets/images/f3_line_flow.png"}
+                alt="line-flow"
+              />
             </TopContents01>
             <TopContents02
               as={motion.div}
@@ -106,8 +100,14 @@ const Features03 = () => {
               initial="hidden"
               animate="visible"
             >
-              <PhoneSmall01 src={f3_mo_s_1} alt="phone-small-1" />
-              <PhoneSmall02 src={f3_mo_s_2} alt="phone-small-2" />
+              <PhoneSmall01
+                src={"/assets/images/f3_mo_s_1.png"}
+                alt="phone-small-1"
+              />
+              <PhoneSmall02
+                src={"/assets/images/f3_mo_s_2.png"}
+                alt="phone-small-2"
+              />
             </TopContents02>
             <TopContents03
               as={motion.div}
@@ -116,7 +116,7 @@ const Features03 = () => {
               initial="hidden"
               animate="visible"
             >
-              <Line03 src={f3_line_3} alt="line-3" />
+              <Line03 src={"/assets/images/f3_line_3.png"} alt="line-3" />
               <TopDescription02>내 주변 세부 웨이팅 존</TopDescription02>
               <TopDescription03>
                 내 위치 중심의 세부 장소 추천 영역
@@ -126,7 +126,7 @@ const Features03 = () => {
           <BottomSection>
             <Phone02
               as={motion.img}
-              src={f3_mo_2}
+              src={"/assets/images/f3_mo_2.svg"}
               custom={9}
               variants={fadeInUp}
               initial="hidden"
@@ -163,7 +163,7 @@ export default Features03;
 
 //Style
 const Feature03Container = styled.div`
-  background: url("src/assets/images/f3_background.png");
+  background: url("/assets/images/f3_background.png");
   width: 100%;
   height: 1369px;
   display: inline-flex;

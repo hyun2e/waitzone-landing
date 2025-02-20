@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import footer_logo from "../assets/images/footer_logo.png";
 
 const Footer = () => {
   return (
     <FooterContainer>
       <ContentWrapper>
         <LeftSection>
-          <Logo src={footer_logo} />
+          <Logo src={"/assets/images/footer_logo.png"} />
         </LeftSection>
 
         <CenterSection>

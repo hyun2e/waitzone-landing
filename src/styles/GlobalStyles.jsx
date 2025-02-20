@@ -1,7 +1,6 @@
 // src/styles/GlobalStyles.js
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import PretendardWoff2 from "../assets/fonts/PretendardVariable.woff2";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -9,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   /* Pretendard Variables 폰트 정의 */
   @font-face {
     font-family: 'Pretendard';
-    src: url(${PretendardWoff2}) format('woff2');
+    src: url("/assets/fonts/PretendardVariable.woff2") format('woff2');
     font-weight: 1 999; /* 변수 폰트 */
     font-style: normal;
     font-display: swap;

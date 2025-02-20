@@ -1,12 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import f2_mo from "../assets/images/f2_mo.svg";
-import f2_bg from "../assets/images/f2_background_graphic_pin.png";
-import f2_test from "../assets/images/f2_test.svg";
-import f2_a_left from "../assets/images/f2_a_left.svg";
-import f2_a_right from "../assets/images/f2_a_right.svg";
-import f2_icon from "../assets/images/f2_icon.svg";
-import f2_play from "../assets/images/f2_play.gif";
 
 // 폰트 스타일's 시작 --------------------------------------
 
@@ -196,7 +189,11 @@ const Features02 = () => {
     <FeatureContainer>
       {/*  배경 이미지 */}
       <BgImageWrapper>
-        <img className="f2_bg" src={f2_bg} alt="웨이팅 존 배경" />
+        <img
+          className="f2_bg"
+          src={"/assets/images/f2_background_graphic_pin.png"}
+          alt="웨이팅 존 배경"
+        />
       </BgImageWrapper>
 
       <GraphicWrapper>
@@ -212,12 +209,16 @@ const Features02 = () => {
 
         {/*  모바일 UI */}
         <MoImageWrapper>
-          <img className="f2_mo" src={f2_mo} alt="웨이팅 존 UI" />
+          <img
+            className="f2_mo"
+            src={"/assets/images/f2_mo.svg"}
+            alt="웨이팅 존 UI"
+          />
         </MoImageWrapper>
 
         {/* ✅ GIF 추가: MoImageWrapper 위에 배치 */}
         <GifWrapper>
-          <Gifimg src={f2_play} alt="GIF 애니메이션" />
+          <Gifimg src={"/assets/images/f2_play.gif"} alt="GIF 애니메이션" />
         </GifWrapper>
 
         {/* -------------------------------------------------- */}
@@ -225,13 +226,17 @@ const Features02 = () => {
         {/* 팝업 */}
         <PopWrapper>
           <div style={{ position: "relative", display: "flex" }}>
-            <img src={f2_test} alt="배경" style={{ width: "105%" }} />
+            <img
+              src={"/assets/images/f2_test.svg"}
+              alt="배경"
+              style={{ width: "105%" }}
+            />
           </div>
           <PopContentsWrapper>
             <IconWrapper>
               <div style={{ position: "relative" }}>
                 <img
-                  src={f2_icon}
+                  src={"/assets/images/f2_icon.svg"}
                   alt="아이콘"
                   style={{ width: "23px", height: "23px" }}
                 />
@@ -249,7 +254,11 @@ const Features02 = () => {
         {/*  왼쪽 말풍선 */}
         <OverlayItemLeft>
           <div style={{ position: "relative", display: "inline-block" }}>
-            <img src={f2_a_left} alt="배경" style={{ width: "100%" }} />
+            <img
+              src={"/assets/images/f2_a_left.svg"}
+              alt="배경"
+              style={{ width: "100%" }}
+            />
             <OverlayText>입장을 놓치면 어떡하지?</OverlayText>
           </div>
         </OverlayItemLeft>
@@ -257,7 +266,11 @@ const Features02 = () => {
         {/*  오른쪽 말풍선 */}
         <OverlayItemRight>
           <div style={{ position: "relative", display: "inline-block" }}>
-            <img src={f2_a_right} alt="배경" style={{ width: "100%" }} />
+            <img
+              src={"/assets/images/f2_a_right.svg"}
+              alt="배경"
+              style={{ width: "100%" }}
+            />
             <OverlayText>어디까지 가도 될까?</OverlayText>
           </div>
         </OverlayItemRight>

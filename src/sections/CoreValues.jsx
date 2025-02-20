@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import arrow from "../assets/images/c2_arrow.png";
-import background from "../assets/images/c2_background2.png";
-import line from "../assets/images/c2_textbox_line.png";
 
 // 스타일 컴포넌트
 const CoreContainer = styled.div`
-  background-image: url(${background});
+  background-image: url("/assets/images/c2_background2.png");
   background-size: cover;
   background-position: bottom;
   width: 100%;
@@ -28,15 +25,14 @@ const ContentWrapper = styled.div`
   z-index: 1000;
 `;
 
- const GradImg = styled.img`
-   position: absolute;
-   top: 0;
-   left: 0;
+const GradImg = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   /* background-size: center; */
   background-color: rgba(173, 173, 173, 0.9);
- 
- `;
+`;
 
 /* Top core value 덩어리 부분*/
 const TopCorevalue = styled.div`
@@ -68,7 +64,7 @@ const StyledText1 = styled.p`
 const StyledText2 = styled.p`
   color: #ffffff;
   font-size: 16px;
-  background-image: url(${line});
+  background-image: url("/assets/images/c2_textbox_line.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -93,7 +89,6 @@ const TopCoretext = styled.p`
   font-weight: bold;
   margin-top: -20px;
 `;
-
 
 /* Solution 덩어리 부분*/
 const Solution = styled.div`
@@ -120,7 +115,6 @@ const Solutiontext = styled.p`
   margin-top: -10px;
 `;
 
-
 const CoreValues = () => {
   const [textIndex, setTextIndex] = useState(0);
   const texts = [
@@ -141,11 +135,14 @@ const CoreValues = () => {
       <ContentWrapper>
         <TopCorevalue>
           <StyledText1>Core Values</StyledText1> <br />
-          <TopCoretext>"웨이팅 시간을 가치있고 즐거운 경험으로 만들기"</TopCoretext>
+          <TopCoretext>
+            "웨이팅 시간을 가치있고 즐거운 경험으로 만들기"
+          </TopCoretext>
         </TopCorevalue>
-
         <MiddleCorevalue>
-          <StyledText1>해결 방향 <br /></StyledText1>
+          <StyledText1>
+            해결 방향 <br />
+          </StyledText1>
           <StyledText3> 시간허비 · 활동 제약 </StyledText3> <br />
           <motion.div
             key={textIndex}
@@ -158,10 +155,12 @@ const CoreValues = () => {
             <StyledText2>{texts[textIndex]}</StyledText2>
           </motion.div>
         </MiddleCorevalue>
-
-        <img src={arrow} alt="arrow" style={{ marginTop: "30px" }} />{" "}
+        <img
+          src={"/assets/images/c2_arrow.png"}
+          alt="arrow"
+          style={{ marginTop: "30px" }}
+        />{" "}
         {/* margin-top 추가 */}
-
         <Solution>
           <StyledText1>Solution</StyledText1>
           <br />
@@ -172,7 +171,7 @@ const CoreValues = () => {
         </Solution>
       </ContentWrapper>
 
-      <GradImg src={background} alt="background" />
+      <GradImg src={"/assets/images/c2_background2.png"} alt="background" />
     </CoreContainer>
   );
 };

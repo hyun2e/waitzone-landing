@@ -4,18 +4,17 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // 📌 이미지 파일
-import f4Mo from "../assets/images/f4_mo.svg";
-import f4Card1 from "../assets/images/f4_card_1.svg";
-import f4Card2 from "../assets/images/f4_card_2.svg";
-import f4Card3 from "../assets/images/f4_card_3.svg";
-import f4Card4 from "../assets/images/f4_card_4.svg";
-import f4Line1 from "../assets/images/f4_line1.svg";
-import f4Line2 from "../assets/images/f4_line_2.svg";
-import f4Line3 from "../assets/images/f4_line3.svg";
-import f4Line4 from "../assets/images/f4_line_4.svg";
-import f4CardBig from "../assets/images/f4_card_big.svg";
-import f4Graphic from "../assets/images/f4_graphic.png";
-
+import f4Mo from "/assets/images/f4_mo.svg";
+import f4Card1 from "/assets/images/f4_card_1.svg";
+import f4Card2 from "/assets/images/f4_card_2.svg";
+import f4Card3 from "/assets/images/f4_card_3.svg";
+import f4Card4 from "/assets/images/f4_card_4.svg";
+import f4Line1 from "/assets/images/f4_line1.svg";
+import f4Line2 from "/assets/images/f4_line_2.svg";
+import f4Line3 from "/assets/images/f4_line3.svg";
+import f4Line4 from "/assets/images/f4_line_4.svg";
+import f4CardBig from "/assets/images/f4_card_big.svg";
+import f4Graphic from "/assets/images/f4_graphic.png";
 
 // ✅ 애니메이션 설정 (천천히 부드럽게 등장)
 const imageVariants = {
@@ -42,22 +41,21 @@ const textVariants = (delay) => ({
 
 const lineVariants2 = {
   hidden: { opacity: 0, y: 20 }, // 아래에서 시작
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 1, delay: 0.2, ease: "easeOut" }
-  }
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, delay: 0.2, ease: "easeOut" },
+  },
 };
 
 const lineVariants4 = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 1, delay: 0.4, ease: "easeOut" }
-  }
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, delay: 0.4, ease: "easeOut" },
+  },
 };
-
 
 const FeaturesContainer = styled.section`
   background-color: #6b5cfa;
@@ -111,7 +109,6 @@ const Header = styled.div`
     letter-spacing: -0.32px;
   }
 `;
-
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -392,23 +389,23 @@ const Features04 = () => {
         </Header>
 
         <ContentWrapper>
-            <MotionLineImage2 
-              src={f4Line2} 
-              alt="Design Line2" 
-              initial="hidden" 
-              whileInView="visible" 
-              variants={lineVariants2} 
-              viewport={{ once: false, amount: 0.2 }}
-            />
+          <MotionLineImage2
+            src={"/assets/images/f4_line_2.svg"}
+            alt="Design Line2"
+            initial="hidden"
+            whileInView="visible"
+            variants={lineVariants2}
+            viewport={{ once: false, amount: 0.2 }}
+          />
 
-            <MotionLineImage4 
-              src={f4Line4} 
-              alt="Design Line4" 
-              initial="hidden" 
-              whileInView="visible" 
-              variants={lineVariants4} 
-              viewport={{ once: false, amount: 0.2 }}
-            />
+          <MotionLineImage4
+            src={"/assets/images/f4_line_4.svg"}
+            alt="Design Line4"
+            initial="hidden"
+            whileInView="visible"
+            variants={lineVariants4}
+            viewport={{ once: false, amount: 0.2 }}
+          />
 
           {/* ✅ f4Mo 애니메이션 적용 */}
           <MotionImageWrapper
@@ -417,16 +414,27 @@ const Features04 = () => {
             animate={moInView ? "visible" : "hidden"} // ✅ inView 값으로 애니메이션 트리거
             variants={imageVariants}
           >
-            <img src={f4Mo} alt="Mobile UI" className="max-w-sm" />
+            <img
+              src={"/assets/images/f4_mo.svg"}
+              alt="Mobile UI"
+              className="max-w-sm"
+            />
           </MotionImageWrapper>
 
           <FloatingCardLeft>
-            <FeatureCard src={f4Card1} alt="Feature Card 1" />
+            <FeatureCard
+              src={"/assets/images/f4_card_1.svg"}
+              alt="Feature Card 1"
+            />
           </FloatingCardLeft>
 
           <CardsWrapper>
             <FloatingCardRight>
-              {[f4Card2, f4Card3, f4Card4].map((card, index) => (
+              {[
+                "/assets/images/f4_card_2.svg",
+                "/assets/images/f4_card_3.svg",
+                "/assets/images/f4_card_4.svg",
+              ].map((card, index) => (
                 <FeatureCard
                   key={index}
                   src={card}
@@ -437,14 +445,17 @@ const Features04 = () => {
           </CardsWrapper>
 
           {/* ✅ Line 1 (작은 라인, 카드 밑) */}
-          <LineImage1 src={f4Line1} alt="Design Line1" />
+          <LineImage1 src={"/assets/images/f4_line1.svg"} alt="Design Line1" />
 
           {/* ✅ Line 3 (큰 라인, 추천 카드 위) */}
-          <LineImage3 src={f4Line3} alt="Design Line3" />
+          <LineImage3 src={"/assets/images/f4_line3.svg"} alt="Design Line3" />
         </ContentWrapper>
 
         {/* 배경 그래픽 요소 */}
-        <StyledGraphicImage src={f4Graphic} alt="Graphic Illustration" />
+        <StyledGraphicImage
+          src={"/assets/images/f4_graphic.png"}
+          alt="Graphic Illustration"
+        />
 
         <MotionDescriptionBlock1
           ref={textRef1}
@@ -489,7 +500,7 @@ const Features04 = () => {
           variants={imageVariants}
         >
           <img
-            src={f4CardBig}
+            src={"/assets/images/f4_card_big.svg"}
             alt="추천 카드"
             className="max-w-md rounded-lg shadow-lg"
           />

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import LogoImg from "../assets/images/logo.svg";
 
 // ✅ NavBar 스타일 정의
 const Nav = styled.nav`
@@ -46,8 +45,7 @@ const NavLink = styled.button`
   /* intro- features 버튼 호버효과 */
   &:hover {
     color: #c5b8f4;
-    background-color: #6F47FF;
-   
+    background-color: #6f47ff;
   }
 
   &:focus {
@@ -83,7 +81,7 @@ const NavBar = ({ scrollToSection, refs }) => {
     <Nav>
       {/* ✅ 로고 */}
       <a href="/">
-        <Logo src={LogoImg} alt="WAITZONE 로고" />
+        <Logo src={"/assets/images/logo.svg"} alt="WAITZONE 로고" />
       </a>
 
       {/* ✅ 네비게이션 버튼 */}
