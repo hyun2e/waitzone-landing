@@ -81,6 +81,7 @@ const Feature03Container = styled.div`
   flex-shrink: 0;
   overflow: hidden;
   position: relative;
+  background-size: cover;
 `;
 
 // Text Section
@@ -155,7 +156,7 @@ const Line02 = styled.img`
 const Graphic = styled.img`
   position: absolute;
   top: 0px;
-  right: 79px;
+  right: 565px;
 `;
 
 // Right Section
