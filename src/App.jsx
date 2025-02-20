@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import NavBar from "./components/NavBar";
-import GlobalStyle from "./styles/GlobalStyles";
-import { theme } from "./styles/theme";
-import HeroSection from "./sections/HeroSection";
-import CoreValues from "./sections/CoreValues";
-import Features01 from "./sections/Features01";
-import Features02 from "./sections/Features02";
-import Features03 from "./sections/Features03";
-import Features04 from "./sections/Features04";
+import GlobalStyle from "./styles/GlobalStyles.jsx";
+import { theme } from "./styles/theme.js";
+import HeroSection from "./sections/HeroSection.jsx";
+import CoreValues from "./sections/CoreValues.jsx";
+import Features01 from "./sections/Features01.jsx";
+import Features02 from "./sections/Features02.jsx";
+import Features03 from "./sections/Features03.jsx";
+import Features04 from "./sections/Features04.jsx";
 import Footer from "./sections/Footer";
 
 const ContentContainer = styled.div`
