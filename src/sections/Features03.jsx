@@ -1,6 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+<<<<<<< HEAD
+=======
+import f3_graphic_pin from "../assets/images/f3_graphic_pin.png";
+import f3_line_1 from "../assets/images/f3_line_1.png";
+import f3_line_2 from "../assets/images/f3_line_2.png";
+import f3_line_3 from "../assets/images/f3_line_3.png";
+import f3_mo_1 from "../assets/images/f3_mo_1.svg";
+import f3_mo_2 from "../assets/images/f3_mo_2.svg";
+import f3_mo_s_1 from "../assets/images/f3_mo_s_l.svg";
+import f3_mo_s_2 from "../assets/images/f3_mo_s_r.svg";
+import f3_line_flow from "../assets/images/f3_line_flow.png";
+>>>>>>> 538102c (수정완료)
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
