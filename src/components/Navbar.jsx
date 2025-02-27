@@ -1,24 +1,55 @@
 import React from "react";
 import styled from "styled-components";
 
+// 섹션별 배경색과 글자색 설정
+const sectionStyles = {
+  hero: { bg: "rgba(62, 62, 62, 0.21)", text: "#ffffff" },
+  coreValues: { bg: "#123456", text: "#ffffff" },
+  features01: { bg: "#ff0000", text: "#000000" },
+  features02: { bg: "#00ff00", text: "#000000" },
+  features03: { bg: "#0000ff", text: "#ffffff" },
+  features04: { bg: "#f0f0f0", text: "#000000" },
+  footer: { bg: "#000000", text: "#ffffff" },
+};
+
+// 섹션별 로고 이미지 경로 설정 (예시)
+const sectionLogos = {
+  hero: "/assets/images/logo-hero.svg",
+  coreValues: "/assets/images/logo-coreValues.svg",
+  features01: "/assets/images/logo-features01.svg",
+  features02: "/assets/images/logo-features02.svg",
+  features03: "/assets/images/logo-features03.svg",
+  features04: "/assets/images/logo-features04.svg",
+  footer: "/assets/images/logo-footer.svg",
+};
+
 // ✅ NavBar 스타일 정의
 const Nav = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
   height: 66px;
-  background-color: rgba(62, 62, 62, 0.21);
+  background-color: ${({ currentSection }) =>
+    sectionStyles[currentSection]
+      ? sectionStyles[currentSection].bg
+      : "rgba(62, 62, 62, 0.21)"};
+  color: ${({ currentSection }) =>
+    sectionStyles[currentSection]
+      ? sectionStyles[currentSection].text
+      : "#ffffff"};
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
   z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
 `;
 
 // ✅ 로고 스타일
 const Logo = styled.img`
   height: 20px;
   cursor: pointer;
+  transition: opacity 0.3s ease;
 `;
 
 // ✅ 네비게이션 버튼 컨테이너
@@ -32,7 +63,7 @@ const NavButtons = styled.div`
 const NavLink = styled.button`
   background: none;
   border: none;
-  color: #ffffff;
+  color: inherit;
   font-family: "Pretendard", sans-serif;
   font-size: 16px;
   cursor: pointer;
@@ -42,7 +73,6 @@ const NavLink = styled.button`
   height: 40px;
   border-radius: 8px;
 
-  /* intro- features 버튼 호버효과 */
   &:hover {
     color: #c5b8f4;
     background-color: #6f47ff;
@@ -76,15 +106,17 @@ const AppButton = styled.a`
 `;
 
 // ✅ NavBar 컴포넌트
-const NavBar = ({ scrollToSection, refs }) => {
-  return (
-    <Nav>
-      {/* ✅ 로고 */}
-      <a href="/">
-        <Logo src={"/assets/images/logo.svg"} alt="WAITZONE 로고" />
-      </a>
+const NavBar = ({ scrollToSection, refs, currentSection }) => {
+  // 현재 섹션에 따른 로고 선택 (없으면 기본 로고 사용)
+  const logoSrc =
+    (currentSection && sectionLogos[currentSection]) ||
+    "/assets/images/logo.svg";
 
-      {/* ✅ 네비게이션 버튼 */}
+  return (
+    <Nav currentSection={currentSection}>
+      <a href="/">
+        <Logo src={logoSrc} alt="WAITZONE 로고" />
+      </a>
       <NavButtons>
         <NavLink onClick={() => scrollToSection(refs.heroRef)}>Intro</NavLink>
         <NavLink onClick={() => scrollToSection(refs.features01Ref)}>

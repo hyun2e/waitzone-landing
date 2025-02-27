@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import NavBar from "./components/Navbar.jsx";
 import GlobalStyle from "./styles/GlobalStyles.jsx";
@@ -13,12 +13,10 @@ import Footer from "./sections/Footer";
 
 const ContentContainer = styled.div`
   width: 100%;
-  //max-width: 800px;
-  //margin: auto;
 `;
 
 const App = () => {
-  // 🔥 스크롤 이동을 위한 ref 설정
+  // 섹션 ref 선언
   const heroRef = useRef(null);
   const coreValuesRef = useRef(null);
   const features01Ref = useRef(null);
@@ -27,10 +25,52 @@ const App = () => {
   const features04Ref = useRef(null);
   const footerRef = useRef(null);
 
-  // 📌 스크롤 이동 함수
+  // 현재 섹션 상태 관리 (초기값: hero)
+  const [currentSection, setCurrentSection] = useState("hero");
+
+  // 스크롤 이동 함수
   const scrollToSection = (ref) => {
     ref?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  // Intersection Observer를 이용해 현재 보이는 섹션 감지
+  useEffect(() => {
+    const options = {
+      root: null,
+      threshold: 0.5, // 섹션의 50% 이상이 보일 때
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const section = entry.target.getAttribute("data-section");
+          if (section) {
+            setCurrentSection(section);
+          }
+        }
+      });
+    }, options);
+
+    const refs = [
+      heroRef,
+      coreValuesRef,
+      features01Ref,
+      features02Ref,
+      features03Ref,
+      features04Ref,
+      footerRef,
+    ];
+
+    refs.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -47,27 +87,28 @@ const App = () => {
             features04Ref,
             footerRef,
           }}
+          currentSection={currentSection}
         />
         <ContentContainer>
-          <div ref={heroRef}>
+          <div ref={heroRef} data-section="hero">
             <HeroSection />
           </div>
-          <div ref={coreValuesRef}>
+          <div ref={coreValuesRef} data-section="coreValues">
             <CoreValues />
           </div>
-          <div ref={features01Ref}>
+          <div ref={features01Ref} data-section="features01">
             <Features01 />
           </div>
-          <div ref={features02Ref}>
+          <div ref={features02Ref} data-section="features02">
             <Features02 />
           </div>
-          <div ref={features03Ref}>
+          <div ref={features03Ref} data-section="features03">
             <Features03 />
           </div>
-          <div ref={features04Ref}>
+          <div ref={features04Ref} data-section="features04">
             <Features04 />
           </div>
-          <div ref={footerRef}>
+          <div ref={footerRef} data-section="footer">
             <Footer />
           </div>
         </ContentContainer>
