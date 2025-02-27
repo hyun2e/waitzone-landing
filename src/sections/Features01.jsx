@@ -144,7 +144,6 @@ const Phone = styled.img`
 const Icons = styled.div`
   position: absolute;
   bottom: 7%;
-  left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   width: 905px;
