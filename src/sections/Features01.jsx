@@ -25,8 +25,6 @@ const scrollingAnimation = {
 const Features01 = () => {
   return (
     <Feature01Container>
-      <GradientRight src={"/assets/images/f1_gradient_right.png"} />
-      <GradientLeft src={"/assets/images/f1_gradient_left.png"} />
 
       <Icons
         as={motion.img}
@@ -125,22 +123,6 @@ const Phone = styled.img`
   height: 460px;
   flex-shrink: 0;
   margin-top: 54px;
-  z-index: 2;
-`;
-
-const GradientRight = styled.img`
-  position: absolute;
-  width: 150px;
-  height: 670px;
-  left: 0px;
-  z-index: 2;
-`;
-
-const GradientLeft = styled.img`
-  position: absolute;
-  width: 150px;
-  height: 670px;
-  right: 0px;
   z-index: 2;
 `;
 
