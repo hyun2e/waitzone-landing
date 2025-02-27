@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
 
 // 스타일 컴포넌트
 const CoreContainer = styled.div`
@@ -30,22 +31,19 @@ const GradImg = styled.img`
   top: 0;
   left: 0;
   width: 100%;
-  /* background-size: center; */
   background-color: rgba(173, 173, 173, 0.9);
 `;
 
-/* Top core value 덩어리 부분*/
 const TopCorevalue = styled.div`
   color: #ffffff;
   font-size: 24px;
   font-weight: bold;
 `;
 
-/* 해결방향, 시간허비, 활동제약 덩어리 부분*/
 const MiddleCorevalue = styled.div`
   display: flex;
-  justify-content: center; /* 가로 중앙 정렬 */
-  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center;
+  align-items: center;
   max-width: 600px;
   position: relative;
   color: #7852ff;
@@ -54,13 +52,13 @@ const MiddleCorevalue = styled.div`
   text-align: center;
   margin-bottom: 30px;
 `;
-/* Solution 텍스트 해결방향 텍스트 core value 텍스트*/
+
 const StyledText1 = styled.p`
   color: #aca7ff;
   text-align: center;
   font-size: 16px;
 `;
-/* 다양성, 개인화, 가용성 움직이는 애니매이션 텍스트*/
+
 const StyledText2 = styled.p`
   color: #ffffff;
   font-size: 16px;
@@ -77,20 +75,17 @@ const StyledText2 = styled.p`
   z-index: 900;
 `;
 
-/* 시간허비, 활동제약 텍스트 */
 const StyledText3 = styled.p`
   font-size: 20pt;
   font-weight: bold;
 `;
 
-/* 웨이팅 시간을 가치있고 즐거운 경험으로 만들기 */
 const TopCoretext = styled.p`
   font-size: 20pt;
   font-weight: bold;
   margin-top: -20px;
 `;
 
-/* Solution 덩어리 부분*/
 const Solution = styled.div`
   display: flex;
   max-width: 600px;
@@ -109,7 +104,6 @@ const Solution = styled.div`
   border-radius: 20px;
 `;
 
-/* 대기 시간을 반영해 zone을 표시하고, 시간내에 가능한 활동을 추천해드려요 */
 const Solutiontext = styled.p`
   font-size: 13pt;
   margin-top: -10px;
@@ -130,45 +124,82 @@ const CoreValues = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // ✅ useInView 적용 (스크롤 시 등장)
+  const { ref: topRef, inView: topInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+  const { ref: middleRef, inView: middleInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+  const { ref: solutionRef, inView: solutionInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+
   return (
     <CoreContainer>
       <ContentWrapper>
-        <TopCorevalue>
-          <StyledText1>Core Values</StyledText1> <br />
-          <TopCoretext>
-            "웨이팅 시간을 가치있고 즐거운 경험으로 만들기"
-          </TopCoretext>
-        </TopCorevalue>
-        <MiddleCorevalue>
-          <StyledText1>
-            해결 방향 <br />
-          </StyledText1>
-          <StyledText3> 시간허비 · 활동 제약 </StyledText3> <br />
-          <motion.div
-            key={textIndex}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }} // ease 추가
-            style={{ position: "relative" }} // absolute 제거
-          >
-            <StyledText2>{texts[textIndex]}</StyledText2>
-          </motion.div>
-        </MiddleCorevalue>
+        {/* ✅ Core Values 제목 애니메이션 적용 */}
+        <motion.div
+          ref={topRef}
+          initial="hidden"
+          animate={topInView ? "visible" : "hidden"}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+          }}
+        >
+          <TopCorevalue>
+            <StyledText1>Core Values</StyledText1> <br />
+            <TopCoretext>
+              "웨이팅 시간을 가치있고 즐거운 경험으로 만들기"
+            </TopCoretext>
+          </TopCorevalue>
+        </motion.div>
+
+        {/* ✅ 해결 방향 애니메이션 적용 */}
+        <motion.div
+          ref={middleRef}
+          initial="hidden"
+          animate={middleInView ? "visible" : "hidden"}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", delay: 0.3 } },
+          }}
+        >
+          <MiddleCorevalue>
+            <StyledText1>해결 방향</StyledText1>
+            <StyledText3>시간허비 · 활동 제약</StyledText3>
+            <motion.div
+              key={textIndex}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              style={{ position: "relative" }}
+            >
+              <StyledText2>{texts[textIndex]}</StyledText2>
+            </motion.div>
+          </MiddleCorevalue>
+        </motion.div>
+
         <img
           src={"/assets/images/c2_arrow.png"}
           alt="arrow"
           style={{ marginTop: "30px" }}
-        />{" "}
-        {/* margin-top 추가 */}
-        <Solution>
-          <StyledText1>Solution</StyledText1>
-          <br />
-          <Solutiontext>
-            대기 시간을 반영해 Zone을 표시하고, 시간 내에 가능한 활동을 추천해
-            드려요.
-          </Solutiontext>
-        </Solution>
+        />
+
+        {/* ✅ Solution 애니메이션 적용 */}
+        <motion.div
+          ref={solutionRef}
+          initial="hidden"
+          animate={solutionInView ? "visible" : "hidden"}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", delay: 0.5 } },
+          }}
+        >
+          <Solution>
+            <StyledText1>Solution</StyledText1>
+            <br />
+            <Solutiontext>
+              대기 시간을 반영해 Zone을 표시하고, 시간 내에 가능한 활동을 추천해 드려요.
+            </Solutiontext>
+          </Solution>
+        </motion.div>
       </ContentWrapper>
 
       <GradImg src={"/assets/images/c2_background2.png"} alt="background" />
