@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 // 📌 이미지 파일
 import background from "/assets/images/1_background_all.png";
-import mock from "/assets/images/1_background_phonemock.png";
+import mock from "/assets/images/1_background_phonemock.svg";
 
 // ✅ 애니메이션 설정 (제목, 설명, 버튼, 안내문 순차적 등장)
 const textVariants = {
@@ -175,7 +175,7 @@ const MotionHeroimg = motion(styled.div`
   position: relative;
   top: 270px;
   bottom: 20px;
-  left: 210px;
+  left: 250px;
 `);
 
 const HeroSection = () => {

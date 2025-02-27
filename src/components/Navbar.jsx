@@ -120,16 +120,16 @@ const NavBar = ({ scrollToSection, refs, currentSection }) => {
       <NavButtons>
         <NavLink onClick={() => scrollToSection(refs.heroRef)}>Intro</NavLink>
         <NavLink onClick={() => scrollToSection(refs.features01Ref)}>
-          Features01
+          웨이팅신청존
         </NavLink>
         <NavLink onClick={() => scrollToSection(refs.features02Ref)}>
-          Features02
+          웨이팅존
         </NavLink>
         <NavLink onClick={() => scrollToSection(refs.features03Ref)}>
-          Features03
+          장소추천
         </NavLink>
         <NavLink onClick={() => scrollToSection(refs.features04Ref)}>
-          Features04
+          맞춤큐레이션
         </NavLink>
         <AppButton
           href="https://www.figma.com/proto/ds0Lh5X8LrFvX6g2ab4o1u/2%EC%A1%B0?node-id=3538-39212&t=Jo6B6Je3jo4cl34y-1"
