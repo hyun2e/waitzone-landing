@@ -1,7 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
+// 📌 애니메이션 설정
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
   visible: (i) => ({
@@ -11,7 +13,7 @@ const fadeInUp = {
   }),
 };
 
-// keyframes 유틸리티로 애니메이션 정의
+// 📌 아이콘 배경 스크롤 애니메이션
 const scrollIconsAnimation = keyframes`
   from {
     background-position: 0 0;
@@ -22,17 +24,29 @@ const scrollIconsAnimation = keyframes`
 `;
 
 const Features01 = () => {
+  // ✅ useInView 적용
+  const { ref: sectionRef, inView: sectionInView } = useInView({
+    triggerOnce: false, // 스크롤할 때마다 실행
+    threshold: 0.2, // 20% 이상 보이면 트리거
+  });
+
   return (
-    <Feature01Container>
+    <Feature01Container ref={sectionRef}>
       <Feature01Content>
-        <Icons />
+        <Icons
+          as={motion.h4}
+          custom={0}
+          variants={fadeInUp}
+          initial="hidden"
+          animate={sectionInView ? "visible" : "hidden"}
+        />
         <Content>
           <Title
             as={motion.h4}
-            custom={0}
+            custom={1}
             variants={fadeInUp}
             initial="hidden"
-            animate="visible"
+            animate={sectionInView ? "visible" : "hidden"}
           >
             Features 01
           </Title>
@@ -41,7 +55,7 @@ const Features01 = () => {
             custom={1}
             variants={fadeInUp}
             initial="hidden"
-            animate="visible"
+            animate={sectionInView ? "visible" : "hidden"}
           >
             웨이팅 신청 존에서 빠르게 웨이팅
           </SubTitle>
@@ -50,7 +64,7 @@ const Features01 = () => {
             custom={2}
             variants={fadeInUp}
             initial="hidden"
-            animate="visible"
+            animate={sectionInView ? "visible" : "hidden"}
           >
             장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.
           </Description>
@@ -60,7 +74,7 @@ const Features01 = () => {
             custom={3}
             variants={fadeInUp}
             initial="hidden"
-            animate="visible"
+            animate={sectionInView ? "visible" : "hidden"}
           />
         </Content>
       </Feature01Content>
@@ -70,7 +84,7 @@ const Features01 = () => {
 
 export default Features01;
 
-// Style
+// ✅ Styled Components
 const Feature01Container = styled.div`
   position: relative;
   width: 100%;
