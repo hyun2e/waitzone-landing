@@ -94,21 +94,27 @@ const NavLink = styled.button`
   }
 `;
 
-// ✅ 버튼 스타일 (105x40px 고정)
+// ✅ 버튼 스타일 (105x40px 고정) - 현재 섹션에 따른 색상을 props로 적용
 const AppButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 105px;
   height: 40px;
-  background-color: #171517;
-  color: #ffffff;
+  background-color: ${({ currentSection }) =>
+    sectionButtonStlye[currentSection]
+      ? sectionButtonStlye[currentSection].bg
+      : "#171517"};
+  color: ${({ currentSection }) =>
+    sectionButtonStlye[currentSection]
+      ? sectionButtonStlye[currentSection].text
+      : "#ffffff"};
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px;
   text-align: center;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 
   &:hover {
     background-color: #c5b8f4;
@@ -143,6 +149,7 @@ const NavBar = ({ scrollToSection, refs, currentSection }) => {
           맞춤큐레이션
         </NavLink>
         <AppButton
+          currentSection={currentSection}
           href="https://www.figma.com/proto/ds0Lh5X8LrFvX6g2ab4o1u/2%EC%A1%B0?node-id=3538-39212&t=Jo6B6Je3jo4cl34y-1"
           target="_blank"
         >

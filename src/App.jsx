@@ -16,7 +16,7 @@ const ContentContainer = styled.div`
 `;
 
 const App = () => {
-  // 섹션 ref 선언
+  // 각 섹션에 대한 ref 선언
   const heroRef = useRef(null);
   const coreValuesRef = useRef(null);
   const features01Ref = useRef(null);
@@ -25,7 +25,7 @@ const App = () => {
   const features04Ref = useRef(null);
   const footerRef = useRef(null);
 
-  // 현재 섹션 상태 관리 (초기값: hero)
+  // 현재 보이는 섹션 상태 관리 (초기값: hero)
   const [currentSection, setCurrentSection] = useState("hero");
 
   // 스크롤 이동 함수
@@ -33,15 +33,18 @@ const App = () => {
     ref?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  // Intersection Observer를 이용해 현재 보이는 섹션 감지
+  // Intersection Observer를 사용해 섹션이 화면 맨 위에 도달할 때 currentSection 업데이트
   useEffect(() => {
     const options = {
       root: null,
-      threshold: 0.5, // 섹션의 50% 이상이 보일 때
+      threshold: 0, // 경계선에 닿을 때 처리
+      // rootMargin을 활용해 섹션의 하단이 뷰포트 상단에 닿을 때 관찰하도록 설정
+      rootMargin: "0px 0px -100% 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
+        // entry가 관찰되고 있으면 해당 섹션을 currentSection으로 업데이트
         if (entry.isIntersecting) {
           const section = entry.target.getAttribute("data-section");
           if (section) {
