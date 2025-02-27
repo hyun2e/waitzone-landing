@@ -3,24 +3,35 @@ import styled from "styled-components";
 
 // 섹션별 배경색과 글자색 설정
 const sectionStyles = {
-  hero: { bg: "rgba(62, 62, 62, 0.21)", text: "#ffffff" },
-  coreValues: { bg: "#123456", text: "#ffffff" },
-  features01: { bg: "#ff0000", text: "#000000" },
-  features02: { bg: "#00ff00", text: "#000000" },
-  features03: { bg: "#0000ff", text: "#ffffff" },
-  features04: { bg: "#f0f0f0", text: "#000000" },
-  footer: { bg: "#000000", text: "#ffffff" },
+  hero: { text: "#ffffff" },
+  coreValues: { bg: "#000000", text: "#ffffff" },
+  features01: { bg: "#171517", text: "#ffffff" },
+  features02: { bg: "#6f47ff", text: "#ffffff" },
+  features03: { bg: "#262626", text: "#ffffff" },
+  features04: { bg: "#6b5cfa", text: "#ffffff" },
+  footer: { bg: "#6b5cfa", text: "#ffffff" },
+};
+
+// 섹션별 체험하기 버튼 색 설정
+const sectionButtonStlye = {
+  hero: { bg: "#000000", text: "#ffffff" },
+  coreValues: { bg: "#6f47ff", text: "#ffffff" },
+  features01: { bg: "#6f47ff", text: "#ffffff" },
+  features02: { bg: "#000000", text: "#ffffff" },
+  features03: { bg: "#6f47ff", text: "#ffffff" },
+  features04: { bg: "#6b5cfa", text: "#ffffff" },
+  footer: { bg: "#6b5cfa", text: "#ffffff" },
 };
 
 // 섹션별 로고 이미지 경로 설정 (예시)
 const sectionLogos = {
-  hero: "/assets/images/logo-hero.svg",
-  coreValues: "/assets/images/logo-coreValues.svg",
-  features01: "/assets/images/logo-features01.svg",
-  features02: "/assets/images/logo-features02.svg",
-  features03: "/assets/images/logo-features03.svg",
-  features04: "/assets/images/logo-features04.svg",
-  footer: "/assets/images/logo-footer.svg",
+  hero: "/assets/images/logo.svg",
+  coreValues: "/assets/images/logo.svg",
+  features01: "/assets/images/logo.svg",
+  features02: "/assets/images/logo.svg",
+  features03: "/assets/images/logo.svg",
+  features04: "/assets/images/logo.svg",
+  footer: "/assets/images/logo.svg",
 };
 
 // ✅ NavBar 스타일 정의
