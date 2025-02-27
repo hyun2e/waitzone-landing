@@ -19,7 +19,7 @@ const sectionButtonStlye = {
   features01: { bg: "#6f47ff", text: "#ffffff" },
   features02: { bg: "#000000", text: "#ffffff" },
   features03: { bg: "#6f47ff", text: "#ffffff" },
-  features04: { bg: "#6b5cfa", text: "#ffffff" },
+  features04: { bg: "#000000", text: "#ffffff" },
   footer: { bg: "#6b5cfa", text: "#ffffff" },
 };
 
@@ -135,7 +135,7 @@ const NavBar = ({ scrollToSection, refs, currentSection }) => {
         <Logo src={logoSrc} alt="WAITZONE 로고" />
       </a>
       <NavButtons>
-        <NavLink onClick={() => scrollToSection(refs.heroRef)}>Intro</NavLink>
+        <NavLink onClick={() => scrollToSection(refs.heroRef)}>INTRO</NavLink>
         <NavLink onClick={() => scrollToSection(refs.features01Ref)}>
           웨이팅신청존
         </NavLink>

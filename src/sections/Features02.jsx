@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 // 폰트 스타일's 시작 --------------------------------------
-
 const Title = styled.h4`
   font-size: 16px;
   font-weight: 700;
   color: #ffffff;
   line-height: 140%;
+  letter-spacing: 0.2px;
 `;
 
 const SubTitle = styled.h2`
@@ -17,14 +18,14 @@ const SubTitle = styled.h2`
   margin-top: 5px;
   margin-bottom: 5px;
   line-height: 130%;
-  letter-spacing: -0.48px;
+  letter-spacing: 0.1px;
 `;
 
 const Description = styled.p`
   font-size: 16px;
   font-weight: 200;
   color: #ffffff;
-  line-height: 140%;
+  line-height: 130%;
   letter-spacing: -0.32px;
 `;
 
@@ -101,11 +102,11 @@ const BgImageWrapper = styled.div`
 
 const GifWrapper = styled.div`
   position: absolute;
-  top: 385px; /* 원하는 위치로 조정 가능 */
+  top: 385px;
   left: 50%;
-  transform: translate(-50%, -50%); /* 중앙 정렬 */
-  z-index: 3; /* f2_mo보다 높은 값으로 설정 */
-  width: 167px; /* GIF 크기 조정 */
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 167px;
   height: auto;
 `;
 
@@ -113,8 +114,42 @@ const Gifimg = styled.img`
   width: 100%;
 `;
 
-// 말풍선_이미지 --------------------------------------
-const OverlayItemLeft = styled.div`
+// ======== (1) PopWrapper를 motion.div로 변경 (모션 주기)
+const PopWrapper = styled(motion.div)`
+  display: flex;
+  position: absolute;
+  top: 225px;
+  right: 85px;
+  z-index: 4;
+  width: 300px;
+  background-image: url(f2_test);
+  background-size: cover;
+  background-position: center;
+`;
+
+// 팝업 내부용
+const PopContentsWrapper = styled.div`
+  gap: 9px;
+  display: flex;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const PopTextWrapper = styled.div`
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+`;
+
+// ======== (2) OverlayItemLeft -> motion.div
+const OverlayItemLeft = styled(motion.div)`
   position: absolute;
   top: 337px;
   left: 116px;
@@ -122,7 +157,8 @@ const OverlayItemLeft = styled.div`
   z-index: 3;
 `;
 
-const OverlayItemRight = styled.div`
+// ======== (3) OverlayItemRight -> motion.div
+const OverlayItemRight = styled(motion.div)`
   position: absolute;
   top: 426px;
   right: 141px;
@@ -136,53 +172,18 @@ const OverlayText = styled.div`
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%; /* 말풍선 크기에 맞게 */
-  height: 100%; /*  부모 요소 기준으로 높이 맞추기 */
-  color: ${(props) => props.theme.mainColors.primary300}; /* 미리 지정된 컬러 */
-  font-size: ${(props) =>
-    props.theme.fontSizes.fontSizes.base}; /* 미리 지정된 폰트 크기 */
+  width: 100%;
+  height: 100%;
+  color: ${(props) => props.theme.mainColors.primary300};
+  font-size: ${(props) => props.theme.fontSizes.fontSizes.base};
   font-weight: 600;
   text-align: center;
   display: flex;
-  justify-content: center; /* 가로 중앙 정렬 */
-  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center;
+  align-items: center;
 `;
 
-// 팝업_시작 --------------------------------------
-
-const PopWrapper = styled.div`
-  display: flex;
-  position: absolute;
-  top: 225px;
-  right: 85px;
-  z-index: 4;
-  width: 300px;
-  background-image: url(f2_test);
-  background-size: cover;
-  background-position: center;
-`;
-
-const PopContentsWrapper = styled.div`
-  gap: 9px;
-  display: flex;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* 완전한 중앙 정렬 */
-`;
-
-const PopTextWrapper = styled.div`
-  width: max-content; /* 글씨가 한 줄로 나올 수 있도록 가로 크기 설정 */
-  display: flex; /* 내부 요소들이 한 줄로 정렬되도록 설정 */
-  flex-direction: column; /* 여러 줄이 필요할 경우 정렬 유지 */
-  white-space: nowrap; /* 글자가 강제로 세로로 흐르는 것 방지 */
-`;
-
-const IconWrapper = styled.div`
-  display: flex;
-`;
-
-// 리턴문 시작 --------------------------------------------------
+// ------------------------------------------
 
 const Features02 = () => {
   return (
@@ -199,10 +200,10 @@ const Features02 = () => {
       <GraphicWrapper>
         {/*  섹션 제목 */}
         <FeatureTitleContainer>
-          <Title>Features02</Title>
-          <SubTitle>웨이팅 존으로 안전하게 웨이팅하기</SubTitle>
+          <Title>Features 02</Title>
+          <SubTitle>웨이팅 존으로 안전한 웨이팅하세요</SubTitle>
           <Description>
-            웨이팅 시간 내 도보로 이동 가능한 존이에요.
+            웨이팅 시간 동안 도보로 이동 가능한 존이에요.
             <br /> 잔여 대기 시간에 따라 반경이 실시간으로 줄어듭니다.
           </Description>
         </FeatureTitleContainer>
@@ -216,15 +217,28 @@ const Features02 = () => {
           />
         </MoImageWrapper>
 
-        {/* ✅ GIF 추가: MoImageWrapper 위에 배치 */}
+        {/* ✅ GIF 추가 */}
         <GifWrapper>
           <Gifimg src={"/assets/images/f2_play.gif"} alt="GIF 애니메이션" />
         </GifWrapper>
 
-        {/* -------------------------------------------------- */}
-
-        {/* 팝업 */}
-        <PopWrapper>
+        {/* 
+          =====================
+            (1) PopWrapper 모션
+          =====================
+          "스크롤로 화면에 들어오면" opacity:1/scale:1
+          => PopWrapper가 제일 먼저 등장 
+        */}
+        <PopWrapper
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{
+            duration: 1.5,
+            delay: 0, // 등장 순서: 가장 먼저
+            ease: [0, 0.51, 0.2, 1.1],
+          }}
+        >
           <div style={{ position: "relative", display: "flex" }}>
             <img
               src={"/assets/images/f2_test.svg"}
@@ -249,10 +263,22 @@ const Features02 = () => {
           </PopContentsWrapper>
         </PopWrapper>
 
-        {/* -------------------------------------------------- */}
-
-        {/*  왼쪽 말풍선 */}
-        <OverlayItemLeft>
+        {/* 
+          =====================
+            (2) OverlayItemLeft
+          =====================
+          => 두 번째로 등장
+        */}
+        <OverlayItemLeft
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5, // PopWrapper 다음(0.5초 후) 등장
+            ease: [0, 0.51, 0.2, 1.01],
+          }}
+        >
           <div style={{ position: "relative", display: "inline-block" }}>
             <img
               src={"/assets/images/f2_a_left.svg"}
@@ -263,8 +289,22 @@ const Features02 = () => {
           </div>
         </OverlayItemLeft>
 
-        {/*  오른쪽 말풍선 */}
-        <OverlayItemRight>
+        {/* 
+          =====================
+            (3) OverlayItemRight
+          =====================
+          => 세 번째로 등장
+        */}
+        <OverlayItemRight
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{
+            duration: 1,
+            delay: 0.3, // PopWrapper→Left 다음(1초 후) 등장
+            ease: [0, 0.51, 0.2, 1.01],
+          }}
+        >
           <div style={{ position: "relative", display: "inline-block" }}>
             <img
               src={"/assets/images/f2_a_right.svg"}
