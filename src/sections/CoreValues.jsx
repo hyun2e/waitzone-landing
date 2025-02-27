@@ -22,7 +22,7 @@ const ContentWrapper = styled.div`
   position: relative;
   width: 100%;
   min-height: 560px;
-  z-index: 1000;
+  z-index: 900;
 `;
 
 const GradImg = styled.img`
@@ -74,7 +74,7 @@ const StyledText2 = styled.p`
   height: 48px;
   line-height: 48px;
   min-height: 48px;
-  z-index: 1000;
+  z-index: 900;
 `;
 
 /* 시간허비, 활동제약 텍스트 */
