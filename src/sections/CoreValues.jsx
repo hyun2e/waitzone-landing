@@ -135,8 +135,12 @@ const CoreValues = () => {
 
   // useInView 적용
   const { ref: topRef, inView: topInView } = useInView({ threshold: 0.2 });
-  const { ref: middleRef, inView: middleInView } = useInView({ threshold: 0.2 });
-  const { ref: solutionRef, inView: solutionInView } = useInView({ threshold: 0.2 });
+  const { ref: middleRef, inView: middleInView } = useInView({
+    threshold: 0.2,
+  });
+  const { ref: solutionRef, inView: solutionInView } = useInView({
+    threshold: 0.2,
+  });
   const { ref: arrowRef, inView: arrowInView } = useInView({ threshold: 0.2 });
 
   return (
@@ -189,7 +193,7 @@ const CoreValues = () => {
           custom={3}
         >
           <ArrowImage
-            src="/assets/images/c2_Arrow.png"
+            src="/assets/images/c2_arrow.png"
             alt="Arrow"
             style={{ opacity: arrowInView ? 1 : 0 }}
           />
@@ -206,7 +210,8 @@ const CoreValues = () => {
             <StyledText1>Solution</StyledText1>
             <br />
             <Solutiontext>
-              대기 시간을 반영해 Zone을 표시하고, 시간 내에 가능한 활동을 추천해 드려요.
+              대기 시간을 반영해 Zone을 표시하고, 시간 내에 가능한 활동을 추천해
+              드려요.
             </Solutiontext>
           </Solution>
         </motion.div>
