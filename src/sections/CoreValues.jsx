@@ -102,9 +102,8 @@ const Solutiontext = styled.p`
 `;
 
 const ArrowImage = styled.img`
-  width: 50px;
-  height: 50px;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   opacity: 0;
   transition: opacity 1s ease-out;
 `;
