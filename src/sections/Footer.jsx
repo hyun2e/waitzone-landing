@@ -29,7 +29,7 @@ const Footer = () => {
         </CenterSection>
 
         <ConnectBox>
-          <ConnectTitle>Connect TBWIN</ConnectTitle>
+          <ConnectTitle>Connect 2BWIN</ConnectTitle>
           <ContactList>
             <ContactItem>이지혜 [jhw_d@naver.com]</ContactItem>
             <ContactItem>남윤경 [yungyeong6596@daum.net]</ContactItem>

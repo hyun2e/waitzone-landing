@@ -114,7 +114,7 @@ const fadeInVariants = {
   visible: (custom) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 1, ease: "easeOut", delay: custom * 0.3 },
+    transition: { duration: 0.6, ease: "easeOut", delay: custom * 0.2 },
   }),
 };
 
