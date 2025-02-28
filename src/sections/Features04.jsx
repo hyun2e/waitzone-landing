@@ -23,8 +23,8 @@ const imageVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1.5, // 📌 천천히 등장
-      ease: "easeInOut",
+      duration: 1, // 📌 천천히 등장
+      ease: "easeOut",
     },
   },
 };

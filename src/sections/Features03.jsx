@@ -16,7 +16,7 @@ const Features03 = () => {
   // useInView 사용 (스크롤 시 등장)
   const { ref: sectionRef, inView: sectionInView } = useInView({
     triggerOnce: false, // 한 번만 애니메이션 실행
-    threshold: 0.2, // 화면에서 20% 보일 때 애니메이션 실행
+    threshold: 0.1, // 화면에서 20% 보일 때 애니메이션 실행
   });
 
   return (

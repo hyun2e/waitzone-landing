@@ -45,7 +45,7 @@ const slideVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 1.2, ease: "easeInOut" },
+    transition: { duration: 1, ease: "easeOut" },
   },
 };
 
