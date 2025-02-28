@@ -26,14 +26,6 @@ const ContentWrapper = styled.div`
   z-index: 900;
 `;
 
-const GradImg = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(173, 173, 173, 0.9);
-`;
-
 const TopCorevalue = styled.div`
   color: #ffffff;
   font-size: 24px;
@@ -109,6 +101,23 @@ const Solutiontext = styled.p`
   margin-top: -10px;
 `;
 
+const ArrowImage = styled.img`
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+`;
+
+const fadeInVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (custom) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, ease: "easeOut", delay: custom * 0.3 },
+  }),
+};
+
 const CoreValues = () => {
   const [textIndex, setTextIndex] = useState(0);
   const texts = [
@@ -124,23 +133,21 @@ const CoreValues = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ useInView 적용 (스크롤 시 등장)
-  const { ref: topRef, inView: topInView } = useInView({ triggerOnce: false, threshold: 0.2 });
-  const { ref: middleRef, inView: middleInView } = useInView({ triggerOnce: false, threshold: 0.2 });
-  const { ref: solutionRef, inView: solutionInView } = useInView({ triggerOnce: false, threshold: 0.2 });
+  // useInView 적용
+  const { ref: topRef, inView: topInView } = useInView({ threshold: 0.2 });
+  const { ref: middleRef, inView: middleInView } = useInView({ threshold: 0.2 });
+  const { ref: solutionRef, inView: solutionInView } = useInView({ threshold: 0.2 });
+  const { ref: arrowRef, inView: arrowInView } = useInView({ threshold: 0.2 });
 
   return (
     <CoreContainer>
       <ContentWrapper>
-        {/* ✅ Core Values 제목 애니메이션 적용 */}
         <motion.div
           ref={topRef}
           initial="hidden"
           animate={topInView ? "visible" : "hidden"}
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
-          }}
+          variants={fadeInVariants}
+          custom={1}
         >
           <TopCorevalue>
             <StyledText1>Core Values</StyledText1> <br />
@@ -150,15 +157,12 @@ const CoreValues = () => {
           </TopCorevalue>
         </motion.div>
 
-        {/* ✅ 해결 방향 애니메이션 적용 */}
         <motion.div
           ref={middleRef}
           initial="hidden"
           animate={middleInView ? "visible" : "hidden"}
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", delay: 0.3 } },
-          }}
+          variants={fadeInVariants}
+          custom={2}
         >
           <MiddleCorevalue>
             <StyledText1>해결 방향</StyledText1>
@@ -176,21 +180,27 @@ const CoreValues = () => {
           </MiddleCorevalue>
         </motion.div>
 
-        <img
-          src={"/assets/images/c2_arrow.png"}
-          alt="arrow"
-          style={{ marginTop: "30px" }}
-        />
+        {/* 화살표 애니메이션 */}
+        <motion.div
+          ref={arrowRef}
+          initial="hidden"
+          animate={arrowInView ? "visible" : "hidden"}
+          variants={fadeInVariants}
+          custom={3}
+        >
+          <ArrowImage
+            src="/assets/images/c2_Arrow.png"
+            alt="Arrow"
+            style={{ opacity: arrowInView ? 1 : 0 }}
+          />
+        </motion.div>
 
-        {/* ✅ Solution 애니메이션 적용 */}
         <motion.div
           ref={solutionRef}
           initial="hidden"
           animate={solutionInView ? "visible" : "hidden"}
-          variants={{
-            hidden: { opacity: 0, y: 30 },
-            visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", delay: 0.5 } },
-          }}
+          variants={fadeInVariants}
+          custom={4}
         >
           <Solution>
             <StyledText1>Solution</StyledText1>
@@ -201,8 +211,6 @@ const CoreValues = () => {
           </Solution>
         </motion.div>
       </ContentWrapper>
-
-      <GradImg src={"/assets/images/c2_background2.png"} alt="background" />
     </CoreContainer>
   );
 };

@@ -35,7 +35,7 @@ const Features01 = () => {
       <Feature01Content>
         <Icons
           as={motion.h4}
-          custom={0}
+          custom={3}
           variants={fadeInUp}
           initial="hidden"
           animate={sectionInView ? "visible" : "hidden"}
@@ -43,7 +43,7 @@ const Features01 = () => {
         <Content>
           <Title
             as={motion.h4}
-            custom={1}
+            custom={0}
             variants={fadeInUp}
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}
@@ -71,7 +71,7 @@ const Features01 = () => {
           <Phone
             as={motion.img}
             src={"/assets/images/f1_mo.svg"}
-            custom={3}
+            custom={0}
             variants={fadeInUp}
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}
