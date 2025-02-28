@@ -66,7 +66,7 @@ const Features01 = () => {
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}
           >
-            장소에 도착하지 않고 빠르게 웨이팅을 신청할 수 있어요.
+            장소에 도착하지 않아도 빠르게 웨이팅을 신청할 수 있어요.
           </Description>
           <Phone
             as={motion.img}
@@ -88,7 +88,7 @@ export default Features01;
 const Feature01Container = styled.div`
   position: relative;
   width: 100%;
-  height: 670px;
+  height: 780px;
   background: #171517;
 `;
 
@@ -110,19 +110,19 @@ const Content = styled.div`
 
 const Title = styled.h4`
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 700;
   color: #aca7ff;
   line-height: 140%;
-  letter-spacing: -0.32px;
-  margin-top: 70px;
+  letter-spacing: -0.12px;
+  margin-top: 84px;
 `;
 
 const SubTitle = styled.h2`
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   margin-top: 5px;
   line-height: 140%;
-  letter-spacing: -0.48px;
+  letter-spacing: -0.28px;
 `;
 
 const Description = styled.p`
@@ -135,9 +135,9 @@ const Description = styled.p`
 
 const Phone = styled.img`
   width: 283px;
-  height: 460px;
+  height: 509px;
   flex-shrink: 0;
-  margin-top: 54px;
+  margin-top: 98px;
   z-index: 2;
 `;
 

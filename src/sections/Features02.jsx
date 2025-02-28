@@ -1,6 +1,16 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
+  }),
+};
 
 // 폰트 스타일's 시작 --------------------------------------
 const Title = styled.h4`
@@ -51,7 +61,7 @@ const PopText = styled.p`
 const FeatureContainer = styled.div`
   background-color: ${(props) => props.theme.mainColors.primary300};
   width: 100%;
-  height: 673px;
+  height: 780px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,8 +82,8 @@ const FeatureTitleContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 70px;
-  margin-bottom: 54px;
+  margin-top: 84px;
+  margin-bottom: 30px;
   z-index: 1;
 `;
 
@@ -102,8 +112,8 @@ const BgImageWrapper = styled.div`
 
 const GifWrapper = styled.div`
   position: absolute;
-  top: 385px;
-  left: 50%;
+  top: 431px;
+  left: 46.7%;
   transform: translate(-50%, -50%);
   z-index: 3;
   width: 167px;
@@ -111,15 +121,15 @@ const GifWrapper = styled.div`
 `;
 
 const Gifimg = styled.img`
-  width: 100%;
+  width: 132%;
 `;
 
 // ======== (1) PopWrapper를 motion.div로 변경 (모션 주기)
 const PopWrapper = styled(motion.div)`
   display: flex;
   position: absolute;
-  top: 225px;
-  right: 85px;
+  top: 243px;
+  right: 72px;
   z-index: 4;
   width: 300px;
   background-image: url(f2_test);
@@ -151,8 +161,8 @@ const IconWrapper = styled.div`
 // ======== (2) OverlayItemLeft -> motion.div
 const OverlayItemLeft = styled(motion.div)`
   position: absolute;
-  top: 337px;
-  left: 116px;
+  top: 397px;
+  left: 93px;
   pointer-events: all;
   z-index: 3;
 `;
@@ -160,8 +170,8 @@ const OverlayItemLeft = styled(motion.div)`
 // ======== (3) OverlayItemRight -> motion.div
 const OverlayItemRight = styled(motion.div)`
   position: absolute;
-  top: 426px;
-  right: 141px;
+  top: 500px;
+  right: 124px;
   pointer-events: all;
   z-index: 3;
 `;
@@ -184,8 +194,13 @@ const OverlayText = styled.div`
 `;
 
 // ------------------------------------------
-
 const Features02 = () => {
+  // ✅ useInView 적용
+  const { ref: sectionRef, inView: sectionInView } = useInView({
+    triggerOnce: false, // 스크롤할 때마다 실행
+    threshold: 0.2, // 20% 이상 보이면 트리거
+  });
+
   return (
     <FeatureContainer>
       {/*  배경 이미지 */}
@@ -200,9 +215,31 @@ const Features02 = () => {
       <GraphicWrapper>
         {/*  섹션 제목 */}
         <FeatureTitleContainer>
-          <Title>Features 02</Title>
-          <SubTitle>웨이팅 존으로 안전한 웨이팅하세요</SubTitle>
-          <Description>
+          <Title
+            as={motion.h4}
+            custom={0}
+            variants={fadeInUp}
+            initial="hidden"
+            animate={sectionInView ? "visible" : "hidden"}
+          >
+            Features 02
+          </Title>
+          <SubTitle
+            as={motion.h2}
+            custom={1}
+            variants={fadeInUp}
+            initial="hidden"
+            animate={sectionInView ? "visible" : "hidden"}
+          >
+            웨이팅 존으로 안전한 웨이팅하세요
+          </SubTitle>
+          <Description
+            as={motion.p}
+            custom={2}
+            variants={fadeInUp}
+            initial="hidden"
+            animate={sectionInView ? "visible" : "hidden"}
+          >
             웨이팅 시간 동안 도보로 이동 가능한 존이에요.
             <br /> 잔여 대기 시간에 따라 반경이 실시간으로 줄어듭니다.
           </Description>
@@ -318,5 +355,4 @@ const Features02 = () => {
     </FeatureContainer>
   );
 };
-
 export default Features02;

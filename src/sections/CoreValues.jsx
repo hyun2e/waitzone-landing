@@ -22,7 +22,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   position: relative;
   width: 100%;
-  min-height: 560px;
+  min-height: 580px;
   z-index: 900;
 `;
 
