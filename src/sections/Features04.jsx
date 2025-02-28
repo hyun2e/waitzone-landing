@@ -380,7 +380,7 @@ const Features04 = () => {
   });
 
   return (
-    <FeaturesContainer>
+    <FeaturesContainer ref={moRef}>
       <GraphicWrapper>
         <Header>
           <h2>Features 04</h2>
@@ -409,7 +409,6 @@ const Features04 = () => {
 
           {/* ✅ f4Mo 애니메이션 적용 */}
           <MotionImageWrapper
-            ref={moRef} // ✅ useInView의 ref 사용
             initial="hidden"
             animate={moInView ? "visible" : "hidden"} // ✅ inView 값으로 애니메이션 트리거
             variants={imageVariants}
