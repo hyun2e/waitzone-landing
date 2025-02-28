@@ -84,7 +84,6 @@ const FeatureTitleContainer = styled.div`
   text-align: center;
   margin-top: 84px;
   margin-bottom: 30px;
-  z-index: 1;
 `;
 
 // 모바일 UI Wrapper
@@ -202,7 +201,7 @@ const Features02 = () => {
   });
 
   return (
-    <FeatureContainer>
+    <FeatureContainer ref={sectionRef}>
       {/*  배경 이미지 */}
       <BgImageWrapper>
         <img
@@ -217,7 +216,7 @@ const Features02 = () => {
         <FeatureTitleContainer>
           <Title
             as={motion.h4}
-            custom={0}
+            custom={1}
             variants={fadeInUp}
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}
